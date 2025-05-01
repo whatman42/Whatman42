@@ -99,7 +99,7 @@ def get_stock_data(ticker: str) -> pd.DataFrame:
     try:
         # Gunakan 60 hari jika pakai interval 1 jam
         stock = yf.Ticker(ticker)
-        df = stock.history(period="365d", interval="1d")
+        df = stock.history(period="356d", interval="1d")
 
         required_cols = ["High", "Low", "Close", "Volume"]
         if df is not None and not df.empty and all(col in df.columns for col in required_cols) and len(df) >= 200:
@@ -153,7 +153,7 @@ def calculate_indicators(df: pd.DataFrame) -> pd.DataFrame:
     df["is_closing_hour"] = (df["hour"] == 15).astype(int)
     df["daily_avg"] = df["Close"].rolling(INTERVAL).mean()
     df["daily_std"] = df["Close"].rolling(INTERVAL).std()
-    df["daily_range"] = df["High"].rolling(INTERVAL).max() - df["Low"].rolling(HOURS_PER_DAY).min()
+    df["daily_range"] = df["High"].rolling(INTERVAL).max() - df["Low"].rolling(INTERVAL).min()
 
     # === Target prediksi: harga tertinggi & terendah MINGGU DEPAN ===
     df["future_high"] = df["High"].shift(-INTERVAL).rolling(INTERVAL).max()
