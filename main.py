@@ -113,7 +113,6 @@ def get_stock_data(ticker: str) -> pd.DataFrame:
 # === Hitung Indikator ===
 def calculate_indicators(df: pd.DataFrame) -> pd.DataFrame:
     HOURS_PER_DAY = 7
-    HOURS_PER_WEEK = 35  # 5 hari trading, 7 jam per hari
     
     # Pastikan index sudah dalam timezone Asia/Jakarta
     if df.index.tz is None:
@@ -155,8 +154,8 @@ def calculate_indicators(df: pd.DataFrame) -> pd.DataFrame:
     df["daily_range"] = df["High"].rolling(HOURS_PER_DAY).max() - df["Low"].rolling(HOURS_PER_DAY).min()
 
     # === Target prediksi: harga tertinggi & terendah MINGGU DEPAN ===
-    df["future_high"] = df["High"].shift(-HOURS_PER_WEEK).rolling(HOURS_PER_WEEK).max()
-    df["future_low"]  = df["Low"].shift(-HOURS_PER_WEEK).rolling(HOURS_PER_WEEK).min()
+    df["future_high"] = df["High"].shift(-HOURS_PER_DAY).rolling(HOURS_PER_DAY).max()
+    df["future_low"]  = df["Low"].shift(-HOURS_PER_DAY).rolling(HOURS_PER_DAY).min()
 
     return df.dropna()
 
