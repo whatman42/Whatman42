@@ -1,8 +1,6 @@
 name: ARISE
 
 on:
-  schedule:
-    - cron: '0 7 * * 1-5'   # 15:00 WIB (Senin–Jumat)
   workflow_dispatch:
 
 jobs:
