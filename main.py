@@ -114,7 +114,7 @@ def get_stock_data(ticker: str) -> pd.DataFrame:
 
 # === Hitung Indikator ===
 def calculate_indicators(df: pd.DataFrame) -> pd.DataFrame:
-    HOURS_PER_DAY = 7
+    INTERVAL = 1
     
     # Pastikan index sudah dalam timezone Asia/Jakarta
     if df.index.tz is None:
@@ -151,13 +151,13 @@ def calculate_indicators(df: pd.DataFrame) -> pd.DataFrame:
     df["hour"] = df.index.hour
     df["is_opening_hour"] = (df["hour"] == 9).astype(int)
     df["is_closing_hour"] = (df["hour"] == 15).astype(int)
-    df["daily_avg"] = df["Close"].rolling(HOURS_PER_DAY).mean()
-    df["daily_std"] = df["Close"].rolling(HOURS_PER_DAY).std()
-    df["daily_range"] = df["High"].rolling(HOURS_PER_DAY).max() - df["Low"].rolling(HOURS_PER_DAY).min()
+    df["daily_avg"] = df["Close"].rolling(INTERVAL).mean()
+    df["daily_std"] = df["Close"].rolling(INTERVAL).std()
+    df["daily_range"] = df["High"].rolling(INTERVAL).max() - df["Low"].rolling(HOURS_PER_DAY).min()
 
     # === Target prediksi: harga tertinggi & terendah MINGGU DEPAN ===
-    df["future_high"] = df["High"].shift(-HOURS_PER_DAY).rolling(HOURS_PER_DAY).max()
-    df["future_low"]  = df["Low"].shift(-HOURS_PER_DAY).rolling(HOURS_PER_DAY).min()
+    df["future_high"] = df["High"].shift(-INTERVAL).rolling(INTERVAL).max()
+    df["future_low"]  = df["Low"].shift(-INTERVAL).rolling(INTERVAL).min()
 
     return df.dropna()
 
