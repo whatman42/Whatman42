@@ -97,7 +97,7 @@ def get_stock_data(ticker: str) -> pd.DataFrame:
     try:
         # Gunakan 60 hari jika pakai interval 1 jam
         stock = yf.Ticker(ticker)
-        df = stock.history(period="180d", interval="1h")
+        df = stock.history(period="60", interval="1h")
 
         required_cols = ["High", "Low", "Close", "Volume"]
         if df is not None and not df.empty and all(col in df.columns for col in required_cols) and len(df) >= 200:
@@ -263,9 +263,17 @@ def tune_xgboost_hyperparameters(X_train, y_train):
         'n_estimators': [100, 200, 300],
         'max_depth': [3, 5, 7]
     }
-    grid_search = GridSearchCV(XGBRegressor(), param_grid, cv=3)
+    grid_search = GridSearchCV(
+        XGBRegressor(),
+        param_grid,
+        scoring=make_scorer(r2_score),
+        cv=3,
+        n_jobs=-1,
+        verbose=1
+    )
     grid_search.fit(X_train, y_train)
     logging.info(f"Best XGBoost Parameters: {grid_search.best_params_}")
+    logging.info(f"Best XGBoost Score: {grid_search.best_score_:.4f}")
     return grid_search.best_estimator_
 
 # === Hyperparameter Tuning untuk LightGBM ===
@@ -275,9 +283,17 @@ def tune_lightgbm_hyperparameters(X_train, y_train):
         'n_estimators': [100, 200],
         'max_depth': [3, 5, 7]
     }
-    grid_search = GridSearchCV(lgb.LGBMRegressor(), param_grid, cv=3)
+    grid_search = GridSearchCV(
+        lgb.LGBMRegressor(),
+        param_grid,
+        scoring=make_scorer(r2_score),
+        cv=3,
+        n_jobs=-1,
+        verbose=1
+    )
     grid_search.fit(X_train, y_train)
     logging.info(f"Best LightGBM Parameters: {grid_search.best_params_}")
+    logging.info(f"Best LightGBM Score: {grid_search.best_score_:.4f}")
     return grid_search.best_estimator_
 
 # === Fungsi Kirim Alert ===
