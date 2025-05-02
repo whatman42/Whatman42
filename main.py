@@ -99,7 +99,7 @@ def get_stock_data(ticker: str) -> pd.DataFrame:
     try:
         # Gunakan 60 hari jika pakai interval 1 jam
         stock = yf.Ticker(ticker)
-        df = stock.history(period="356d", interval="1d")
+        df = stock.history(period="356d", interval="1h")
 
         required_cols = ["High", "Low", "Close", "Volume"]
         if df is not None and not df.empty and all(col in df.columns for col in required_cols) and len(df) >= 200:
@@ -114,7 +114,7 @@ def get_stock_data(ticker: str) -> pd.DataFrame:
 
 # === Hitung Indikator ===
 def calculate_indicators(df: pd.DataFrame) -> pd.DataFrame:
-    INTERVAL = 1
+    INTERVAL = 7
     
     # Pastikan index timezone
     if df.index.tz is None:
