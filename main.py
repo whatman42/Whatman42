@@ -574,7 +574,7 @@ def retrain_if_needed(ticker: str):
         
         # Tentukan fitur yang akan digunakan
         features = [
-            "Close", "ATR", "RSI", "MACD", "MACD_Hist",
+            "Close", "ATR", "RSI", "MACD", "MACD_Hist", "ROC",
             "SMA_14", "SMA_28", "SMA_84", "EMA_10",
             "BB_Upper", "BB_Lower", "Support", "Resistance",
             "VWAP", "ADX", "CCI", "Momentum", "WilliamsR",
