@@ -137,6 +137,9 @@ def calculate_indicators(df: pd.DataFrame) -> pd.DataFrame:
 
     df["ROC"] = momentum.ROCIndicator(df["Close"], window=12).roc()  # atau ubah window sesuai preferensi
     df["RSI"] = momentum.RSIIndicator(df["Close"], window=14).rsi()
+    df["EMA_20"] = trend.EMAIndicator(df["Close"], window=20).ema_indicator()
+    df["EMA_50"] = trend.EMAIndicator(df["Close"], window=50).ema_indicator()
+    df["EMA_100"] = trend.EMAIndicator(df["Close"], window=100).ema_indicator()
     df["EMA_14"] = trend.EMAIndicator(df["Close"], window=14).ema_indicator()
     df["EMA_28"] = trend.EMAIndicator(df["Close"], window=28).ema_indicator()
     df["EMA_84"] = trend.EMAIndicator(df["Close"], window=84).ema_indicator()
