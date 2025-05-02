@@ -116,26 +116,41 @@ def get_stock_data(ticker: str) -> pd.DataFrame:
 def calculate_indicators(df: pd.DataFrame) -> pd.DataFrame:
     INTERVAL = 1
     
-    # Pastikan index sudah dalam timezone Asia/Jakarta
+    # Pastikan index timezone
     if df.index.tz is None:
         df.index = df.index.tz_localize("UTC").tz_convert("Asia/Jakarta")
     else:
         df.index = df.index.tz_convert("Asia/Jakarta")
-        
-    # === Indikator teknikal utama ===
-    df["ATR"] = volatility.AverageTrueRange(df["High"], df["Low"], df["Close"], window=14).average_true_range()
-    
+
+    # Cek NaN pada harga sebelum indikator
+    if df[['High', 'Low', 'Close']].isnull().any().any():
+        logging.warning("Data mengandung NaN sebelum kalkulasi indikator.")
+
+    # ATR
+    try:
+        atr = volatility.AverageTrueRange(df["High"], df["Low"], df["Close"], window=14).average_true_range()
+        if atr.isnull().all():
+            logging.warning("ATR kosong setelah kalkulasi.")
+        df["ATR"] = atr.fillna(0)
+    except Exception as e:
+        logging.error(f"Gagal menghitung ATR: {e}")
+        df["ATR"] = 0  # fallback aman
+
+    # MACD
     macd = trend.MACD(df["Close"])
     df["MACD"] = macd.macd()
     df["MACD_Hist"] = macd.macd_diff()
-    
+
+    # Bollinger Bands
     bb = volatility.BollingerBands(df["Close"], window=20)
     df["BB_Upper"] = bb.bollinger_hband()
     df["BB_Lower"] = bb.bollinger_lband()
 
+    # Support & Resistance
     df["Support"] = df["Low"].rolling(window=48).min()
     df["Resistance"] = df["High"].rolling(window=48).max()
 
+    # Indikator lainnya
     df["RSI"] = momentum.RSIIndicator(df["Close"], window=14).rsi()
     df["SMA_14"] = trend.SMAIndicator(df["Close"], window=14).sma_indicator()
     df["SMA_28"] = trend.SMAIndicator(df["Close"], window=28).sma_indicator()
@@ -147,7 +162,7 @@ def calculate_indicators(df: pd.DataFrame) -> pd.DataFrame:
     df["Momentum"] = momentum.ROCIndicator(df["Close"], window=12).roc()
     df["WilliamsR"] = momentum.WilliamsRIndicator(df["High"], df["Low"], df["Close"], lbp=14).williams_r()
 
-    # === Fitur waktu harian ===
+    # Fitur waktu harian
     df["hour"] = df.index.hour
     df["is_opening_hour"] = (df["hour"] == 9).astype(int)
     df["is_closing_hour"] = (df["hour"] == 15).astype(int)
@@ -155,7 +170,7 @@ def calculate_indicators(df: pd.DataFrame) -> pd.DataFrame:
     df["daily_std"] = df["Close"].rolling(INTERVAL).std()
     df["daily_range"] = df["High"].rolling(INTERVAL).max() - df["Low"].rolling(INTERVAL).min()
 
-    # === Target prediksi: harga tertinggi & terendah MINGGU DEPAN ===
+    # Target prediksi
     df["future_high"] = df["High"].shift(-INTERVAL).rolling(INTERVAL).max()
     df["future_low"]  = df["Low"].shift(-INTERVAL).rolling(INTERVAL).min()
 
