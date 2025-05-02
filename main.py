@@ -135,6 +135,7 @@ def calculate_indicators(df: pd.DataFrame) -> pd.DataFrame:
     df["Support"] = df["Low"].rolling(window=48).min()
     df["Resistance"] = df["High"].rolling(window=48).max()
 
+    df["ROC"] = momentum.ROCIndicator(df["Close"], window=12).roc()  # atau ubah window sesuai preferensi
     df["RSI"] = momentum.RSIIndicator(df["Close"], window=14).rsi()
     df["SMA_14"] = trend.SMAIndicator(df["Close"], window=14).sma_indicator()
     df["SMA_28"] = trend.SMAIndicator(df["Close"], window=28).sma_indicator()
@@ -451,7 +452,7 @@ def analyze_stock(ticker: str):
         return None
 
     features = [
-        "Close", "ATR", "RSI", "MACD", "MACD_Hist",
+        "Close", "ATR", "RSI", "MACD", "MACD_Hist", "ROC",
         "SMA_14", "SMA_28", "SMA_84", "EMA_10",
         "BB_Upper", "BB_Lower", "Support", "Resistance",
         "VWAP", "ADX", "CCI", "Momentum", "WilliamsR",
