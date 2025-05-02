@@ -113,7 +113,7 @@ def get_stock_data(ticker: str) -> pd.DataFrame:
 # === Hitung Indikator ===
 def calculate_indicators(df: pd.DataFrame) -> pd.DataFrame:
     HOURS_PER_DAY = 7
-    HOURS_PER_WEEK = 14  # 5 hari trading, 7 jam per hari
+    HOURS_PER_WEEK = 7  # 5 hari trading, 7 jam per hari
     
     # Pastikan index sudah dalam timezone Asia/Jakarta
     if df.index.tz is None:
@@ -373,7 +373,7 @@ MIN_PRICE = 500
 MAX_PRICE = 2000
 MIN_VOLUME = 10000
 MIN_VOLATILITY = 0.005
-MIN_PROB = 0.9
+MIN_PROB = 0.7
 
 def is_stock_eligible(price, avg_volume, atr, ticker):
     if price < MIN_PRICE:
@@ -552,7 +552,7 @@ def analyze_stock(ticker: str):
         if ph >= price or pl <= price:
             return None
             
-    if profit_potential_pct < 3:
+    if profit_potential_pct < 2:
         logging.info(f"{ticker} dilewati: potensi profit rendah ({profit_potential_pct:.2f}%)")
         return None
 
@@ -588,7 +588,7 @@ def retrain_if_needed(ticker: str):
     akurasi_map = evaluate_prediction_accuracy()
     akurasi = akurasi_map.get(ticker, 1.0)  # default 100%
     
-    if akurasi < 0.90:
+    if akurasi < 0.80:
         logging.info(f"Akurasi model {ticker} rendah ({akurasi:.2%}), retraining...")
         
         # Ambil data saham
