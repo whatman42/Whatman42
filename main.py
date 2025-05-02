@@ -137,9 +137,11 @@ def calculate_indicators(df: pd.DataFrame) -> pd.DataFrame:
 
     df["ROC"] = momentum.ROCIndicator(df["Close"], window=12).roc()  # atau ubah window sesuai preferensi
     df["RSI"] = momentum.RSIIndicator(df["Close"], window=14).rsi()
+    df["EMA_10"] = trend.EMAIndicator(df["Close"], window=10).ema_indicator()
     df["EMA_20"] = trend.EMAIndicator(df["Close"], window=20).ema_indicator()
     df["EMA_50"] = trend.EMAIndicator(df["Close"], window=50).ema_indicator()
     df["EMA_100"] = trend.EMAIndicator(df["Close"], window=100).ema_indicator()
+    df["EMA_200"] = trend.EMAIndicator(df["Close"], window=200).ema_indicator()
     df["EMA_14"] = trend.EMAIndicator(df["Close"], window=14).ema_indicator()
     df["EMA_28"] = trend.EMAIndicator(df["Close"], window=28).ema_indicator()
     df["EMA_84"] = trend.EMAIndicator(df["Close"], window=84).ema_indicator()
@@ -147,7 +149,6 @@ def calculate_indicators(df: pd.DataFrame) -> pd.DataFrame:
     df["SMA_14"] = trend.SMAIndicator(df["Close"], window=14).sma_indicator()
     df["SMA_28"] = trend.SMAIndicator(df["Close"], window=28).sma_indicator()
     df["SMA_84"] = trend.SMAIndicator(df["Close"], window=84).sma_indicator()
-    df["EMA_10"] = trend.EMAIndicator(df["Close"], window=10).ema_indicator()
     df["VWAP"] = volume.VolumeWeightedAveragePrice(df["High"], df["Low"], df["Close"], df["Volume"]).volume_weighted_average_price()
     df["ADX"] = trend.ADXIndicator(df["High"], df["Low"], df["Close"], window=14).adx()
     df["CCI"] = trend.CCIIndicator(df["High"], df["Low"], df["Close"], window=20).cci()
