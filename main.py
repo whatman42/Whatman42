@@ -38,13 +38,13 @@ BACKUP_CSV_PATH  = "stock_data_backup.csv"
 HASH_PATH = "features_hash.json"
 # === Daftar Saham ===
 STOCK_LIST = ["BBCA.JK", "TLKM.JK", "BBRI.JK", "BMRI.JK", "ASII.JK", "UNVR.JK", "BBNI.JK", "ICBP.JK",
-               "CPIN.JK", "INDF.JK", "ANTM.JK", "TPIA.JK", "BRPT.JK", "MDKA.JK", "ADRO.JK", "PGAS.JK",
-               "MNCN.JK", "PTBA.JK", "SMGR.JK", "KLBF.JK", "EXCL.JK", "INCO.JK", "AKRA.JK", "JPFA.JK",
-               "BTPS.JK", "TKIM.JK", "LSIP.JK", "SCMA.JK", "UNTR.JK", "BMTR.JK", "ITMG.JK", "INDY.JK",
-               "SRTG.JK", "HMSP.JK", "BSDE.JK", "SMRA.JK", "LPPF.JK", "ELSA.JK", "ERAA.JK", "TOTL.JK",
-               "WEGE.JK", "WSBP.JK", "KAEF.JK", "SIDO.JK", "JSMR.JK", "ADHI.JK", "MYOR.JK", "PPRO.JK",
-               "WSKT.JK", "WIKA.JK", "MIKA.JK", "PWON.JK", "ASRI.JK", "TOWR.JK", "META.JK", "MCAS.JK",
-               "RAJA.JK", "BUKA.JK", "EMTK.JK", "BFIN.JK", "NFCX.JK", "MTEL.JK", "GOTO.JK"]
+              "CPIN.JK", "INDF.JK", "ANTM.JK", "TPIA.JK", "BRPT.JK", "MDKA.JK", "ADRO.JK", "PGAS.JK",
+              "MNCN.JK", "PTBA.JK", "SMGR.JK", "KLBF.JK", "EXCL.JK", "INCO.JK", "AKRA.JK", "JPFA.JK",
+              "BTPS.JK", "TKIM.JK", "LSIP.JK", "SCMA.JK", "UNTR.JK", "BMTR.JK", "ITMG.JK", "INDY.JK",
+              "SRTG.JK", "HMSP.JK", "BSDE.JK", "SMRA.JK", "LPPF.JK", "ELSA.JK", "ERAA.JK", "TOTL.JK",
+              "WEGE.JK", "WSBP.JK", "KAEF.JK", "SIDO.JK", "JSMR.JK", "ADHI.JK", "MYOR.JK", "PPRO.JK",
+              "WSKT.JK", "WIKA.JK", "MIKA.JK", "PWON.JK", "ASRI.JK", "TOWR.JK", "META.JK", "MCAS.JK",
+              "RAJA.JK", "BUKA.JK", "EMTK.JK", "BFIN.JK", "NFCX.JK", "MTEL.JK", "GOTO.JK"]
 
 # === Logging Setup ===
 log_formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
