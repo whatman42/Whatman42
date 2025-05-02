@@ -1,1 +1,2 @@
-
+ticker,harga,take_profit,stop_loss,aksi,prob_high,prob_low,prob_success,profit_potential_pct
+JPFA.JK,1750.0,1824.17,1744.99,beli,0.95,0.93,0.94,4.24
