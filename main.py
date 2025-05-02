@@ -110,6 +110,33 @@ def get_stock_data(ticker: str) -> pd.DataFrame:
         logging.error(f"Error mengambil data {ticker}: {e}")
     return None
 
+def validate_raw_data(df: pd.DataFrame, required_columns=None, min_rows=100, ticker: str = "UNKNOWN") -> bool:
+    if required_columns is None:
+        required_columns = ["Open", "High", "Low", "Close", "Volume"]
+
+    # Cek apakah data kosong
+    if df.empty:
+        logging.warning(f"{ticker}: Data kosong.")
+        return False
+
+    # Cek apakah kolom penting ada semua
+    missing_cols = set(required_columns) - set(df.columns)
+    if missing_cols:
+        logging.warning(f"{ticker}: Kolom hilang: {missing_cols}")
+        return False
+
+    # Cek apakah data cukup untuk indikator berbasis window
+    if len(df) < min_rows:
+        logging.warning(f"{ticker}: Data kurang dari {min_rows} baris (saat ini: {len(df)}).")
+        return False
+
+    # Cek apakah kolom penting isinya valid
+    if df[required_columns].isnull().all().any():
+        logging.warning(f"{ticker}: Salah satu kolom utama hanya berisi NaN.")
+        return False
+
+    return True
+    
 # === Hitung Indikator ===
 def calculate_indicators(df: pd.DataFrame) -> pd.DataFrame:
     HOURS_PER_DAY = 7
@@ -436,6 +463,9 @@ def analyze_stock(ticker: str):
     if df is None or df.empty:
         logging.error(f"{ticker}: Data saham tidak ditemukan atau kosong.")
         return None
+
+    if not validate_raw_data(df, ticker="UNVR.JK"):
+    return None
 
     df = calculate_indicators(df)
 
