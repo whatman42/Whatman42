@@ -224,7 +224,7 @@ def train_lstm(
     lstm_units: int = 64,
     dropout_rate: float = 0.2,
     dense_units: int = 32,
-    epochs: int = 55,
+    epochs: int = 75,
     batch_size: int = 32,
     verbose: int = 1
 ) -> Sequential:
