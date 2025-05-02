@@ -113,7 +113,7 @@ def get_stock_data(ticker: str) -> pd.DataFrame:
 # === Hitung Indikator ===
 def calculate_indicators(df: pd.DataFrame) -> pd.DataFrame:
     HOURS_PER_DAY = 7
-    HOURS_PER_WEEK = 35  # 5 hari trading, 7 jam per hari
+    HOURS_PER_WEEK = 14  # 5 hari trading, 7 jam per hari
     
     # Pastikan index sudah dalam timezone Asia/Jakarta
     if df.index.tz is None:
