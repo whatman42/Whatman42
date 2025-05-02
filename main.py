@@ -603,12 +603,18 @@ def retrain_if_needed(ticker: str):
         
         # Tentukan fitur yang akan digunakan
         features = [
-            "Close", "ATR", "RSI", "MACD", "MACD_Hist", "ROC",
-            "SMA_14", "SMA_28", "SMA_84", "EMA_10",
-            "BB_Upper", "BB_Lower", "Support", "Resistance",
+            "ATR", "MACD", "MACD_Hist",
+            "BB_Upper", "BB_Lower",
+            "Support", "Resistance",
+            "ROC", "RSI",
+            "EMA_10", "EMA_20", "EMA_50", "EMA_100", "EMA_200",
+            "EMA_14", "EMA_28", "EMA_84",
+            "SMA_10", "SMA_20", "SMA_50", "SMA_100", "SMA_200",
+            "SMA_14", "SMA_28", "SMA_84",
             "VWAP", "ADX", "CCI", "Momentum", "WilliamsR",
-            "daily_avg", "daily_std", "daily_range",
-            "is_opening_hour", "is_closing_hour"
+            "Pivot", "Fib_R1", "Fib_R2", "Fib_R3", "Fib_S1", "Fib_S2", "Fib_S3",
+            "hour", "is_opening_hour", "is_closing_hour",
+            "daily_avg", "daily_std", "daily_range"
         ]
         
         X = df[features]
