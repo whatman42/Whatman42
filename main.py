@@ -416,8 +416,8 @@ def analyze_stock(ticker: str):
     df = calculate_indicators(df)
 
     # Pastikan kolom dan nilainya ada sebelum lanjut
-    if "ATR" not in df.columns or df["ATR"].dropna().empty:
-        logging.warning(f"{ticker}: ATR kosong setelah kalkulasi.")
+    if "ATR" not in df.columns or df["ATR"].replace(0, np.nan).dropna().empty:
+        logging.warning(f"{ticker}: ATR tidak valid (semua nol atau kosong) setelah kalkulasi.")
         return None
 
     atr = df["ATR"].dropna().iloc[-1]
