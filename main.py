@@ -158,6 +158,17 @@ def calculate_indicators(df: pd.DataFrame) -> pd.DataFrame:
     df["CCI"] = trend.CCIIndicator(df["High"], df["Low"], df["Close"], window=20).cci()
     df["Momentum"] = momentum.ROCIndicator(df["Close"], window=12).roc()
     df["WilliamsR"] = momentum.WilliamsRIndicator(df["High"], df["Low"], df["Close"], lbp=14).williams_r()
+    
+    # === Fibonacci Pivot Point & Retracement ===
+    pivot = (df["High"] + df["Low"] + df["Close"]) / 3
+    range_hl = df["High"] - df["Low"]
+    df["Pivot"] = pivot
+    df["Fib_R1"] = pivot + range_hl * 0.382
+    df["Fib_R2"] = pivot + range_hl * 0.618
+    df["Fib_R3"] = pivot + range_hl * 1.000
+    df["Fib_S1"] = pivot - range_hl * 0.382
+    df["Fib_S2"] = pivot - range_hl * 0.618
+    df["Fib_S3"] = pivot - range_hl * 1.000
 
     # === Fitur waktu harian ===
     df["hour"] = df.index.hour
