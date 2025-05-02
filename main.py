@@ -465,9 +465,6 @@ def analyze_stock(ticker: str):
         logging.error(f"{ticker}: Data saham tidak ditemukan atau kosong.")
         return None
 
-    if not validate_raw_data(df, ticker="UNVR.JK"):
-    return None
-
     df = calculate_indicators(df)
 
     # Pastikan kolom dan nilainya ada sebelum lanjut
