@@ -1,4 +1,5 @@
-2025-05-02 19:15:38,997 - ERROR - EMTK.JK: Error saat menghitung probabilitas - 'Close' column is required in input features (X).
-2025-05-02 19:16:46,797 - ERROR - NFCX.JK: Error saat menghitung probabilitas - 'Close' column is required in input features (X).
-2025-05-02 19:16:49,893 - ERROR - BFIN.JK: Error saat menghitung probabilitas - 'Close' column is required in input features (X).
-2025-05-02 19:16:52,995 - ERROR - MTEL.JK: Error saat menghitung probabilitas - 'Close' column is required in input features (X).
+2025-05-03 00:29:58,830 - ERROR - MCAS.JK: Error saat menghitung probabilitas - 'Close' column is required in input features (X).
+2025-05-03 00:30:03,279 - ERROR - EMTK.JK: Error saat menghitung probabilitas - 'Close' column is required in input features (X).
+2025-05-03 00:31:14,919 - ERROR - BFIN.JK: Error saat menghitung probabilitas - 'Close' column is required in input features (X).
+2025-05-03 00:31:19,753 - ERROR - NFCX.JK: Error saat menghitung probabilitas - 'Close' column is required in input features (X).
+2025-05-03 00:31:32,830 - ERROR - MTEL.JK: Error saat menghitung probabilitas - 'Close' column is required in input features (X).
