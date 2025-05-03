@@ -1,1 +1,3 @@
-
+ticker,harga,take_profit,stop_loss,aksi,prob_high,prob_low,prob_success,profit_potential_pct
+AKRA.JK,1245.0,1275.52,1236.87,beli,0.88,0.87,0.88,2.45
+JPFA.JK,1750.0,1805.42,1748.5,beli,0.95,0.9,0.93,3.17
