@@ -372,17 +372,17 @@ def check_and_reset_model_if_needed(ticker: str, current_features: list[str]):
         logging.debug(f"{ticker}: Struktur fitur sama — model tidak di-reset")
         
 # Konstanta threshold (letakkan di atas fungsi analyze_stock)
-MIN_PRICE = 10
-MAX_PRICE = 200000
+#MIN_PRICE = 10
+#MAX_PRICE = 200000
 MIN_VOLUME = 10000
 MIN_VOLATILITY = 0.005
 MIN_PROB = 0.7
 
 def is_stock_eligible(price, avg_volume, atr, ticker):
-    if price < MIN_PRICE:
+    #if price < MIN_PRICE:
         logging.info(f"{ticker} dilewati: harga terlalu rendah ({price:.2f})")
         return False
-    if price > MAX_PRICE:
+    #if price > MAX_PRICE:
         logging.info(f"{ticker} dilewati: harga terlalu tinggi ({price:.2f})")
         return False
     if avg_volume < MIN_VOLUME:
