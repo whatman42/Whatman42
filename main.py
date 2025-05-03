@@ -478,6 +478,7 @@ def analyze_stock(ticker: str):
         return None
 
     features = [
+        "Open", "High", "Low", "Close",
         "ATR", "MACD", "MACD_Hist",
         "BB_Upper", "BB_Lower",
         "Support", "Resistance",
