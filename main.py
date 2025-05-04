@@ -188,11 +188,22 @@ def calculate_indicators(df: pd.DataFrame) -> pd.DataFrame:
     return df.dropna()
 
 def evaluate_model(model, X, y_true):
-    y_pred = model.predict(X)
-    rmse = np.sqrt(mean_squared_error(y_true, y_pred))
-    mae = mean_absolute_error(y_true, y_pred)
-    logging.info(f"Model Evaluation - RMSE: {rmse:.2f}, MAE: {mae:.2f}")
-    return rmse, mae
+    try:
+        # Cek apakah ini LSTM (keras)
+        if hasattr(model, "predict") and "keras" in str(type(model)).lower():
+            X = np.reshape(X.values, (X.shape[0], X.shape[1], 1))
+
+        y_pred = model.predict(X)
+        if isinstance(y_pred, np.ndarray) and y_pred.ndim > 1:
+            y_pred = y_pred.flatten()
+
+        rmse = np.sqrt(mean_squared_error(y_true, y_pred))
+        mae = mean_absolute_error(y_true, y_pred)
+        logging.info(f"Model Evaluation - RMSE: {rmse:.2f}, MAE: {mae:.2f}")
+        return rmse, mae
+    except Exception as e:
+        logging.error(f"Gagal evaluasi model: {e}")
+        return None, None
 
 def train_lightgbm(X_train: pd.DataFrame, y_train: pd.Series, X_val: Optional[pd.DataFrame] = None, y_val: Optional[pd.Series] = None, n_estimators: int = 500, learning_rate: float = 0.05, early_stopping_rounds: Optional[int] = 50, random_state: int = 42) -> lgb.LGBMRegressor:
     model = lgb.LGBMRegressor(n_estimators=n_estimators, learning_rate=learning_rate, random_state=random_state)
@@ -242,6 +253,10 @@ def train_lstm(
     ])
     model.compile(optimizer="adam", loss="mean_squared_error")
     model.fit(X_arr, y, epochs=epochs, batch_size=batch_size, verbose=verbose)
+
+    # Evaluasi konsisten
+    evaluate_model(model, X, y)
+
     return model
 
 def cross_validate_model(model, X, y):
