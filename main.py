@@ -352,6 +352,18 @@ def tune_lstm_hyperparameters(X, y, n_iter=5):
 
     logging.info(f"Best LSTM params: {best_params}, loss: {best_loss:.4f}")
     return best_model
+
+def save_best_params(ticker: str, model_type: str, params: dict):
+    os.makedirs("params", exist_ok=True)
+    with open(f"params/{ticker}_{model_type}.json", "w") as f:
+        json.dump(params, f, indent=2)
+
+def load_best_params(ticker: str, model_type: str) -> Optional[dict]:
+    path = f"params/{ticker}_{model_type}.json"
+    if os.path.exists(path):
+        with open(path, "r") as f:
+            return json.load(f)
+    return None
 # === Fungsi Kirim Alert ===
 def send_alert(message):
     logging.error(f"ALERT: {message}")
