@@ -291,10 +291,16 @@ def tune_xgboost_hyperparameters(X_train, y_train):
         'n_estimators': [100, 200, 300],
         'max_depth': [3, 5, 7]
     }
-    grid_search = GridSearchCV(XGBRegressor(), param_grid, cv=3)
-    grid_search.fit(X_train, y_train)
-    logging.info(f"Best XGBoost Parameters: {grid_search.best_params_}")
-    return grid_search.best_estimator_
+    search = GridSearchCV(
+        XGBRegressor(),
+        param_grid,
+        cv=3,
+        scoring='neg_mean_absolute_error',
+        n_jobs=-1
+    )
+    search.fit(X_train, y_train)
+    logging.info(f"Best XGBoost Parameters: {search.best_params_}")
+    return search.best_estimator_
 
 # === Hyperparameter Tuning untuk LightGBM ===
 def tune_lightgbm_hyperparameters(X_train, y_train):
