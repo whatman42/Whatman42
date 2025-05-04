@@ -704,7 +704,7 @@ def retrain_if_needed(ticker: str):
     akurasi_map = evaluate_prediction_accuracy()
     akurasi = akurasi_map.get(ticker, 1.0)  # default 100%
     
-    if akurasi < 0.80:
+    if akurasi < 0.85:
         logging.info(f"Akurasi model {ticker} rendah ({akurasi:.2%}), retraining...")
         
         # Ambil data saham
