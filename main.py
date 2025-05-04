@@ -323,6 +323,35 @@ def tune_lightgbm_hyperparameters(X_train, y_train):
     logging.info(f"Best LightGBM Parameters: {grid_search.best_params_}")
     return grid_search.best_estimator_
 
+# === Hyperparameter Tuning untuk LSTM ===
+from sklearn.model_selection import ParameterSampler
+
+def tune_lstm_hyperparameters(X, y, n_iter=5):
+    param_grid = {
+        "lstm_units": [32, 64, 128],
+        "dropout_rate": [0.1, 0.2, 0.3],
+        "dense_units": [16, 32, 64],
+        "batch_size": [16, 32],
+        "epochs": [50, 75, 100]
+    }
+
+    best_model = None
+    best_loss = np.inf
+    best_params = None
+
+    for params in ParameterSampler(param_grid, n_iter=n_iter, random_state=42):
+        try:
+            model = train_lstm(X, y, **params, verbose=0)
+            loss = model.evaluate(np.reshape(X.values, (X.shape[0], X.shape[1], 1)), y, verbose=0)
+            if loss < best_loss:
+                best_loss = loss
+                best_model = model
+                best_params = params
+        except Exception as e:
+            logging.warning(f"Gagal tuning LSTM dengan params {params}: {e}")
+
+    logging.info(f"Best LSTM params: {best_params}, loss: {best_loss:.4f}")
+    return best_model
 # === Fungsi Kirim Alert ===
 def send_alert(message):
     logging.error(f"ALERT: {message}")
