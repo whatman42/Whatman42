@@ -299,6 +299,47 @@ def load_or_train_model(path, train_func, X, y, model_type="joblib"):
         logging.info(f"Trained & saved model to {path}")
     return model
 
+def train_and_select_best_model(ticker: str, X: pd.DataFrame, y: pd.Series) -> str:
+    logging.info(f"Training semua model untuk {ticker}...")
+
+    models = {}
+    scores = {}
+
+    # LightGBM
+    model_lgb = train_lightgbm(X, y)
+    rmse_lgb, mae_lgb = evaluate_model(model_lgb, X, y)
+    models["lightgbm"] = model_lgb
+    scores["lightgbm"] = mae_lgb
+
+    # XGBoost
+    model_xgb = train_xgboost(X, y)
+    rmse_xgb, mae_xgb = evaluate_model(model_xgb, X, y)
+    models["xgboost"] = model_xgb
+    scores["xgboost"] = mae_xgb
+
+    # LSTM
+    model_lstm = train_lstm(X, y, verbose=0)
+    rmse_lstm, mae_lstm = evaluate_model(model_lstm, X, y)
+    models["lstm"] = model_lstm
+    scores["lstm"] = mae_lstm
+
+    # Pilih model terbaik (berdasarkan MAE)
+    best_model_type = min(scores, key=scores.get)
+    best_model = models[best_model_type]
+    logging.info(f"Model terbaik untuk {ticker}: {best_model_type.upper()} (MAE: {scores[best_model_type]:.4f})")
+
+    # Simpan model
+    if best_model_type == "lstm":
+        best_model.save(f"model_lstm_best_{ticker}.keras")
+    else:
+        joblib.dump(best_model, f"model_{best_model_type}_best_{ticker}.pkl")
+
+    # Simpan info model terbaik
+    with open(f"model_best_type_{ticker}.txt", "w") as f:
+        f.write(best_model_type)
+
+    return best_model_type
+
 # === Hyperparameter Tuning untuk XGBoost ===
 def tune_xgboost_hyperparameters(X_train, y_train):
     param_grid = {
