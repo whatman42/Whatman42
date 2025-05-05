@@ -28,6 +28,7 @@ from tensorflow.keras.layers import LSTM, Dense, Dropout
 from sklearn.model_selection import train_test_split
 from concurrent.futures import ThreadPoolExecutor
 from logging.handlers import RotatingFileHandler
+from sklearn.model_selection import ParameterSampler
 
 # === Konfigurasi Bot ===
 TELEGRAM_TOKEN   = os.environ.get("TELEGRAM_TOKEN")
@@ -380,8 +381,6 @@ def tune_lightgbm_hyperparameters(X_train, y_train):
     return grid_search.best_estimator_
 
 # === Hyperparameter Tuning untuk LSTM ===
-from sklearn.model_selection import ParameterSampler
-
 def tune_lstm_hyperparameters(X, y, n_iter=5):
     param_grid = {
         "lstm_units": [32, 64, 128],
