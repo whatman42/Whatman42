@@ -1046,7 +1046,7 @@ if __name__ == "__main__":
             f"<b>🔮Hai K.N.T.L. Clan Member🔮</b>\n"
             f"<b>Apapun Yang Sedang Kalian Hadapi Saat Ini, Ingatlah...</b>\n"
             f"<b><i>{motivation}</i></b>\n\n"
-            f"<b>Berikut Top 5 saham pilihan berdasarkan analisa K.N.T.L.A.I 🤖:</b>\n"
+            f"<b>Berikut Top 5 saham pilihan berdasarkan analisa K.N.T.L. (Kernel Neural Trading Logic) A.I 🤖:</b>\n"
         )
         for r in top_5:
             message += (
