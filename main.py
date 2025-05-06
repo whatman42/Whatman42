@@ -22,6 +22,10 @@ from sklearn.model_selection import RandomizedSearchCV
 from sklearn.model_selection import cross_val_score
 from sklearn.metrics import mean_squared_error, mean_absolute_error
 from typing import Optional, Dict, List, Tuple
+from ta.volatility import AverageTrueRange, BollingerBands
+from ta.trend import MACD, EMAIndicator, SMAIndicator, ADXIndicator, CCIIndicator
+from ta.momentum import ROCIndicator, RSIIndicator, WilliamsRIndicator
+from ta.volume import VolumeWeightedAveragePrice
 from ta import momentum, trend, volatility, volume
 from ta.momentum import StochasticOscillator
 from ta.volume import OnBalanceVolumeIndicator
