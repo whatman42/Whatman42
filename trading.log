@@ -1,45 +1,51 @@
-2025-05-06 15:56:15.752647: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.
-2025-05-06 15:56:15.755761: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.
-2025-05-06 15:56:15.764210: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-05-06 16:07:02.758181: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.
+2025-05-06 16:07:02.761256: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.
+2025-05-06 16:07:02.769756: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
-E0000 00:00:1746546975.778084    2058 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
-E0000 00:00:1746546975.782316    2058 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
-W0000 00:00:1746546975.793990    2058 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-W0000 00:00:1746546975.794007    2058 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-W0000 00:00:1746546975.794010    2058 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-W0000 00:00:1746546975.794012    2058 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-2025-05-06 15:56:15.797550: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+E0000 00:00:1746547622.783795    2065 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1746547622.788002    2065 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1746547622.799391    2065 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1746547622.799406    2065 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1746547622.799409    2065 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1746547622.799411    2065 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2025-05-06 16:07:02.802956: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
 To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3805, in get_loc
-    return self._engine.get_loc(casted_key)
-  File "index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
-  File "index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
-  File "pandas/_libs/hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
-  File "pandas/_libs/hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
-KeyError: 'daily_avg'
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/home/runner/work/Whatman42/Whatman42/main.py", line 1070, in <module>
-    results = list(executor.map(analyze_stock, STOCK_LIST))
-  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/concurrent/futures/_base.py", line 621, in result_iterator
-    yield _result_or_cancel(fs.pop())
-  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/concurrent/futures/_base.py", line 319, in _result_or_cancel
-    return fut.result(timeout)
-  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/concurrent/futures/_base.py", line 458, in result
-    return self.__get_result()
-  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
-    raise self._exception
-  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/concurrent/futures/thread.py", line 58, in run
-    result = self.fn(*self.args, **self.kwargs)
-  File "/home/runner/work/Whatman42/Whatman42/main.py", line 592, in analyze_stock
-    df = calculate_indicators(df)
-  File "/home/runner/work/Whatman42/Whatman42/main.py", line 196, in calculate_indicators
-    df["zscore"] = (df["Close"] - df["daily_avg"]) / df["daily_std"]
-  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/pandas/core/frame.py", line 4102, in __getitem__
-    indexer = self.columns.get_loc(key)
-  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3812, in get_loc
-    raise KeyError(key) from err
-KeyError: 'daily_avg'
+2025-05-06 16:07:29,426 - ERROR - PGAS.JK: Error saat mempersiapkan data - ['Support_5', 'Resistance_5']
+2025-05-06 16:07:29,513 - ERROR - BRPT.JK: Error saat mempersiapkan data - ['Support_5', 'Resistance_5']
+2025-05-06 16:07:34,986 - ERROR - MNCN.JK: Error saat mempersiapkan data - ['Support_5', 'Resistance_5']
+2025-05-06 16:07:35,175 - ERROR - KLBF.JK: Error saat mempersiapkan data - ['Support_5', 'Resistance_5']
+2025-05-06 16:07:40,495 - ERROR - AKRA.JK: Error saat mempersiapkan data - ['Support_5', 'Resistance_5']
+2025-05-06 16:07:45,743 - ERROR - BTPS.JK: Error saat mempersiapkan data - ['Support_5', 'Resistance_5']
+2025-05-06 16:07:45,895 - ERROR - SCMA.JK: Error saat mempersiapkan data - ['Support_5', 'Resistance_5']
+2025-05-06 16:07:45,904 - ERROR - LSIP.JK: Error saat mempersiapkan data - ['Support_5', 'Resistance_5']
+2025-05-06 16:07:51,111 - ERROR - BMTR.JK: Error saat mempersiapkan data - ['Support_5', 'Resistance_5']
+2025-05-06 16:07:51,186 - ERROR - INDY.JK: Error saat mempersiapkan data - ['Support_5', 'Resistance_5']
+2025-05-06 16:07:56,585 - ERROR - BSDE.JK: Error saat mempersiapkan data - ['Support_5', 'Resistance_5']
+2025-05-06 16:07:56,676 - ERROR - SMRA.JK: Error saat mempersiapkan data - ['Support_5', 'Resistance_5']
+2025-05-06 16:07:56,692 - ERROR - SRTG.JK: Error saat mempersiapkan data - ['Support_5', 'Resistance_5']
+2025-05-06 16:07:56,693 - ERROR - HMSP.JK: Error saat mempersiapkan data - ['Support_5', 'Resistance_5']
+2025-05-06 16:08:02,118 - ERROR - ERAA.JK: Error saat mempersiapkan data - ['Support_5', 'Resistance_5']
+2025-05-06 16:08:02,127 - ERROR - TOTL.JK: Error saat mempersiapkan data - ['Support_5', 'Resistance_5']
+2025-05-06 16:08:03,382 - ERROR - ELSA.JK: Error saat mempersiapkan data - ['Support_5', 'Resistance_5']
+2025-05-06 16:08:03,609 - ERROR - WEGE.JK: Error saat mempersiapkan data - ['Support_5', 'Resistance_5']
+2025-05-06 16:08:08,246 - ERROR - WSBP.JK: Error saat mempersiapkan data - ['Support_5', 'Resistance_5']
+2025-05-06 16:08:08,419 - ERROR - KAEF.JK: Error saat mempersiapkan data - ['Support_5', 'Resistance_5']
+2025-05-06 16:08:08,596 - ERROR - SIDO.JK: Error saat mempersiapkan data - ['Support_5', 'Resistance_5']
+2025-05-06 16:08:11,825 - WARNING - WSKT.JK: ATR tidak valid (semua nol atau kosong) setelah kalkulasi.
+2025-05-06 16:08:12,038 - ERROR - $PPRO.JK: possibly delisted; no price data found  (period=1d)
+2025-05-06 16:08:12,038 - WARNING - PPRO.JK: Data daily kosong saat ambil harga terbaru.
+2025-05-06 16:08:12,039 - ERROR - PPRO.JK: Error saat mempersiapkan data - ['Support_5', 'Resistance_5']
+2025-05-06 16:08:12,090 - ERROR - ADHI.JK: Error saat mempersiapkan data - ['Support_5', 'Resistance_5']
+2025-05-06 16:08:16,987 - ERROR - $WIKA.JK: possibly delisted; no price data found  (period=1d)
+2025-05-06 16:08:16,988 - WARNING - WIKA.JK: Data daily kosong saat ambil harga terbaru.
+2025-05-06 16:08:16,996 - ERROR - WIKA.JK: Error saat mempersiapkan data - ['Support_5', 'Resistance_5']
+2025-05-06 16:08:17,349 - ERROR - ASRI.JK: Error saat mempersiapkan data - ['Support_5', 'Resistance_5']
+2025-05-06 16:08:17,468 - ERROR - PWON.JK: Error saat mempersiapkan data - ['Support_5', 'Resistance_5']
+2025-05-06 16:08:18,969 - WARNING - META.JK: ATR tidak valid (semua nol atau kosong) setelah kalkulasi.
+2025-05-06 16:08:18,979 - ERROR - TOWR.JK: Error saat mempersiapkan data - ['Support_5', 'Resistance_5']
+2025-05-06 16:08:25,337 - ERROR - BUKA.JK: Error saat mempersiapkan data - ['Support_5', 'Resistance_5']
+2025-05-06 16:08:25,535 - ERROR - BFIN.JK: Error saat mempersiapkan data - ['Support_5', 'Resistance_5']
+2025-05-06 16:08:25,653 - ERROR - EMTK.JK: Error saat mempersiapkan data - ['Support_5', 'Resistance_5']
+2025-05-06 16:08:29,593 - ERROR - MTEL.JK: Error saat mempersiapkan data - ['Support_5', 'Resistance_5']
+2025-05-06 16:08:29,775 - ERROR - NFCX.JK: Error saat mempersiapkan data - ['Support_5', 'Resistance_5']
+2025-05-06 16:08:29,813 - ERROR - GOTO.JK: Error saat mempersiapkan data - ['Support_5', 'Resistance_5']
