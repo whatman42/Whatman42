@@ -131,6 +131,8 @@ def calculate_indicators(df: pd.DataFrame) -> pd.DataFrame:
         return df
 
     # === Indikator teknikal ===
+    df["Body"] = abs(df["Close"] - df["Open"])
+
     df["OBV"] = OnBalanceVolumeIndicator(df["Close"], df["Volume"]).on_balance_volume()
     df["OBV_MA_5"] = df["OBV"].rolling(window=5).mean()
     df["OBV_Diff"] = df["OBV"].diff()
