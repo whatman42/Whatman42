@@ -130,86 +130,104 @@ def calc_slope(series):
 
 # === Hitung Indikator ===
 def calculate_indicators(df: pd.DataFrame) -> pd.DataFrame:
+    from ta.trend import (
+        EMAIndicator, SMAIndicator, ADXIndicator, MACD,
+        CCIIndicator
+    )
+    from ta.momentum import (
+        RSIIndicator, ROCIndicator, WilliamsRIndicator
+    )
+    from ta.volatility import (
+        AverageTrueRange, BollingerBands
+    )
+    from ta.volume import (
+        VolumeWeightedAveragePrice, OnBalanceVolumeIndicator
+    )
+    from ta.momentum import StochasticOscillator
+    from sklearn.linear_model import LinearRegression
+
     HOURS_PER_DAY = 5
-    
-    # Pastikan index sudah dalam timezone Asia/Jakarta
+
+    # Pastikan timezone benar
     if df.index.tz is None:
         df.index = df.index.tz_localize("UTC").tz_convert("Asia/Jakarta")
     else:
         df.index = df.index.tz_convert("Asia/Jakarta")
-        
-    # Buang data tidak lengkap
+
     if df.empty or len(df) < 2 * HOURS_PER_DAY:
         return df
 
-    # === Fitur waktu harian ===
+    # === Fitur waktu & harian ===
     df["hour"] = df.index.hour
     df["is_opening_hour"] = (df["hour"] == 9).astype(int)
     df["is_closing_hour"] = (df["hour"] == 15).astype(int)
-    df["return_prev_day"] = df["Close"].pct_change(periods=HOURS_PER_DAY)
-    df["gap_close"] = df["Open"] - df["Close"].shift(HOURS_PER_DAY)
     df["daily_avg"] = df["Close"].rolling(HOURS_PER_DAY).mean()
     df["daily_std"] = df["Close"].rolling(HOURS_PER_DAY).std()
     df["daily_range"] = df["High"].rolling(HOURS_PER_DAY).max() - df["Low"].rolling(HOURS_PER_DAY).min()
+    df["return_prev_day"] = df["Close"].pct_change(periods=HOURS_PER_DAY)
+    df["gap_close"] = df["Open"] - df["Close"].shift(HOURS_PER_DAY)
+    df["zscore"] = (df["Close"] - df["daily_avg"]) / df["daily_std"]
 
-    # === Indikator teknikal ===
-    df["slope_5"] = df["Close"].rolling(window=5).apply(calc_slope)
-
-    df["Body"] = abs(df["Close"] - df["Open"])
-
-    df["OBV"] = OnBalanceVolumeIndicator(df["Close"], df["Volume"]).on_balance_volume()
-    df["OBV_MA_5"] = df["OBV"].rolling(window=5).mean()
-    df["OBV_Diff"] = df["OBV"].diff()
-    df["OBV_MA_10"] = df["OBV"].rolling(window=10).mean()
-    df["OBV_vs_MA"] = df["OBV"] - df["OBV_MA_10"]  # sinyal overbought/oversold volume
-
+    # === Volatilitas dan range ===
     df["ATR_5"] = AverageTrueRange(df["High"], df["Low"], df["Close"], window=5).average_true_range()
     df["ATR_10"] = AverageTrueRange(df["High"], df["Low"], df["Close"], window=10).average_true_range()
-    df["ATR"] = volatility.AverageTrueRange(df["High"], df["Low"], df["Close"], window=15).average_true_range()
+    df["ATR"] = AverageTrueRange(df["High"], df["Low"], df["Close"], window=15).average_true_range()
     df["Range_to_ATR"] = (df["High"] - df["Low"]) / df["ATR_5"]
-    
-    macd = trend.MACD(df["Close"])
+
+    # === Volume: OBV & VWAP ===
+    df["OBV"] = OnBalanceVolumeIndicator(df["Close"], df["Volume"]).on_balance_volume()
+    df["OBV_MA_5"] = df["OBV"].rolling(window=5).mean()
+    df["OBV_MA_10"] = df["OBV"].rolling(window=10).mean()
+    df["OBV_Diff"] = df["OBV"].diff()
+    df["OBV_vs_MA"] = df["OBV"] - df["OBV_MA_10"]
+    df["VWAP"] = VolumeWeightedAveragePrice(df["High"], df["Low"], df["Close"], df["Volume"]).volume_weighted_average_price()
+
+    # === Trend: EMA, SMA, Slope, MACD ===
+    for w in [5, 10, 15, 20, 25, 50]:
+        df[f"EMA_{w}"] = EMAIndicator(df["Close"], window=w).ema_indicator()
+        df[f"SMA_{w}"] = SMAIndicator(df["Close"], window=w).sma_indicator()
+
+    macd = MACD(df["Close"])
     df["MACD"] = macd.macd()
     df["MACD_Hist"] = macd.macd_diff()
-    
-    bb = volatility.BollingerBands(df["Close"], window=5)
+
+    def calc_slope(series):
+        y = series.values.reshape(-1, 1)
+        x = np.arange(len(series)).reshape(-1, 1)
+        if len(series.dropna()) < len(series):
+            return np.nan
+        model = LinearRegression().fit(x, y)
+        return model.coef_[0][0]
+
+    df["slope_5"] = df["Close"].rolling(window=5).apply(calc_slope)
+    df["Body"] = abs(df["Close"] - df["Open"])
+    df["HA_Close"] = (df["Open"] + df["High"] + df["Low"] + df["Close"]) / 4
+
+    # === Momentum: RSI, ROC, Williams, Stoch, PROC ===
+    df["RSI"] = RSIIndicator(df["Close"], window=5).rsi()
+    df["ROC"] = ROCIndicator(df["Close"], window=5).roc()
+    df["Momentum"] = df["ROC"]  # alias, opsional
+    df["PROC_3"] = df["Close"].pct_change(periods=3)
+    df["WilliamsR"] = WilliamsRIndicator(df["High"], df["Low"], df["Close"], lbp=5).williams_r()
+    stoch = StochasticOscillator(df["High"], df["Low"], df["Close"], window=5, smooth_window=3)
+    df["Stoch_K"] = stoch.stoch()
+    df["Stoch_D"] = stoch.stoch_signal()
+
+    # === Support, Resistance, CCI, ADX ===
+    df["Support"] = df["Low"].rolling(window=5).min()
+    df["Resistance"] = df["High"].rolling(window=5).max()
+    df["Support_10"] = df["Low"].rolling(window=10).min()
+    df["Resistance_10"] = df["High"].rolling(window=10).max()
+    df["CCI"] = CCIIndicator(df["High"], df["Low"], df["Close"], window=5).cci()
+    df["ADX"] = ADXIndicator(df["High"], df["Low"], df["Close"], window=5).adx()
+
+    # === Bollinger Bands ===
+    bb = BollingerBands(df["Close"], window=5)
     df["BB_Upper"] = bb.bollinger_hband()
     df["BB_Lower"] = bb.bollinger_lband()
     df["BB_Middle"] = bb.bollinger_mavg()
 
-    df["Support"] = df["Low"].rolling(window=5).min()
-    df["Resistance"] = df["High"].rolling(window=5).max()
-    df["Support_25"] = df["Low"].rolling(window=25).min()
-    df["Resistance_25"] = df["High"].rolling(window=25).max()
-
-    df["PROC_3"] = df["Close"].pct_change(periods=3)
-    df["ROC"] = momentum.ROCIndicator(df["Close"], window=5).roc()  # atau ubah window sesuai preferensi
-    df["RSI"] = momentum.RSIIndicator(df["Close"], window=5).rsi()
-    df["EMA_5"] = trend.EMAIndicator(df["Close"], window=5).ema_indicator()
-    df["EMA_10"] = trend.EMAIndicator(df["Close"], window=10).ema_indicator()
-    df["EMA_15"] = trend.EMAIndicator(df["Close"], window=15).ema_indicator()
-    df["EMA_20"] = trend.EMAIndicator(df["Close"], window=20).ema_indicator()
-    df["EMA_25"] = trend.EMAIndicator(df["Close"], window=25).ema_indicator()
-    df["EMA_50"] = trend.EMAIndicator(df["Close"], window=50).ema_indicator()
-    df["SMA_5"] = trend.SMAIndicator(df["Close"], window=5).sma_indicator()
-    df["SMA_10"] = trend.SMAIndicator(df["Close"], window=10).sma_indicator()
-    df["SMA_15"] = trend.SMAIndicator(df["Close"], window=15).sma_indicator()
-    df["SMA_20"] = trend.SMAIndicator(df["Close"], window=20).sma_indicator()
-    df["SMA_25"] = trend.SMAIndicator(df["Close"], window=25).sma_indicator()
-    df["SMA_50"] = trend.SMAIndicator(df["Close"], window=50).sma_indicator()
-    df["VWAP"] = volume.VolumeWeightedAveragePrice(df["High"], df["Low"], df["Close"], df["Volume"]).volume_weighted_average_price()
-    df["ADX"] = trend.ADXIndicator(df["High"], df["Low"], df["Close"], window=5).adx()
-    df["CCI"] = trend.CCIIndicator(df["High"], df["Low"], df["Close"], window=5).cci()
-    df["Momentum"] = momentum.ROCIndicator(df["Close"], window=5).roc()
-    df["WilliamsR"] = momentum.WilliamsRIndicator(df["High"], df["Low"], df["Close"], lbp=5).williams_r()
-    df["HA_Close"] = (df["Open"] + df["High"] + df["Low"] + df["Close"]) / 4
-    df["zscore"] = (df["Close"] - df["daily_avg"]) / df["daily_std"]
-
-    stoch = StochasticOscillator(df["High"], df["Low"], df["Close"], window=5, smooth_window=3)
-    df["Stoch_K"] = stoch.stoch()
-    df["Stoch_D"] = stoch.stoch_signal()
-    
-    # === Fibonacci Pivot Point & Retracement ===
+    # === Fibonacci Pivot & Retracement ===
     pivot = (df["High"] + df["Low"] + df["Close"]) / 3
     range_hl = df["High"] - df["Low"]
     df["Pivot"] = pivot
@@ -220,9 +238,9 @@ def calculate_indicators(df: pd.DataFrame) -> pd.DataFrame:
     df["Fib_S2"] = pivot - range_hl * 0.618
     df["Fib_S3"] = pivot - range_hl * 1.000
 
-    # === Target prediksi: harga tertinggi & terendah BESOK ===
+    # === Target (label prediksi) ===
     df["future_high"] = df["High"].shift(-HOURS_PER_DAY).rolling(HOURS_PER_DAY).max()
-    df["future_low"]  = df["Low"].shift(-HOURS_PER_DAY).rolling(HOURS_PER_DAY).min()
+    df["future_low"] = df["Low"].shift(-HOURS_PER_DAY).rolling(HOURS_PER_DAY).min()
 
     return df.dropna()
 
