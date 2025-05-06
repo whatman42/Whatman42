@@ -139,8 +139,10 @@ def calculate_indicators(df: pd.DataFrame) -> pd.DataFrame:
     df["BB_Upper"] = bb.bollinger_hband()
     df["BB_Lower"] = bb.bollinger_lband()
 
-    df["Support"] = df["Low"].rolling(window=48).min()
-    df["Resistance"] = df["High"].rolling(window=48).max()
+    df["Support"] = df["Low"].rolling(window=5).min()
+    df["Resistance"] = df["High"].rolling(window=5).max()
+    df["Support_10"] = df["Low"].rolling(window=10).min()
+    df["Resistance_10"] = df["High"].rolling(window=10).max()
 
     df["ROC"] = momentum.ROCIndicator(df["Close"], window=5).roc()  # atau ubah window sesuai preferensi
     df["RSI"] = momentum.RSIIndicator(df["Close"], window=5).rsi()
