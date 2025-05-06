@@ -622,7 +622,7 @@ def analyze_stock(ticker: str):
         return None
 
     features = [
-        "Close", "Body",
+        "Close", "Body", "slope_5",
         "OBV", "OBV_Diff", "OBV_MA_5", "OBV_vs_MA",
         "ATR", "ATR_5", "ATR_10", "Range_to_ATR", "MACD", "MACD_Hist",
         "BB_Upper", "BB_Lower", "BB_Middle",
@@ -750,7 +750,7 @@ def retrain_if_needed(ticker: str):
         
         # Tentukan fitur yang akan digunakan
         features = [
-            "Close", "Body",
+            "Close", "Body", "slope_5",
             "OBV", "OBV_Diff", "OBV_MA_5", "OBV_vs_MA",
             "ATR", "ATR_5", "ATR_10", "Range_to_ATR", "MACD", "MACD_Hist",
             "BB_Upper", "BB_Lower", "BB_Middle",
