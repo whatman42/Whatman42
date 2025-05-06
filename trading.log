@@ -1,7 +1,7 @@
-2025-05-06 16:56:43,388 - ERROR - $PPRO.JK: possibly delisted; no price data found  (period=1d)
-2025-05-06 16:56:43,393 - WARNING - PPRO.JK: Data daily kosong saat ambil harga terbaru.
-2025-05-06 16:57:02,479 - WARNING - WSKT.JK: ATR tidak valid (semua nol atau kosong) setelah kalkulasi.
-2025-05-06 16:57:04,013 - ERROR - $WIKA.JK: possibly delisted; no price data found  (period=1d)
-2025-05-06 16:57:04,013 - WARNING - WIKA.JK: Data daily kosong saat ambil harga terbaru.
-2025-05-06 16:57:54,203 - WARNING - 5 out of the last 48 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x7fe5acc2eef0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
-2025-05-06 17:00:04,502 - WARNING - META.JK: ATR tidak valid (semua nol atau kosong) setelah kalkulasi.
+2025-05-06 17:30:40,899 - ERROR - $PPRO.JK: possibly delisted; no price data found  (period=1d)
+2025-05-06 17:30:40,902 - WARNING - PPRO.JK: Data daily kosong saat ambil harga terbaru.
+2025-05-06 17:31:02,715 - WARNING - WSKT.JK: ATR tidak valid (semua nol atau kosong) setelah kalkulasi.
+2025-05-06 17:31:04,084 - ERROR - $WIKA.JK: possibly delisted; no price data found  (period=1d)
+2025-05-06 17:31:04,085 - WARNING - WIKA.JK: Data daily kosong saat ambil harga terbaru.
+2025-05-06 17:31:58,651 - WARNING - 5 out of the last 48 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x7f98389eb640> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+2025-05-06 17:34:06,152 - WARNING - META.JK: ATR tidak valid (semua nol atau kosong) setelah kalkulasi.
