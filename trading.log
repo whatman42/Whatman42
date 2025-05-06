@@ -1,6 +1,4 @@
-2025-05-05 08:04:29,415 - ERROR - $PPRO.JK: possibly delisted; no price data found  (period=1d)
-2025-05-05 08:04:29,420 - WARNING - PPRO.JK: Data daily kosong saat ambil harga terbaru.
-2025-05-05 08:04:38,936 - WARNING - WSKT.JK: ATR tidak valid (semua nol atau kosong) setelah kalkulasi.
-2025-05-05 08:04:39,297 - ERROR - $WIKA.JK: possibly delisted; no price data found  (period=1d)
-2025-05-05 08:04:39,297 - WARNING - WIKA.JK: Data daily kosong saat ambil harga terbaru.
-2025-05-05 08:07:37,017 - WARNING - META.JK: ATR tidak valid (semua nol atau kosong) setelah kalkulasi.
+2025-05-06 07:47:18,843 - WARNING - WSKT.JK: ATR tidak valid (semua nol atau kosong) setelah kalkulasi.
+2025-05-06 07:47:19,422 - ERROR - $WIKA.JK: possibly delisted; no price data found  (period=1d)
+2025-05-06 07:47:19,423 - WARNING - WIKA.JK: Data daily kosong saat ambil harga terbaru.
+2025-05-06 07:49:09,547 - WARNING - META.JK: ATR tidak valid (semua nol atau kosong) setelah kalkulasi.
