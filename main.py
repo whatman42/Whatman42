@@ -216,8 +216,8 @@ def calculate_indicators(df: pd.DataFrame) -> pd.DataFrame:
     # === Support, Resistance, CCI, ADX ===
     df["Support"] = df["Low"].rolling(window=5).min()
     df["Resistance"] = df["High"].rolling(window=5).max()
-    df["Support_10"] = df["Low"].rolling(window=10).min()
-    df["Resistance_10"] = df["High"].rolling(window=10).max()
+    df["Support_25"] = df["Low"].rolling(window=25).min()
+    df["Resistance_25"] = df["High"].rolling(window=25).max()
     df["CCI"] = CCIIndicator(df["High"], df["Low"], df["Close"], window=5).cci()
     df["ADX"] = ADXIndicator(df["High"], df["Low"], df["Close"], window=5).adx()
 
