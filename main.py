@@ -178,6 +178,7 @@ def calculate_indicators(df: pd.DataFrame) -> pd.DataFrame:
     df["CCI"] = trend.CCIIndicator(df["High"], df["Low"], df["Close"], window=5).cci()
     df["Momentum"] = momentum.ROCIndicator(df["Close"], window=5).roc()
     df["WilliamsR"] = momentum.WilliamsRIndicator(df["High"], df["Low"], df["Close"], lbp=5).williams_r()
+    df["HA_Close"] = (df["Open"] + df["High"] + df["Low"] + df["Close"]) / 4
 
     stoch = StochasticOscillator(df["High"], df["Low"], df["Close"], window=5, smooth_window=3)
     df["Stoch_K"] = stoch.stoch()
