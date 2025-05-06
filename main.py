@@ -142,6 +142,7 @@ def calculate_indicators(df: pd.DataFrame) -> pd.DataFrame:
     df["ATR_5"] = AverageTrueRange(df["High"], df["Low"], df["Close"], window=5).average_true_range()
     df["ATR_10"] = AverageTrueRange(df["High"], df["Low"], df["Close"], window=10).average_true_range()
     df["ATR"] = volatility.AverageTrueRange(df["High"], df["Low"], df["Close"], window=15).average_true_range()
+    df["Range_to_ATR"] = (df["High"] - df["Low"]) / df["ATR_5"]
     
     macd = trend.MACD(df["Close"])
     df["MACD"] = macd.macd()
@@ -611,7 +612,7 @@ def analyze_stock(ticker: str):
     features = [
         "Close", "Body",
         "OBV", "OBV_Diff", "OBV_MA_5", "OBV_vs_MA",
-        "ATR", "ATR_5", "ATR_10", "MACD", "MACD_Hist",
+        "ATR", "ATR_5", "ATR_10", "Range_to_ATR", "MACD", "MACD_Hist",
         "BB_Upper", "BB_Lower", "BB_Middle",
         "Support", "Resistance", "Support_5", "Resistance_5", "Support_10", "Resistance_10",
         "PROC_3", "ROC", "RSI", "return_prev_day",
@@ -739,7 +740,7 @@ def retrain_if_needed(ticker: str):
         features = [
             "Close", "Body",
             "OBV", "OBV_Diff", "OBV_MA_5", "OBV_vs_MA",
-            "ATR", "ATR_5", "ATR_10", "MACD", "MACD_Hist",
+            "ATR", "ATR_5", "ATR_10", "Range_to_ATR", "MACD", "MACD_Hist",
             "BB_Upper", "BB_Lower", "BB_Middle",
             "Support", "Resistance", "Support_5", "Resistance_5", "Support_10", "Resistance_10",
             "PROC_3", "ROC", "RSI", "return_prev_day",
