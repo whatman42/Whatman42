@@ -128,8 +128,12 @@ def calculate_indicators(df: pd.DataFrame) -> pd.DataFrame:
     if df.empty or len(df) < 2 * HOURS_PER_DAY:
         return df
 
-    # === Indikator teknikal utama ===
+    # === Indikator teknikal ===
     df["OBV"] = OnBalanceVolumeIndicator(df["Close"], df["Volume"]).on_balance_volume()
+    df["OBV_MA_5"] = df["OBV"].rolling(window=5).mean()
+    df["OBV_Diff"] = df["OBV"].diff()
+    df["OBV_MA_10"] = df["OBV"].rolling(window=10).mean()
+    df["OBV_vs_MA"] = df["OBV"] - df["OBV_MA_10"]  # sinyal overbought/oversold volume
 
     df["ATR_5"] = AverageTrueRange(df["High"], df["Low"], df["Close"], window=5).average_true_range()
     df["ATR_10"] = AverageTrueRange(df["High"], df["Low"], df["Close"], window=10).average_true_range()
@@ -596,7 +600,8 @@ def analyze_stock(ticker: str):
         return None
 
     features = [
-        "Close", "OBV",
+        "Close",
+        "OBV", "OBV_Diff", "OBV_MA_5", "OBV_vs_MA",
         "ATR", "ATR_5", "ATR_10", "MACD", "MACD_Hist",
         "BB_Upper", "BB_Lower", "BB_Middle",
         "Support", "Resistance", "Support_5", "Resistance_5", "Support_10", "Resistance_10",
@@ -723,7 +728,8 @@ def retrain_if_needed(ticker: str):
         
         # Tentukan fitur yang akan digunakan
         features = [
-            "Close", "OBV",
+            "Close",
+            "OBV", "OBV_Diff", "OBV_MA_5", "OBV_vs_MA",
             "ATR", "ATR_5", "ATR_10", "MACD", "MACD_Hist",
             "BB_Upper", "BB_Lower", "BB_Middle",
             "Support", "Resistance", "Support_5", "Resistance_5", "Support_10", "Resistance_10",
