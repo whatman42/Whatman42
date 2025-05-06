@@ -1,51 +1,7 @@
-2025-05-06 16:21:38.900228: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.
-2025-05-06 16:21:38.903290: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.
-2025-05-06 16:21:38.911767: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
-WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
-E0000 00:00:1746548498.925793    2068 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
-E0000 00:00:1746548498.929939    2068 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
-W0000 00:00:1746548498.941476    2068 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-W0000 00:00:1746548498.941494    2068 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-W0000 00:00:1746548498.941497    2068 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-W0000 00:00:1746548498.941499    2068 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-2025-05-06 16:21:38.945008: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
-To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
-[LightGBM] [Fatal] Feature (return_prev_day) appears more than one time.
-[LightGBM] [Fatal] Feature (return_prev_day) appears more than one time.
-[LightGBM] [Fatal] Feature (return_prev_day) appears more than one time.
-Traceback (most recent call last):
-  File "/home/runner/work/Whatman42/Whatman42/main.py", line 1070, in <module>
-    results = list(executor.map(analyze_stock, STOCK_LIST))
-  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/concurrent/futures/_base.py", line 621, in result_iterator
-    yield _result_or_cancel(fs.pop())
-  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/concurrent/futures/_base.py", line 319, in _result_or_cancel
-    return fut.result(timeout)
-  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/concurrent/futures/_base.py", line 458, in result
-    return self.__get_result()
-  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
-    raise self._exception
-  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/concurrent/futures/thread.py", line 58, in run
-    result = self.fn(*self.args, **self.kwargs)
-  File "/home/runner/work/Whatman42/Whatman42/main.py", line 652, in analyze_stock
-    model_high_lgb = load_or_train_model(f"model_high_lgb_{ticker}.pkl", train_lightgbm, X_tr, yh_tr)
-  File "/home/runner/work/Whatman42/Whatman42/main.py", line 557, in load_or_train_model
-    model = train_fn(X_train, y_train)
-  File "/home/runner/work/Whatman42/Whatman42/main.py", line 253, in train_lightgbm
-    model.fit(X_train, y_train)
-  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/lightgbm/sklearn.py", line 1398, in fit
-    super().fit(
-  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/lightgbm/sklearn.py", line 1049, in fit
-    self._Booster = train(
-  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/lightgbm/engine.py", line 297, in train
-    booster = Booster(params=params, train_set=train_set)
-  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/lightgbm/basic.py", line 3656, in __init__
-    train_set.construct()
-  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/lightgbm/basic.py", line 2590, in construct
-    self._lazy_init(
-  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/lightgbm/basic.py", line 2227, in _lazy_init
-    return self.set_feature_name(feature_name)
-  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/lightgbm/basic.py", line 3046, in set_feature_name
-    _safe_call(
-  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/lightgbm/basic.py", line 313, in _safe_call
-    raise LightGBMError(_LIB.LGBM_GetLastError().decode("utf-8"))
-lightgbm.basic.LightGBMError: Feature (return_prev_day) appears more than one time.
+2025-05-06 16:56:43,388 - ERROR - $PPRO.JK: possibly delisted; no price data found  (period=1d)
+2025-05-06 16:56:43,393 - WARNING - PPRO.JK: Data daily kosong saat ambil harga terbaru.
+2025-05-06 16:57:02,479 - WARNING - WSKT.JK: ATR tidak valid (semua nol atau kosong) setelah kalkulasi.
+2025-05-06 16:57:04,013 - ERROR - $WIKA.JK: possibly delisted; no price data found  (period=1d)
+2025-05-06 16:57:04,013 - WARNING - WIKA.JK: Data daily kosong saat ambil harga terbaru.
+2025-05-06 16:57:54,203 - WARNING - 5 out of the last 48 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x7fe5acc2eef0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+2025-05-06 17:00:04,502 - WARNING - META.JK: ATR tidak valid (semua nol atau kosong) setelah kalkulasi.
