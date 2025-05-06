@@ -596,7 +596,7 @@ def analyze_stock(ticker: str):
     features = [
         "Close",
         "ATR", "MACD", "MACD_Hist",
-        "BB_Upper", "BB_Lower",
+        "BB_Upper", "BB_Lower", "BB_Middle",
         "Support", "Resistance",
         "ROC", "RSI", "return_prev_day",
         "EMA_5", "EMA_10", "EMA_15", "EMA_20", "EMA_25", "EMA_50",
