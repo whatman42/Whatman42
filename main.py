@@ -162,7 +162,7 @@ def calculate_indicators(df: pd.DataFrame) -> pd.DataFrame:
     df["VWAP"] = volume.VolumeWeightedAveragePrice(df["High"], df["Low"], df["Close"], df["Volume"]).volume_weighted_average_price()
     df["ADX"] = trend.ADXIndicator(df["High"], df["Low"], df["Close"], window=14).adx()
     df["CCI"] = trend.CCIIndicator(df["High"], df["Low"], df["Close"], window=20).cci()
-    df["Momentum"] = momentum.ROCIndicator(df["Close"], window=12).roc()
+    df["Momentum"] = momentum.ROCIndicator(df["Close"], window=5).roc()
     df["WilliamsR"] = momentum.WilliamsRIndicator(df["High"], df["Low"], df["Close"], lbp=14).williams_r()
     
     # === Fibonacci Pivot Point & Retracement ===
