@@ -21,7 +21,9 @@ from sklearn.model_selection import RandomizedSearchCV
 from sklearn.model_selection import cross_val_score
 from sklearn.metrics import mean_squared_error, mean_absolute_error
 from typing import Optional, Dict, List, Tuple
-from ta import momentum, trend, volatility, volume, OnBalanceVolumeIndicator
+from ta import momentum, trend, volatility, volume
+from ta.momentum import StochasticOscillator
+from ta.volume import OnBalanceVolumeIndicator
 from datetime import datetime
 from tensorflow.keras.models import Sequential, load_model
 from tensorflow.keras.layers import LSTM, Dense, Dropout
