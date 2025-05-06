@@ -189,9 +189,8 @@ def calculate_indicators(df: pd.DataFrame) -> pd.DataFrame:
     df["daily_range"] = df["High"].rolling(HOURS_PER_DAY).max() - df["Low"].rolling(HOURS_PER_DAY).min()
 
     # === Target prediksi: harga tertinggi & terendah BESOK ===
-    df["target_high_tomorrow"] = df["High"].shift(-HOURS_PER_DAY).rolling(HOURS_PER_DAY).max()
-    df["target_low_tomorrow"] = df["Low"].shift(-HOURS_PER_DAY).rolling(HOURS_PER_DAY).min()
-    df["target_close_tomorrow"] = df["Close"].shift(-HOURS_PER_DAY)
+    df["future_high"] = df["High"].shift(-HOURS_PER_WEEK).rolling(HOURS_PER_WEEK).max()
+    df["future_low"]  = df["Low"].shift(-HOURS_PER_WEEK).rolling(HOURS_PER_WEEK).min()
 
     return df.dropna()
 
