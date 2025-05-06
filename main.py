@@ -141,6 +141,7 @@ def calculate_indicators(df: pd.DataFrame) -> pd.DataFrame:
 
     df["ROC"] = momentum.ROCIndicator(df["Close"], window=12).roc()  # atau ubah window sesuai preferensi
     df["RSI"] = momentum.RSIIndicator(df["Close"], window=14).rsi()
+    df["EMA_5"] = trend.EMAIndicator(df["Close"], window=5).ema_indicator()
     df["EMA_10"] = trend.EMAIndicator(df["Close"], window=10).ema_indicator()
     df["EMA_20"] = trend.EMAIndicator(df["Close"], window=20).ema_indicator()
     df["EMA_50"] = trend.EMAIndicator(df["Close"], window=50).ema_indicator()
@@ -149,6 +150,7 @@ def calculate_indicators(df: pd.DataFrame) -> pd.DataFrame:
     df["EMA_14"] = trend.EMAIndicator(df["Close"], window=14).ema_indicator()
     df["EMA_28"] = trend.EMAIndicator(df["Close"], window=28).ema_indicator()
     df["EMA_84"] = trend.EMAIndicator(df["Close"], window=84).ema_indicator()
+    df["SMA_5"] = trend.SMAIndicator(df["Close"], window=5).sma_indicator()
     df["SMA_10"] = trend.SMAIndicator(df["Close"], window=10).sma_indicator()
     df["SMA_20"] = trend.SMAIndicator(df["Close"], window=20).sma_indicator()
     df["SMA_50"] = trend.SMAIndicator(df["Close"], window=50).sma_indicator()
@@ -182,9 +184,10 @@ def calculate_indicators(df: pd.DataFrame) -> pd.DataFrame:
     df["daily_std"] = df["Close"].rolling(HOURS_PER_DAY).std()
     df["daily_range"] = df["High"].rolling(HOURS_PER_DAY).max() - df["Low"].rolling(HOURS_PER_DAY).min()
 
-    # === Target prediksi: harga tertinggi & terendah MINGGU DEPAN ===
-    df["future_high"] = df["High"].shift(-HOURS_PER_WEEK).rolling(HOURS_PER_WEEK).max()
-    df["future_low"]  = df["Low"].shift(-HOURS_PER_WEEK).rolling(HOURS_PER_WEEK).min()
+    # === Target prediksi: harga tertinggi & terendah BESOK ===
+    df["target_high_tomorrow"] = df["High"].shift(-HOURS_PER_DAY).rolling(HOURS_PER_DAY).max()
+    df["target_low_tomorrow"] = df["Low"].shift(-HOURS_PER_DAY).rolling(HOURS_PER_DAY).min()
+    df["target_close_tomorrow"] = df["Close"].shift(-HOURS_PER_DAY)
 
     return df.dropna()
 
