@@ -129,6 +129,8 @@ def calculate_indicators(df: pd.DataFrame) -> pd.DataFrame:
         return df
 
     # === Indikator teknikal utama ===
+    df["OBV"] = OnBalanceVolumeIndicator(df["Close"], df["Volume"]).on_balance_volume()
+
     df["ATR_5"] = AverageTrueRange(df["High"], df["Low"], df["Close"], window=5).average_true_range()
     df["ATR_10"] = AverageTrueRange(df["High"], df["Low"], df["Close"], window=10).average_true_range()
     df["ATR"] = volatility.AverageTrueRange(df["High"], df["Low"], df["Close"], window=15).average_true_range()
