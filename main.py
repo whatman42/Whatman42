@@ -135,9 +135,10 @@ def calculate_indicators(df: pd.DataFrame) -> pd.DataFrame:
     df["MACD"] = macd.macd()
     df["MACD_Hist"] = macd.macd_diff()
     
-    bb = volatility.BollingerBands(df["Close"], window=20)
+    bb = volatility.BollingerBands(df["Close"], window=5)
     df["BB_Upper"] = bb.bollinger_hband()
     df["BB_Lower"] = bb.bollinger_lband()
+    df["BB_Middle"] = bb.bollinger_mavg()
 
     df["Support"] = df["Low"].rolling(window=5).min()
     df["Resistance"] = df["High"].rolling(window=5).max()
