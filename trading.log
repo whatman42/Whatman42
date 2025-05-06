@@ -1,17 +1,17 @@
-2025-05-06 15:44:24.453637: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.
-2025-05-06 15:44:24.456728: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.
-2025-05-06 15:44:24.465158: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-05-06 15:51:51.719112: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.
+2025-05-06 15:51:51.722210: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.
+2025-05-06 15:51:51.730702: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
-E0000 00:00:1746546264.478890    2166 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
-E0000 00:00:1746546264.483011    2166 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
-W0000 00:00:1746546264.494643    2166 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-W0000 00:00:1746546264.494657    2166 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-W0000 00:00:1746546264.494660    2166 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-W0000 00:00:1746546264.494662    2166 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-2025-05-06 15:44:24.498209: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+E0000 00:00:1746546711.744865    2077 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1746546711.749067    2077 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1746546711.760494    2077 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1746546711.760512    2077 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1746546711.760514    2077 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1746546711.760517    2077 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2025-05-06 15:51:51.764121: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
 To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
 Traceback (most recent call last):
-  File "/home/runner/work/Whatman42/Whatman42/main.py", line 1065, in <module>
+  File "/home/runner/work/Whatman42/Whatman42/main.py", line 1066, in <module>
     results = list(executor.map(analyze_stock, STOCK_LIST))
   File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/concurrent/futures/_base.py", line 621, in result_iterator
     yield _result_or_cancel(fs.pop())
@@ -23,27 +23,8 @@ Traceback (most recent call last):
     raise self._exception
   File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/concurrent/futures/thread.py", line 58, in run
     result = self.fn(*self.args, **self.kwargs)
-  File "/home/runner/work/Whatman42/Whatman42/main.py", line 587, in analyze_stock
+  File "/home/runner/work/Whatman42/Whatman42/main.py", line 588, in analyze_stock
     df = calculate_indicators(df)
-  File "/home/runner/work/Whatman42/Whatman42/main.py", line 141, in calculate_indicators
-    df["slope_5"] = df["Close"].rolling(window=5).apply(calc_slope)
-  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/pandas/core/window/rolling.py", line 2049, in apply
-    return super().apply(
-  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/pandas/core/window/rolling.py", line 1508, in apply
-    return self._apply(
-  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/pandas/core/window/rolling.py", line 619, in _apply
-    return self._apply_columnwise(homogeneous_func, name, numeric_only)
-  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/pandas/core/window/rolling.py", line 472, in _apply_columnwise
-    return self._apply_series(homogeneous_func, name)
-  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/pandas/core/window/rolling.py", line 456, in _apply_series
-    result = homogeneous_func(values)
-  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/pandas/core/window/rolling.py", line 614, in homogeneous_func
-    result = calc(values)
-  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/pandas/core/window/rolling.py", line 611, in calc
-    return func(x, start, end, min_periods, *numba_args)
-  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/pandas/core/window/rolling.py", line 1535, in apply_func
-    return window_func(values, begin, end, min_periods)
-  File "aggregations.pyx", line 1422, in pandas._libs.window.aggregations.roll_apply
-  File "/home/runner/work/Whatman42/Whatman42/main.py", line 123, in calc_slope
-    model = LinearRegression().fit(x, y)
-NameError: name 'LinearRegression' is not defined
+  File "/home/runner/work/Whatman42/Whatman42/main.py", line 152, in calculate_indicators
+    df["ATR_5"] = AverageTrueRange(df["High"], df["Low"], df["Close"], window=5).average_true_range()
+NameError: name 'AverageTrueRange' is not defined
