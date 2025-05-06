@@ -179,8 +179,8 @@ def calculate_indicators(df: pd.DataFrame) -> pd.DataFrame:
 
     df["Support"] = df["Low"].rolling(window=5).min()
     df["Resistance"] = df["High"].rolling(window=5).max()
-    df["Support_10"] = df["Low"].rolling(window=10).min()
-    df["Resistance_10"] = df["High"].rolling(window=10).max()
+    df["Support_25"] = df["Low"].rolling(window=25).min()
+    df["Resistance_25"] = df["High"].rolling(window=25).max()
 
     df["PROC_3"] = df["Close"].pct_change(periods=3)
     df["ROC"] = momentum.ROCIndicator(df["Close"], window=5).roc()  # atau ubah window sesuai preferensi
@@ -631,7 +631,7 @@ def analyze_stock(ticker: str):
         "OBV", "OBV_Diff", "OBV_MA_5", "OBV_vs_MA",
         "ATR", "ATR_5", "ATR_10", "Range_to_ATR", "MACD", "MACD_Hist",
         "BB_Upper", "BB_Lower", "BB_Middle",
-        "Support", "Resistance", "Support_10", "Resistance_10",
+        "Support", "Resistance", "Support_25", "Resistance_25",
         "PROC_3", "ROC", "RSI", "return_prev_day",
         "EMA_5", "EMA_10", "EMA_15", "EMA_20", "EMA_25", "EMA_50",
         "SMA_5", "SMA_10", "SMA_15", "SMA_20", "SMA_25", "SMA_50",
@@ -759,7 +759,7 @@ def retrain_if_needed(ticker: str):
             "OBV", "OBV_Diff", "OBV_MA_5", "OBV_vs_MA",
             "ATR", "ATR_5", "ATR_10", "Range_to_ATR", "MACD", "MACD_Hist",
             "BB_Upper", "BB_Lower", "BB_Middle",
-            "Support", "Resistance", "Support_5", "Resistance_5", "Support_10", "Resistance_10",
+            "Support", "Resistance", "Support_25", "Resistance_25",
             "PROC_3", "ROC", "RSI", "return_prev_day",
             "EMA_5", "EMA_10", "EMA_15", "EMA_20", "EMA_25", "EMA_50",
             "SMA_5", "SMA_10", "SMA_15", "SMA_20", "SMA_25", "SMA_50",
