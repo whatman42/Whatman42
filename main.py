@@ -155,6 +155,7 @@ def calculate_indicators(df: pd.DataFrame) -> pd.DataFrame:
     df["Support_10"] = df["Low"].rolling(window=10).min()
     df["Resistance_10"] = df["High"].rolling(window=10).max()
 
+    df["PROC_3"] = df["Close"].pct_change(periods=3)
     df["ROC"] = momentum.ROCIndicator(df["Close"], window=5).roc()  # atau ubah window sesuai preferensi
     df["RSI"] = momentum.RSIIndicator(df["Close"], window=5).rsi()
     df["EMA_5"] = trend.EMAIndicator(df["Close"], window=5).ema_indicator()
@@ -611,7 +612,7 @@ def analyze_stock(ticker: str):
         "ATR", "ATR_5", "ATR_10", "MACD", "MACD_Hist",
         "BB_Upper", "BB_Lower", "BB_Middle",
         "Support", "Resistance", "Support_5", "Resistance_5", "Support_10", "Resistance_10",
-        "ROC", "RSI", "return_prev_day",
+        "PROC_3", "ROC", "RSI", "return_prev_day",
         "EMA_5", "EMA_10", "EMA_15", "EMA_20", "EMA_25", "EMA_50",
         "SMA_5", "SMA_10", "SMA_15", "SMA_20", "SMA_25", "SMA_50",
         "VWAP", "ADX", "CCI", "Momentum", "WilliamsR", "Stoch_K", "Stoch_D",
@@ -739,7 +740,7 @@ def retrain_if_needed(ticker: str):
             "ATR", "ATR_5", "ATR_10", "MACD", "MACD_Hist",
             "BB_Upper", "BB_Lower", "BB_Middle",
             "Support", "Resistance", "Support_5", "Resistance_5", "Support_10", "Resistance_10",
-            "ROC", "RSI", "return_prev_day",
+            "PROC_3", "ROC", "RSI", "return_prev_day",
             "EMA_5", "EMA_10", "EMA_15", "EMA_20", "EMA_25", "EMA_50",
             "SMA_5", "SMA_10", "SMA_15", "SMA_20", "SMA_25", "SMA_50",
             "VWAP", "ADX", "CCI", "Momentum", "WilliamsR", "Stoch_K", "Stoch_D",
