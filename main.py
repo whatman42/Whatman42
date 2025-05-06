@@ -151,6 +151,7 @@ def calculate_indicators(df: pd.DataFrame) -> pd.DataFrame:
     df["daily_avg"] = df["Close"].rolling(HOURS_PER_DAY).mean()
     df["daily_std"] = df["Close"].rolling(HOURS_PER_DAY).std()
     df["daily_range"] = df["High"].rolling(HOURS_PER_DAY).max() - df["Low"].rolling(HOURS_PER_DAY).min()
+
     # === Indikator teknikal ===
     df["slope_5"] = df["Close"].rolling(window=5).apply(calc_slope)
 
