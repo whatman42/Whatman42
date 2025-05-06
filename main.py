@@ -172,6 +172,10 @@ def calculate_indicators(df: pd.DataFrame) -> pd.DataFrame:
     df["CCI"] = trend.CCIIndicator(df["High"], df["Low"], df["Close"], window=5).cci()
     df["Momentum"] = momentum.ROCIndicator(df["Close"], window=5).roc()
     df["WilliamsR"] = momentum.WilliamsRIndicator(df["High"], df["Low"], df["Close"], lbp=5).williams_r()
+
+    stoch = StochasticOscillator(df["High"], df["Low"], df["Close"], window=5, smooth_window=3)
+    df["Stoch_K"] = stoch.stoch()
+    df["Stoch_D"] = stoch.stoch_signal()
     
     # === Fibonacci Pivot Point & Retracement ===
     pivot = (df["High"] + df["Low"] + df["Close"]) / 3
@@ -608,7 +612,7 @@ def analyze_stock(ticker: str):
         "ROC", "RSI", "return_prev_day",
         "EMA_5", "EMA_10", "EMA_15", "EMA_20", "EMA_25", "EMA_50",
         "SMA_5", "SMA_10", "SMA_15", "SMA_20", "SMA_25", "SMA_50",
-        "VWAP", "ADX", "CCI", "Momentum", "WilliamsR",
+        "VWAP", "ADX", "CCI", "Momentum", "WilliamsR", "Stoch_K", "Stoch_D",
         "Pivot", "Fib_R1", "Fib_R2", "Fib_R3", "Fib_S1", "Fib_S2", "Fib_S3",
         "hour", "is_opening_hour", "is_closing_hour",
         "daily_avg", "daily_std", "daily_range"
@@ -736,7 +740,7 @@ def retrain_if_needed(ticker: str):
             "ROC", "RSI", "return_prev_day",
             "EMA_5", "EMA_10", "EMA_15", "EMA_20", "EMA_25", "EMA_50",
             "SMA_5", "SMA_10", "SMA_15", "SMA_20", "SMA_25", "SMA_50",
-            "VWAP", "ADX", "CCI", "Momentum", "WilliamsR",
+            "VWAP", "ADX", "CCI", "Momentum", "WilliamsR", "Stoch_K", "Stoch_D",
             "Pivot", "Fib_R1", "Fib_R2", "Fib_R3", "Fib_S1", "Fib_S2", "Fib_S3",
             "hour", "is_opening_hour", "is_closing_hour",
             "daily_avg", "daily_std", "daily_range"
