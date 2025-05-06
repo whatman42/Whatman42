@@ -116,8 +116,8 @@ def validate_raw_data(df: pd.DataFrame, required_columns=None, min_rows=100, tic
     
 # === Hitung Indikator ===
 def calculate_indicators(df: pd.DataFrame) -> pd.DataFrame:
-    HOURS_PER_DAY = 6
-    HOURS_PER_WEEK = 6  # 5 hari trading, 6 jam per hari
+    HOURS_PER_DAY = 5
+    HOURS_PER_WEEK = 5  # 5 hari trading, 6 jam per hari
     
     # Pastikan index sudah dalam timezone Asia/Jakarta
     if df.index.tz is None:
