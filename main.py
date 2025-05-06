@@ -620,7 +620,7 @@ def analyze_stock(ticker: str):
         "PROC_3", "ROC", "RSI", "return_prev_day",
         "EMA_5", "EMA_10", "EMA_15", "EMA_20", "EMA_25", "EMA_50",
         "SMA_5", "SMA_10", "SMA_15", "SMA_20", "SMA_25", "SMA_50",
-        "VWAP", "ADX", "CCI", "Momentum", "WilliamsR", "HA_Close", "Stoch_K", "Stoch_D",
+        "VWAP", "ADX", "CCI", "Momentum", "WilliamsR", "HA_Close", "zscore", "Stoch_K", "Stoch_D",
         "Pivot", "Fib_R1", "Fib_R2", "Fib_R3", "Fib_S1", "Fib_S2", "Fib_S3",
         "hour", "is_opening_hour", "is_closing_hour",
         "daily_avg", "daily_std", "daily_range"
@@ -748,7 +748,7 @@ def retrain_if_needed(ticker: str):
             "PROC_3", "ROC", "RSI", "return_prev_day",
             "EMA_5", "EMA_10", "EMA_15", "EMA_20", "EMA_25", "EMA_50",
             "SMA_5", "SMA_10", "SMA_15", "SMA_20", "SMA_25", "SMA_50",
-            "VWAP", "ADX", "CCI", "Momentum", "WilliamsR", "HA_Close", "Stoch_K", "Stoch_D",
+            "VWAP", "ADX", "CCI", "Momentum", "WilliamsR", "HA_Close", "zscore", "Stoch_K", "Stoch_D",
             "Pivot", "Fib_R1", "Fib_R2", "Fib_R3", "Fib_S1", "Fib_S2", "Fib_S3",
             "hour", "is_opening_hour", "is_closing_hour",
             "daily_avg", "daily_std", "daily_range"
