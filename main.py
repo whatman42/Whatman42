@@ -140,7 +140,7 @@ def calculate_indicators(df: pd.DataFrame) -> pd.DataFrame:
     df["Resistance"] = df["High"].rolling(window=48).max()
 
     df["ROC"] = momentum.ROCIndicator(df["Close"], window=5).roc()  # atau ubah window sesuai preferensi
-    df["RSI"] = momentum.RSIIndicator(df["Close"], window=14).rsi()
+    df["RSI"] = momentum.RSIIndicator(df["Close"], window=5).rsi()
     df["EMA_5"] = trend.EMAIndicator(df["Close"], window=5).ema_indicator()
     df["EMA_10"] = trend.EMAIndicator(df["Close"], window=10).ema_indicator()
     df["EMA_20"] = trend.EMAIndicator(df["Close"], window=20).ema_indicator()
@@ -160,10 +160,10 @@ def calculate_indicators(df: pd.DataFrame) -> pd.DataFrame:
     df["SMA_28"] = trend.SMAIndicator(df["Close"], window=28).sma_indicator()
     df["SMA_84"] = trend.SMAIndicator(df["Close"], window=84).sma_indicator()
     df["VWAP"] = volume.VolumeWeightedAveragePrice(df["High"], df["Low"], df["Close"], df["Volume"]).volume_weighted_average_price()
-    df["ADX"] = trend.ADXIndicator(df["High"], df["Low"], df["Close"], window=14).adx()
-    df["CCI"] = trend.CCIIndicator(df["High"], df["Low"], df["Close"], window=20).cci()
+    df["ADX"] = trend.ADXIndicator(df["High"], df["Low"], df["Close"], window=5).adx()
+    df["CCI"] = trend.CCIIndicator(df["High"], df["Low"], df["Close"], window=5).cci()
     df["Momentum"] = momentum.ROCIndicator(df["Close"], window=5).roc()
-    df["WilliamsR"] = momentum.WilliamsRIndicator(df["High"], df["Low"], df["Close"], lbp=14).williams_r()
+    df["WilliamsR"] = momentum.WilliamsRIndicator(df["High"], df["Low"], df["Close"], lbp=5).williams_r()
     
     # === Fibonacci Pivot Point & Retracement ===
     pivot = (df["High"] + df["Low"] + df["Close"]) / 3
