@@ -120,13 +120,6 @@ def validate_raw_data(df: pd.DataFrame, required_columns=None, min_rows=100, tic
         return False
 
     return True
-    
-def calc_slope(series):
-    y = series.values.reshape(-1, 1)
-    x = np.arange(len(series)).reshape(-1, 1)
-    if len(series.dropna()) < len(series): return np.nan
-    model = LinearRegression().fit(x, y)
-    return model.coef_[0][0]
 
 # === Hitung Indikator ===
 def calculate_indicators(df: pd.DataFrame) -> pd.DataFrame:
