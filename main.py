@@ -665,7 +665,7 @@ def analyze_stock(ticker: str):
         "RSI", "ROC", "Momentum", "PROC_3", "WilliamsR", "Stoch_K", "Stoch_D",
 
         # === Support & Resistance ===
-        "Support", "Resistance", "Support_10", "Resistance_10", "CCI", "ADX",
+        "Support", "Resistance", "Support_25", "Resistance_25", "CCI", "ADX",
 
         # === Bollinger Bands ===
         "BB_Upper", "BB_Lower", "BB_Middle",
@@ -791,18 +791,36 @@ def retrain_if_needed(ticker: str):
         
         # Tentukan fitur yang akan digunakan
         features = [
-            "Close", "Body", "slope_5",
-            "OBV", "OBV_Diff", "OBV_MA_5", "OBV_vs_MA",
-            "ATR", "ATR_5", "ATR_10", "Range_to_ATR", "MACD", "MACD_Hist",
-            "BB_Upper", "BB_Lower", "BB_Middle",
-            "Support", "Resistance", "Support_25", "Resistance_25",
-            "PROC_3", "ROC", "RSI", "return_prev_day",
+            "Close",
+            # === Fitur Waktu ===
+            "is_opening_hour", "is_closing_hour", "return_prev_day", "gap_close",
+            "daily_avg", "daily_std", "daily_range", "zscore",
+
+            # === Volatilitas ===
+            "ATR_5", "ATR_10", "ATR", "Range_to_ATR",
+
+            # === Volume ===
+            "OBV", "OBV_MA_5", "OBV_MA_10", "OBV_Diff", "OBV_vs_MA", "VWAP",
+
+            # === Trend ===
             "EMA_5", "EMA_10", "EMA_15", "EMA_20", "EMA_25", "EMA_50",
             "SMA_5", "SMA_10", "SMA_15", "SMA_20", "SMA_25", "SMA_50",
-            "VWAP", "ADX", "CCI", "Momentum", "WilliamsR", "HA_Close", "zscore", "Stoch_K", "Stoch_D",
+            "MACD", "MACD_Hist", "slope_5", "Body", "HA_Close",
+
+            # === Momentum ===
+            "RSI", "ROC", "Momentum", "PROC_3", "WilliamsR", "Stoch_K", "Stoch_D",
+
+            # === Support & Resistance ===
+            "Support", "Resistance", "Support_25", "Resistance_25", "CCI", "ADX",
+
+            # === Bollinger Bands ===
+            "BB_Upper", "BB_Lower", "BB_Middle",
+
+            # === Fibonacci Pivot Points ===
             "Pivot", "Fib_R1", "Fib_R2", "Fib_R3", "Fib_S1", "Fib_S2", "Fib_S3",
-            "hour", "is_opening_hour", "is_closing_hour", "gap_close", "return_prev_day",
-            "daily_avg", "daily_std", "daily_range"
+
+            # === Target (Harga Tertinggi & Terendah Besok) ===
+            "future_high", "future_low"
         ]
         
         X = df[features]
