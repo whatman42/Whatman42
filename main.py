@@ -142,6 +142,15 @@ def calculate_indicators(df: pd.DataFrame) -> pd.DataFrame:
     if df.empty or len(df) < 2 * HOURS_PER_DAY:
         return df
 
+    # === Fitur waktu harian ===
+    df["hour"] = df.index.hour
+    df["is_opening_hour"] = (df["hour"] == 9).astype(int)
+    df["is_closing_hour"] = (df["hour"] == 15).astype(int)
+    df["return_prev_day"] = df["Close"].pct_change(periods=HOURS_PER_DAY)
+    df["gap_close"] = df["Open"] - df["Close"].shift(HOURS_PER_DAY)
+    df["daily_avg"] = df["Close"].rolling(HOURS_PER_DAY).mean()
+    df["daily_std"] = df["Close"].rolling(HOURS_PER_DAY).std()
+    df["daily_range"] = df["High"].rolling(HOURS_PER_DAY).max() - df["Low"].rolling(HOURS_PER_DAY).min()
     # === Indikator teknikal ===
     df["slope_5"] = df["Close"].rolling(window=5).apply(calc_slope)
 
@@ -209,16 +218,6 @@ def calculate_indicators(df: pd.DataFrame) -> pd.DataFrame:
     df["Fib_S1"] = pivot - range_hl * 0.382
     df["Fib_S2"] = pivot - range_hl * 0.618
     df["Fib_S3"] = pivot - range_hl * 1.000
-
-    # === Fitur waktu harian ===
-    df["hour"] = df.index.hour
-    df["is_opening_hour"] = (df["hour"] == 9).astype(int)
-    df["is_closing_hour"] = (df["hour"] == 15).astype(int)
-    df["return_prev_day"] = df["Close"].pct_change(periods=HOURS_PER_DAY)
-    df["gap_close"] = df["Open"] - df["Close"].shift(HOURS_PER_DAY)
-    df["daily_avg"] = df["Close"].rolling(HOURS_PER_DAY).mean()
-    df["daily_std"] = df["Close"].rolling(HOURS_PER_DAY).std()
-    df["daily_range"] = df["High"].rolling(HOURS_PER_DAY).max() - df["Low"].rolling(HOURS_PER_DAY).min()
 
     # === Target prediksi: harga tertinggi & terendah BESOK ===
     df["future_high"] = df["High"].shift(-HOURS_PER_DAY).rolling(HOURS_PER_DAY).max()
