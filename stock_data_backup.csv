@@ -1,3 +1,2 @@
 ticker,harga,take_profit,stop_loss,aksi,prob_high,prob_low,prob_success,profit_potential_pct
-KLBF.JK,1405.0,1434.97,1395.51,beli,0.9,0.85,0.87,2.13
-MTEL.JK,620.0,634.24,617.71,beli,0.85,0.87,0.86,2.3
+KLBF.JK,1410.0,1440.53,1409.25,beli,0.88,0.84,0.86,2.17

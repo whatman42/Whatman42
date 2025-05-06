@@ -1,4 +1,7 @@
-  File "/home/runner/work/Whatman42/Whatman42/main.py", line 732
-    "EMA_5", EMA_10", "EMA_20", "EMA_50", "EMA_100", "EMA_200",
-                                                             ^
-SyntaxError: unterminated string literal (detected at line 732)
+2025-05-06 14:13:35,960 - ERROR - $PPRO.JK: possibly delisted; no price data found  (period=1d)
+2025-05-06 14:13:35,966 - WARNING - PPRO.JK: Data daily kosong saat ambil harga terbaru.
+2025-05-06 14:13:51,302 - WARNING - WSKT.JK: ATR tidak valid (semua nol atau kosong) setelah kalkulasi.
+2025-05-06 14:13:51,765 - ERROR - $WIKA.JK: possibly delisted; no price data found  (period=1d)
+2025-05-06 14:13:51,765 - WARNING - WIKA.JK: Data daily kosong saat ambil harga terbaru.
+2025-05-06 14:14:18,907 - WARNING - 5 out of the last 45 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x7f0ed4ed2dd0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+2025-05-06 14:15:39,771 - WARNING - META.JK: ATR tidak valid (semua nol atau kosong) setelah kalkulasi.
