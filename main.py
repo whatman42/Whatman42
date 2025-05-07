@@ -162,10 +162,7 @@ def calculate_indicators(df: pd.DataFrame) -> pd.DataFrame:
     df["zscore"] = (df["Close"] - df["daily_avg"]) / df["daily_std"]
 
     # === Volatilitas dan range ===
-    df["ATR_5"] = AverageTrueRange(df["High"], df["Low"], df["Close"], window=5).average_true_range()
-    df["ATR_10"] = AverageTrueRange(df["High"], df["Low"], df["Close"], window=10).average_true_range()
-    df["ATR"] = AverageTrueRange(df["High"], df["Low"], df["Close"], window=15).average_true_range()
-    df["Range_to_ATR"] = (df["High"] - df["Low"]) / df["ATR_5"]
+    df["ATR"] = volatility.AverageTrueRange(df["High"], df["Low"], df["Close"], window=5).average_true_range()
 
     # === Volume: OBV & VWAP ===
     df["OBV"] = OnBalanceVolumeIndicator(df["Close"], df["Volume"]).on_balance_volume()
@@ -533,7 +530,7 @@ def check_and_reset_model_if_needed(ticker: str, current_features: list[str]):
         
 # Konstanta threshold (letakkan di atas fungsi analyze_stock)
 MIN_PRICE = 0
-MAX_PRICE = 1700
+MAX_PRICE = 2000000
 MIN_VOLUME = 10000
 MIN_VOLATILITY = 0.005
 MIN_PROB = 0.7
@@ -644,7 +641,7 @@ def analyze_stock(ticker: str):
         "daily_avg", "daily_std", "daily_range", "zscore",
 
         # === Volatilitas ===
-        "ATR_5", "ATR_10", "ATR", "Range_to_ATR",
+        "ATR",
 
         # === Volume ===
         "OBV", "OBV_MA_5", "OBV_MA_10", "OBV_Diff", "OBV_vs_MA", "VWAP",
@@ -790,7 +787,7 @@ def retrain_if_needed(ticker: str):
             "daily_avg", "daily_std", "daily_range", "zscore",
 
             # === Volatilitas ===
-            "ATR_5", "ATR_10", "ATR", "Range_to_ATR",
+            "ATR",
 
             # === Volume ===
             "OBV", "OBV_MA_5", "OBV_MA_10", "OBV_Diff", "OBV_vs_MA", "VWAP",
