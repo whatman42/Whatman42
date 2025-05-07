@@ -1,2 +1,4 @@
 ticker,harga,take_profit,stop_loss,aksi,prob_high,prob_low,prob_success,profit_potential_pct
-ADHI.JK,278.0,284.26,277.59,beli,0.87,0.9,0.88,2.25
+BRPT.JK,850.0,894.53,847.85,beli,0.9,0.94,0.92,5.24
+SRTG.JK,1690.0,1792.18,1658.66,beli,0.94,0.92,0.93,6.05
+ADHI.JK,276.0,281.57,274.9,beli,0.88,0.92,0.9,2.02
