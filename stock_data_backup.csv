@@ -1,1 +1,2 @@
-
+ticker,harga,take_profit,stop_loss,aksi,prob_high,prob_low,prob_success,profit_potential_pct
+ADHI.JK,278.0,284.26,277.59,beli,0.87,0.9,0.88,2.25
