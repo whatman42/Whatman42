@@ -106,7 +106,7 @@ def get_stock_data(ticker: str) -> pd.DataFrame:
     try:
         # Gunakan 60 hari jika pakai interval 1 jam
         stock = yf.Ticker(ticker)
-        df = stock.history(period="1y", interval="1h")
+        df = stock.history(period="180d", interval="1h")
 
         required_cols = ["High", "Low", "Close", "Volume"]
         if df is not None and not df.empty and all(col in df.columns for col in required_cols) and len(df) >= 200:
@@ -599,7 +599,7 @@ def load_or_train_model(path, train_fn, X_train, y_train, model_type="joblib"):
 def get_latest_close(ticker: str):
     try:
         stock = yf.Ticker(ticker)
-        df = stock.history(period="1d", interval="1d")
+        df = stock.history(period="1d", interval="1h")
 
         if df is None or df.empty:
             logging.warning(f"{ticker}: Data daily kosong saat ambil harga terbaru.")
