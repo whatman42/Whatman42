@@ -555,10 +555,10 @@ def check_and_reset_model_if_needed(ticker: str, current_features: list[str]):
         
 # Konstanta threshold (letakkan di atas fungsi analyze_stock)
 MIN_PRICE = 50
-MAX_PRICE = 10000
+MAX_PRICE = 100000
 MIN_VOLUME = 100000
 MIN_VOLATILITY = 0.005
-MIN_PROB = 0.9
+MIN_PROB = 0.5
 
 def is_stock_eligible(price, avg_volume, atr, ticker):
     if price < MIN_PRICE:
