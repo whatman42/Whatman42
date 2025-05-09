@@ -837,7 +837,7 @@ def main():
         logging.warning("Tidak ada sinyal yang valid ditemukan.")
         return
 
-    # Urutkan berdasarkan potensi profit tertinggi
+    # Urutkan berdasarkan potensi probabilitas tertinggi
     results = sorted(results, key=lambda x: x["prob_success"], reverse=True)
 
     # Ambil Top N
