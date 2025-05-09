@@ -508,6 +508,17 @@ def train_final_lstm_with_best_params(X, y, best_params, epochs=50):
 
     return model
 
+# Fungsi untuk membangun model LSTM
+def build_lstm_model(X_train, lstm_units, dropout_rate, dense_units, optimizer):
+    model = Sequential()
+    model.add(LSTM(lstm_units, activation='relu', input_shape=(X_train.shape[1], 1)))
+    model.add(Dropout(dropout_rate))
+    model.add(Dense(dense_units, activation='relu'))
+    model.add(Dense(1))  # Output layer untuk prediksi harga
+
+    model.compile(optimizer=optimizer, loss='mean_squared_error')
+    return model
+    
 def save_best_params(ticker: str, model_type: str, params: dict):
     os.makedirs("params", exist_ok=True)
     with open(f"params/{ticker}_{model_type}.json", "w") as f:
