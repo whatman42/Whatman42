@@ -837,7 +837,7 @@ def main():
     results = sorted(results, key=lambda x: x["profit_potential_pct"], reverse=True)
 
     # Ambil Top N
-    top_n = 5  # atau 1 kalau mau satu sinyal terbaik saja
+    top_n = 10  # atau 1 kalau mau satu sinyal terbaik saja
     top_signals = results[:top_n]
 
     for r in top_signals:
