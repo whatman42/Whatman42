@@ -494,6 +494,92 @@ def tune_lightgbm_hyperparameters_optuna(X_train, y_train, n_trials=50):
     return best_model, study.best_params
 
 # === Hyperparameter Tuning untuk LSTM ===
+def tune_lstm_hyperparameters_optuna(X, y, n_trials=30):
+    from sklearn.model_selection import train_test_split
+    from sklearn.preprocessing import MinMaxScaler
+    from tensorflow.keras.models import Sequential
+    from tensorflow.keras.layers import LSTM, Dense, Dropout
+    from tensorflow.keras.optimizers import Adam, RMSprop, Nadam
+    from tensorflow.keras.callbacks import EarlyStopping
+
+    def objective(trial):
+        # Suggest hyperparameters
+        best_params = {
+            "lstm_units": trial.suggest_int("lstm_units", 32, 128, step=32),
+            "dense_units": trial.suggest_int("dense_units", 16, 64, step=16),
+            "dropout_rate": trial.suggest_float("dropout_rate", 0.1, 0.5),
+            "recurrent_dropout": trial.suggest_float("recurrent_dropout", 0.0, 0.5),
+            "activation": trial.suggest_categorical("activation", ["tanh", "relu"]),
+            "optimizer": trial.suggest_categorical("optimizer", ["adam", "rmsprop", "nadam"]),
+            "learning_rate": trial.suggest_float("learning_rate", 1e-4, 1e-2, log=True),
+            "batch_size": trial.suggest_categorical("batch_size", [16, 32, 64])
+        }
+
+        # Split & scale
+        X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.2, shuffle=False)
+        scaler = MinMaxScaler()
+        X_train_scaled = scaler.fit_transform(X_train)
+        X_val_scaled = scaler.transform(X_val)
+
+        X_train_r = X_train_scaled.reshape((X_train_scaled.shape[0], X_train_scaled.shape[1], 1))
+        X_val_r = X_val_scaled.reshape((X_val_scaled.shape[0], X_val_scaled.shape[1], 1))
+
+        # Build model
+        model = Sequential()
+        model.add(LSTM(
+            best_params["lstm_units"],
+            activation=best_params["activation"],
+            recurrent_dropout=best_params["recurrent_dropout"],
+            input_shape=(X_train_r.shape[1], 1)
+        ))
+        model.add(Dropout(best_params["dropout_rate"]))
+        model.add(Dense(best_params["dense_units"], activation=best_params["activation"]))
+        model.add(Dense(1))
+
+        # Compile
+        optimizer = {
+            "adam": Adam,
+            "rmsprop": RMSprop,
+            "nadam": Nadam
+        }[best_params["optimizer"]](learning_rate=best_params["learning_rate"])
+        model.compile(loss="mean_absolute_error", optimizer=optimizer)
+
+        # Fit
+        early_stop = EarlyStopping(monitor="val_loss", patience=5, restore_best_weights=True, verbose=0)
+        model.fit(X_train_r, y_train, validation_data=(X_val_r, y_val),
+                  epochs=50, batch_size=best_params["batch_size"], verbose=0, callbacks=[early_stop])
+
+        val_loss = model.evaluate(X_val_r, y_val, verbose=0)
+        return val_loss
+
+    study = optuna.create_study(direction="minimize")
+    study.optimize(objective, n_trials=n_trials)
+
+    return study.best_params
+    
+def train_lstm_with_auto_tuning(X, y, ticker, epochs=50, force_retrain=False):
+    import os
+    import json
+
+    param_path = f"lstm_best_params_{ticker}.json"
+
+    # Gunakan file param jika sudah ada, kecuali force retrain
+    if os.path.exists(param_path) and not force_retrain:
+        with open(param_path, "r") as f:
+            best_params = json.load(f)
+        logging.info(f"Parameter terbaik LSTM {ticker} dimuat dari file.")
+    else:
+        logging.info(f"Melakukan tuning hyperparameter LSTM untuk {ticker}...")
+        best_params = tune_lstm_hyperparameters_optuna(X, y, n_trials=30)
+
+        with open(param_path, "w") as f:
+            json.dump(best_params, f, indent=2)
+        logging.info(f"Parameter terbaik LSTM {ticker} disimpan ke {param_path}")
+
+    model = train_final_lstm_with_best_params(X, y, best_params, epochs=epochs)
+    model.save(f"model_lstm_{ticker}.keras")
+    logging.info(f"Model LSTM {ticker} selesai dilatih dan disimpan.")
+    
 def train_final_lstm_with_best_params(X, y, best_params, epochs=50):
     from tensorflow.keras.models import Sequential
     from tensorflow.keras.layers import LSTM, Dense, Dropout
@@ -930,7 +1016,9 @@ def retrain_if_needed(ticker: str, mae_threshold_pct: float = 0.02):
         joblib.dump(model_low_xgb, f"model_low_xgb_{ticker}.pkl")
         
         # Latih model LSTM
-        model_lstm = train_lstm(X, y_high)  # Asumsi menggunakan y_high untuk LSTM
+        # Hyperparameter tuning untuk LSTM
+        best_params = tune_lstm_hyperparameters_optuna(X, y_high)
+        model_lstm = train_final_lstm_with_best_params(X, y_high, best_params)
         model_lstm.save(f"model_lstm_{ticker}.keras")
         
         logging.info(f"Model untuk {ticker} telah dilatih ulang dan disimpan.")
