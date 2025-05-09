@@ -849,21 +849,27 @@ def main():
     for r in top_signals:
         print_signal(r)
         
-def retrain_if_needed(ticker: str):
-    akurasi_map = evaluate_prediction_accuracy()
-    akurasi = akurasi_map.get(ticker, 1.0)  # default 100%
+def retrain_if_needed(ticker: str, mae_threshold_pct: float = 0.02):
+    evaluasi_map = evaluate_prediction_accuracy()
+    metrik = evaluasi_map.get(ticker, {})
     
-    if akurasi < 0.80:
-        logging.info(f"Akurasi model {ticker} rendah ({akurasi:.2%}), retraining...")
-        
-        # Ambil data saham
-        df = get_stock_data(ticker)
-        if df is None or df.empty:
-            logging.error(f"{ticker}: Data saham tidak ditemukan atau kosong.")
-            return
-        
-        # Kalkulasi indikator teknikal
-        df = calculate_indicators(df)
+    akurasi = metrik.get("akurasi", 1.0)
+    mae_high = metrik.get("mae_high", 0)
+    mae_low = metrik.get("mae_low", 0)
+
+    # Ambil harga saat ini sebagai basis MAE threshold
+    df_now = get_stock_data(ticker)
+    if df_now is None or df_now.empty:
+        logging.error(f"{ticker}: Data saham tidak ditemukan atau kosong.")
+        return
+
+    harga_now = df_now["Close"].iloc[-1]
+    mae_threshold = harga_now * mae_threshold_pct
+
+    if akurasi < 0.80 or mae_high > mae_threshold or mae_low > mae_threshold:
+        logging.info(f"Retraining diperlukan untuk {ticker} - Akurasi: {akurasi:.2%}, MAE High: {mae_high:.2f}, MAE Low: {mae_low:.2f}")
+
+        df = calculate_indicators(df_now)
         df = df.dropna(subset=["future_high", "future_low"])
         
         # Tentukan fitur yang akan digunakan
