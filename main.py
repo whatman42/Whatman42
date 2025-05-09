@@ -43,6 +43,8 @@ TELEGRAM_TOKEN   = os.environ.get("TELEGRAM_TOKEN")
 CHAT_ID          = os.environ.get("CHAT_ID")
 ATR_MULTIPLIER   = 2.5
 RETRAIN_INTERVAL = 7
+AKURASI_THRESHOLD = 0.80
+MAE_THRESHOLD = 50.0  # Atur sesuai karakteristik saham (misal 50 rupiah)
 BACKUP_CSV_PATH  = "stock_data_backup.csv"
 HASH_PATH = "features_hash.json"
 
@@ -1036,10 +1038,38 @@ def evaluate_prediction_accuracy() -> Dict[str, Dict[str, float]]:
     logging.info(f"Evaluasi lengkap dihitung untuk {len(evaluasi)} ticker.")
     return evaluasi
     
+def evaluate_prediction_mae() -> Dict[str, float]:
+    log_path = "prediksi_log.csv"
+    if not os.path.exists(log_path):
+        return {}
+
+    try:
+        df_log = pd.read_csv(log_path, names=["ticker", "tanggal", "harga_awal", "pred_high", "pred_low"])
+        df_log["tanggal"] = pd.to_datetime(df_log["tanggal"])
+        df_log.drop_duplicates(subset=["ticker", "tanggal"], keep="last", inplace=True)
+    except Exception as e:
+        logging.error(f"Gagal membaca log prediksi: {e}")
+        return {}
+
+    df_data = get_realized_price_data()
+    if df_data.empty:
+        return {}
+
+    df_data["tanggal"] = pd.to_datetime(df_data["tanggal"])
+    df_data.drop_duplicates(subset=["ticker", "tanggal"], keep="last", inplace=True)
+
+    df_merged = df_log.merge(df_data, on=["ticker", "tanggal"], how="inner")
+    if df_merged.empty:
+        return {}
+
+    df_merged["mae_high"] = (df_merged["pred_high"] - df_merged["actual_high"]).abs()
+    df_merged["mae_low"] = (df_merged["pred_low"] - df_merged["actual_low"]).abs()
+    df_merged["mae_avg"] = (df_merged["mae_high"] + df_merged["mae_low"]) / 2
+
+    return df_merged.groupby("ticker")["mae_avg"].mean().to_dict()
+    
 def check_and_reset_model_if_needed(ticker, features):
     hash_path = f"model_feature_hashes.json"
-    
-    # Hitung hash untuk fitur saat ini
     current_hash = hashlib.md5(json.dumps(features, sort_keys=True).encode()).hexdigest()
 
     saved_hashes = {}
@@ -1053,30 +1083,39 @@ def check_and_reset_model_if_needed(ticker, features):
             logging.warning("Hash file corrupted, resetting...")
             saved_hashes = {}
 
-    # Jika hash fitur berbeda, reset model
-    if saved_hashes.get(ticker) != current_hash:
-        logging.info(f"Fitur berubah untuk {ticker}, reset model.")
-        
-        # Hapus model-model yang sudah ada
+    # Cek performa model (akurasi dan MAE)
+    akurasi_map = evaluate_prediction_accuracy()
+    mae_map = evaluate_prediction_mae()
+    akurasi = akurasi_map.get(ticker, 1.0)
+    mae = mae_map.get(ticker, 0.0)
+
+    perlu_reset = (
+        saved_hashes.get(ticker) != current_hash or
+        akurasi < AKURASI_THRESHOLD or
+        mae > MAE_THRESHOLD
+    )
+
+    if perlu_reset:
+        logging.info(f"Reset model {ticker} | Fitur berubah: {saved_hashes.get(ticker) != current_hash} | Akurasi: {akurasi:.2%} | MAE: {mae:.2f}")
+
         model_files = [
-            f"model_high_lgb_{ticker}.pkl",  # LightGBM
-            f"model_low_lgb_{ticker}.pkl",   # LightGBM
-            f"model_high_xgb_{ticker}.pkl",  # XGBoost
-            f"model_low_xgb_{ticker}.pkl",   # XGBoost
-            f"model_lstm_{ticker}.keras"     # LSTM
+            f"model_high_lgb_{ticker}.pkl",
+            f"model_low_lgb_{ticker}.pkl",
+            f"model_high_xgb_{ticker}.pkl",
+            f"model_low_xgb_{ticker}.pkl",
+            f"model_lstm_{ticker}.keras"
         ]
-        
+
         for fname in model_files:
             if os.path.exists(fname):
                 os.remove(fname)
                 logging.info(f"Model {fname} dihapus.")
-        
-        # Simpan hash baru untuk fitur
+
         saved_hashes[ticker] = current_hash
         with open(hash_path, "w") as f:
             json.dump(saved_hashes, f, indent=2)
     else:
-        logging.info(f"Fitur untuk {ticker} tidak berubah, model tidak di-reset.")
+        logging.info(f"Model {ticker} tidak perlu di-reset. Akurasi dan MAE masih wajar.")
 
 def reset_models():
     # Pola file model
