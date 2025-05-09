@@ -310,7 +310,7 @@ def train_lstm(
     lstm_units: int = 64,
     dropout_rate: float = 0.2,
     dense_units: int = 32,
-    epochs: int = 75,
+    epochs: int = 77,
     batch_size: int = 32,
     verbose: int = 1
 ) -> Sequential:
@@ -415,9 +415,9 @@ def train_and_select_best_model(ticker: str, X: pd.DataFrame, y: pd.Series) -> s
 # === Hyperparameter Tuning untuk XGBoost ===
 def tune_xgboost_hyperparameters(X_train, y_train):
     param_grid = {
-        'learning_rate': [0.01, 0.05, 0.1],
-        'n_estimators': [100, 200, 300],
-        'max_depth': [3, 5, 7]
+        'learning_rate': [0.01, 0.05, 0.1, 0,15],
+        'n_estimators': [100, 200, 300, 400],
+        'max_depth': [3, 5, 7, 9]
     }
     search = GridSearchCV(
         XGBRegressor(),
@@ -433,10 +433,10 @@ def tune_xgboost_hyperparameters(X_train, y_train):
 # === Hyperparameter Tuning untuk LightGBM ===
 def tune_lightgbm_hyperparameters(X_train, y_train):
     param_grid = {
-        'learning_rate': [0.01, 0.05, 0.1],
-        'n_estimators': [100, 200, 300],
-        'max_depth': [3, 5, 7],
-        'num_leaves': [15, 31, 63]
+        'learning_rate': [0.01, 0.05, 0.1, 0,15],
+        'n_estimators': [100, 200, 300, 400],
+        'max_depth': [3, 5, 7, 9],
+        'num_leaves': [15, 31, 63, 127]
     }
 
     grid_search = GridSearchCV(
@@ -454,11 +454,11 @@ def tune_lightgbm_hyperparameters(X_train, y_train):
 # === Hyperparameter Tuning untuk LSTM ===
 def tune_lstm_hyperparameters(X, y, n_iter=5):
     param_grid = {
-        "lstm_units": [32, 64, 128],
-        "dropout_rate": [0.1, 0.2, 0.3],
-        "dense_units": [16, 32, 64],
-        "batch_size": [16, 32],
-        "epochs": [50, 75, 100]
+        "lstm_units": [32, 64, 128, 256],
+        "dropout_rate": [0.1, 0.2, 0.3, 0,4],
+        "dense_units": [16, 32, 64, 128],
+        "batch_size": [16, 32, 64, 128],
+        "epochs": [50, 75, 100, 125,]
     }
 
     best_model = None
