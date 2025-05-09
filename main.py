@@ -775,8 +775,8 @@ def analyze_stock(ticker: str):
         return None
 
     # Gabungkan probabilitas dari kedua model (LightGBM dan XGBoost)
-    prob_high = (prob_high_lgb + prob_high_xgb) / 2
-    prob_low  = (prob_low_lgb + prob_low_xgb) / 2
+    prob_high = np.median([prob_high_lgb, prob_high_xgb])
+    prob_low  = np.median([prob_low_lgb, prob_low_xgb])
 
     if prob_high < MIN_PROB or prob_low < MIN_PROB:
         logging.info(f"{ticker} dilewati: Prob rendah (H={prob_high:.2f}, L={prob_low:.2f})")
