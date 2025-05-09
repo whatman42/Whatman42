@@ -45,6 +45,7 @@ ATR_MULTIPLIER   = 2.5
 RETRAIN_INTERVAL = 7
 BACKUP_CSV_PATH  = "stock_data_backup.csv"
 HASH_PATH = "features_hash.json"
+
 # === Daftar Saham ===
 STOCK_LIST = [
     "AALI.JK", "ABBA.JK", "ABMM.JK", "ACES.JK", "ACST.JK", "ADHI.JK", "ADMF.JK", "ADMG.JK", "ADRO.JK", "AGII.JK",
