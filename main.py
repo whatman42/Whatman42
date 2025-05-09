@@ -795,9 +795,9 @@ def analyze_stock(ticker: str):
     ph_lstm = model_lstm.predict(np.reshape(X_last.values, (X_last.shape[0], X_last.shape[1], 1)))[0][0]
     pl_lstm = model_lstm.predict(np.reshape(X_last.values, (X_last.shape[0], X_last.shape[1], 1)))[0][0]
 
-    # Ambil rata-rata dari hasil prediksi
-    ph = (ph_lgb + ph_xgb + ph_lstm) / 3
-    pl = (pl_lgb + pl_xgb + pl_lstm) / 3
+    # Median Ensemble dari hasil prediksi
+    ph = np.median([ph_lgb, ph_xgb, ph_lstm])
+    pl = np.median([pl_lgb, pl_xgb, pl_lstm])
 
     action = "beli" if (ph - price) / price > 0.02 else "jual"
     profit_potential_pct = (ph - price) / price * 100 if action == "beli" else (price - pl) / price * 100
