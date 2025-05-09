@@ -318,7 +318,8 @@ def train_lstm(
     batch_size: int = 32,
     verbose: int = 1
 ) -> Sequential:
-    X_arr = np.reshape(X.values, (X.shape[0], X.shape[1], 1))
+    X_arr = X.values.reshape((X.shape[0], X.shape[1], 1))
+
     model = Sequential([
         LSTM(lstm_units, return_sequences=True, input_shape=(X.shape[1], 1)),
         Dropout(dropout_rate),
@@ -328,10 +329,9 @@ def train_lstm(
         Dense(1)
     ])
     model.compile(optimizer="adam", loss="mean_squared_error")
-    model.fit(X_arr, y, epochs=epochs, batch_size=batch_size, verbose=verbose)
+    model.fit(X_arr, y.values, epochs=epochs, batch_size=batch_size, verbose=verbose)
 
-    # Evaluasi konsisten
-    evaluate_model(model, X, y)
+    evaluate_model(model, X_arr, y.values)  # Pastikan fungsi bisa handle numpy array
 
     return model
 
