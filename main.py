@@ -468,8 +468,7 @@ def tune_lightgbm_hyperparameters_optuna(X_train, y_train, n_trials=50):
             'learning_rate': trial.suggest_float('learning_rate', 0.005, 0.3, log=True),
             'n_estimators': trial.suggest_int('n_estimators', 100, 1000, step=100),
             'max_depth': trial.suggest_int('max_depth', 3, 12),
-            'min_child_weight': trial.suggest_int('min_child_weight', 1, 10),
-            'gamma': trial.suggest_float('gamma', 0, 5),
+            'min_child_samples': trial.suggest_int('min_child_samples', 5, 100),
             'boosting_type': trial.suggest_categorical('boosting_type', ['gbdt', 'dart', 'goss']),
             'num_leaves': trial.suggest_int('num_leaves', 7, 255),
             'subsample': trial.suggest_float('subsample', 0.6, 1.0),
@@ -478,6 +477,10 @@ def tune_lightgbm_hyperparameters_optuna(X_train, y_train, n_trials=50):
             'reg_lambda': trial.suggest_float('reg_lambda', 0.0, 1.0),
             'verbosity': -1
         }
+        # GOSS tidak cocok dengan subsample
+        if params['boosting_type'] == 'goss':
+            params['subsample'] = 1.0
+
         model = lgb.LGBMRegressor(**params, random_state=42)
         score = cross_val_score(model, X_train, y_train, scoring='neg_mean_absolute_error', cv=3, n_jobs=-1)
         return -score.mean()
