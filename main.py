@@ -705,7 +705,7 @@ MIN_PRICE = 50
 MAX_PRICE = 100000
 MIN_VOLUME = 100000
 MIN_VOLATILITY = 0.005
-MIN_PROB = 0.5
+MIN_PROB = 0.8
 
 def is_stock_eligible(price, avg_volume, atr, ticker):
     if price < MIN_PRICE:
@@ -1364,7 +1364,7 @@ if __name__ == "__main__":
             f"<b>🔮Hai K.N.T.L. Clan Member🔮</b>\n"
             f"<b>Apapun Yang Sedang Kalian Hadapi Saat Ini, Ingatlah...</b>\n"
             f"<b><i>{motivation}</i></b>\n\n"
-            f"<b>Berikut Top 10 saham pilihan berdasarkan analisa K.N.T.L. (Kernel Neural Trading Logic) A.I 🤖:</b>\n"
+            f"<b>Berikut Rekomendasi Saham Pilihan Berdasarkan Analisa K.N.T.L. (Kernel Neural Trading Logic) A.I 🤖:</b>\n"
         )
         for r in top_10:
             message += (
