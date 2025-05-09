@@ -278,6 +278,7 @@ def evaluate_model(model, X, y_true):
         logging.error(f"Gagal evaluasi model: {e}")
         return None, None
 
+# === Training LightGBM ===
 def train_lightgbm(X_train: pd.DataFrame, y_train: pd.Series, X_val: Optional[pd.DataFrame] = None, y_val: Optional[pd.Series] = None, n_estimators: int = 500, learning_rate: float = 0.05, early_stopping_rounds: Optional[int] = 50, random_state: int = 42) -> lgb.LGBMRegressor:
     model = lgb.LGBMRegressor(n_estimators=n_estimators, learning_rate=learning_rate, random_state=random_state)
     
@@ -291,6 +292,7 @@ def train_lightgbm(X_train: pd.DataFrame, y_train: pd.Series, X_val: Optional[pd
     
     return model
 
+# === Training XGBoost ===
 def train_xgboost(X_train: pd.DataFrame, y_train: pd.Series, X_val: Optional[pd.DataFrame] = None, y_val: Optional[pd.Series] = None, n_estimators: int = 500, learning_rate: float = 0.05, early_stopping_rounds: Optional[int] = 50, random_state: int = 42) -> XGBRegressor:
     model = XGBRegressor(n_estimators=n_estimators, learning_rate=learning_rate, random_state=random_state)
     
