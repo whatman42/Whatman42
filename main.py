@@ -949,7 +949,7 @@ def get_realized_price_data() -> pd.DataFrame:
     for ticker in df_log["ticker"].unique():
         df_ticker = df_log[df_log["ticker"] == ticker].copy()
         start_date = df_ticker["tanggal"].min()
-        end_date = df_ticker["tanggal"].max() + pd.Timedelta(days=6)
+        end_date = df_ticker["tanggal"].max() + pd.Timedelta(days=2)
 
         try:
             df_price = yf.download(
@@ -974,7 +974,7 @@ def get_realized_price_data() -> pd.DataFrame:
         for _, row in df_ticker.iterrows():
             tanggal_prediksi = row["tanggal"]
             start_window = tanggal_prediksi + pd.Timedelta(days=1)
-            end_window = tanggal_prediksi + pd.Timedelta(days=6)
+            end_window = tanggal_prediksi + pd.Timedelta(days=2)
 
             df_window = df_price.loc[(df_price.index >= start_window) & (df_price.index <= end_window)]
             if df_window.shape[0] < 3:
