@@ -833,12 +833,18 @@ def analyze_stock(ticker: str):
 def main():
     results = list(filter(None, executor.map(analyze_stock, STOCK_LIST)))
     
+    if not results:
+        logging.warning("Tidak ada sinyal yang valid ditemukan.")
+        return
+
     # Urutkan berdasarkan potensi profit tertinggi
-    results = sorted(results, key=lambda x: x["profit_potential_pct"], reverse=True)
+    results = sorted(results, key=lambda x: x["prob_success"], reverse=True)
 
     # Ambil Top N
-    top_n = 10  # atau 1 kalau mau satu sinyal terbaik saja
+    top_n = 10
     top_signals = results[:top_n]
+
+    logging.info(f"{len(results)} sinyal dianalisis, menampilkan top {top_n}")
 
     for r in top_signals:
         print_signal(r)
