@@ -263,18 +263,30 @@ def calculate_indicators(df: pd.DataFrame) -> pd.DataFrame:
 
 def evaluate_model(model, X, y_true):
     try:
-        # Cek apakah ini LSTM (keras)
-        if hasattr(model, "predict") and "keras" in str(type(model)).lower():
-            X = np.reshape(X.values, (X.shape[0], X.shape[1], 1))
+        # Handle input reshaping jika model adalah LSTM dari Keras
+        is_keras = "tensorflow" in str(type(model)).lower() or "keras" in str(type(model)).lower()
 
+        if is_keras:
+            if isinstance(X, pd.DataFrame):
+                X = X.values
+            X = X.reshape((X.shape[0], X.shape[1], 1))
+
+        # Prediksi
         y_pred = model.predict(X)
         if isinstance(y_pred, np.ndarray) and y_pred.ndim > 1:
             y_pred = y_pred.flatten()
 
+        # Hitung metrik evaluasi
         rmse = np.sqrt(mean_squared_error(y_true, y_pred))
         mae = mean_absolute_error(y_true, y_pred)
+
+        # Logging fallback jika belum diset
+        if not logging.getLogger().hasHandlers():
+            logging.basicConfig(level=logging.INFO)
+
         logging.info(f"Model Evaluation - RMSE: {rmse:.2f}, MAE: {mae:.2f}")
         return rmse, mae
+
     except Exception as e:
         logging.error(f"Gagal evaluasi model: {e}")
         return None, None
