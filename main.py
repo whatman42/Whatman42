@@ -981,6 +981,7 @@ def evaluate_prediction_accuracy() -> Dict[str, float]:
     try:
         df_log = pd.read_csv(log_path, names=["ticker", "tanggal", "harga_awal", "pred_high", "pred_low"])
         df_log["tanggal"] = pd.to_datetime(df_log["tanggal"])
+        df_log.drop_duplicates(subset=["ticker", "tanggal"], keep="last", inplace=True)
     except Exception as e:
         logging.error(f"Gagal membaca file log prediksi: {e}")
         return {}
@@ -991,6 +992,7 @@ def evaluate_prediction_accuracy() -> Dict[str, float]:
         return {}
 
     df_data["tanggal"] = pd.to_datetime(df_data["tanggal"])
+    df_data.drop_duplicates(subset=["ticker", "tanggal"], keep="last", inplace=True)
 
     df_merged = df_log.merge(df_data, on=["ticker", "tanggal"], how="inner")
 
@@ -1004,8 +1006,11 @@ def evaluate_prediction_accuracy() -> Dict[str, float]:
     )
 
     akurasi_per_ticker = df_merged.groupby("ticker")["benar"].mean().to_dict()
-    logging.info(f"Akurasi prediksi dihitung untuk {len(akurasi_per_ticker)} ticker.")
+    
+    for ticker, acc in akurasi_per_ticker.items():
+        logging.debug(f"Akurasi {ticker}: {acc:.2%}")
 
+    logging.info(f"Akurasi prediksi dihitung untuk {len(akurasi_per_ticker)} ticker.")
     return akurasi_per_ticker
     
 def check_and_reset_model_if_needed(ticker, features):
