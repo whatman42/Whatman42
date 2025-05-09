@@ -9,6 +9,7 @@ import requests
 import random
 import logging
 import datetime
+import optuna
 import xgboost as xgb
 import numpy as np
 import pandas as pd
@@ -413,71 +414,99 @@ def train_and_select_best_model(ticker: str, X: pd.DataFrame, y: pd.Series) -> s
     return best_model_type
 
 # === Hyperparameter Tuning untuk XGBoost ===
-def tune_xgboost_hyperparameters(X_train, y_train):
-    param_grid = {
-        'learning_rate': [0.01, 0.05, 0.1, 0,15],
-        'n_estimators': [100, 200, 300, 400],
-        'max_depth': [3, 5, 7, 9]
-    }
-    search = GridSearchCV(
-        XGBRegressor(),
-        param_grid,
-        cv=3,
-        scoring='neg_mean_absolute_error',
-        n_jobs=-1
-    )
-    search.fit(X_train, y_train)
-    logging.info(f"Best XGBoost Parameters: {search.best_params_}")
-    return search.best_estimator_
+def tune_xgboost_hyperparameters_optuna(X_train, y_train, n_trials=50):
+    def objective(trial):
+        params = {
+            'learning_rate': trial.suggest_float('learning_rate', 0.005, 0.3, log=True),
+            'n_estimators': trial.suggest_int('n_estimators', 100, 1000, step=100),
+            'max_depth': trial.suggest_int('max_depth', 3, 12),
+            'min_child_weight': trial.suggest_int('min_child_weight', 1, 10),
+            'gamma': trial.suggest_float('gamma', 0, 5),
+            'subsample': trial.suggest_float('subsample', 0.5, 1.0),
+            'colsample_bytree': trial.suggest_float('colsample_bytree', 0.5, 1.0),
+            'reg_alpha': trial.suggest_float('reg_alpha', 0.0, 1.0),
+            'reg_lambda': trial.suggest_float('reg_lambda', 0.0, 1.0),
+            'booster': trial.suggest_categorical('booster', ['gbtree', 'dart']),
+            'tree_method': 'hist',
+            'verbosity': 0,
+            'random_state': 42
+        }
+
+        model = xgb.XGBRegressor(**params)
+        score = cross_val_score(model, X_train, y_train, scoring='neg_mean_absolute_error', cv=3, n_jobs=-1)
+        return -score.mean()
+
+    study = optuna.create_study(direction='minimize')
+    study.optimize(objective, n_trials=n_trials)
+
+    best_model = xgb.XGBRegressor(**study.best_params)
+    best_model.fit(X_train, y_train)
+
+    return best_model, study.best_params
 
 # === Hyperparameter Tuning untuk LightGBM ===
-def tune_lightgbm_hyperparameters(X_train, y_train):
-    param_grid = {
-        'learning_rate': [0.01, 0.05, 0.1, 0,15],
-        'n_estimators': [100, 200, 300, 400],
-        'max_depth': [3, 5, 7, 9],
-        'num_leaves': [15, 31, 63, 127]
-    }
+def tune_lightgbm_hyperparameters_optuna(X_train, y_train, n_trials=50):
+    def objective(trial):
+        params = {
+            'learning_rate': trial.suggest_float('learning_rate', 0.005, 0.3, log=True),
+            'n_estimators': trial.suggest_int('n_estimators', 100, 1000, step=100),
+            'max_depth': trial.suggest_int('max_depth', 3, 12),
+            'min_child_weight': trial.suggest_int('min_child_weight', 1, 10),
+            'gamma': trial.suggest_float('gamma', 0, 5),
+            'boosting_type': trial.suggest_categorical('boosting_type', ['gbdt', 'dart', 'goss']),
+            'num_leaves': trial.suggest_int('num_leaves', 7, 255),
+            'subsample': trial.suggest_float('subsample', 0.6, 1.0),
+            'colsample_bytree': trial.suggest_float('colsample_bytree', 0.6, 1.0),
+            'reg_alpha': trial.suggest_float('reg_alpha', 0.0, 1.0),
+            'reg_lambda': trial.suggest_float('reg_lambda', 0.0, 1.0),
+            'verbosity': -1
+        }
+        model = lgb.LGBMRegressor(**params, random_state=42)
+        score = cross_val_score(model, X_train, y_train, scoring='neg_mean_absolute_error', cv=3, n_jobs=-1)
+        return -score.mean()
 
-    grid_search = GridSearchCV(
-        estimator=lgb.LGBMRegressor(),
-        param_grid=param_grid,
-        cv=3,
-        scoring='neg_mean_absolute_error',
-        n_jobs=-1
-    )
+    study = optuna.create_study(direction='minimize')
+    study.optimize(objective, n_trials=n_trials)
 
-    grid_search.fit(X_train, y_train)
-    logging.info(f"Best LightGBM Parameters: {grid_search.best_params_}")
-    return grid_search.best_estimator_
+    best_model = lgb.LGBMRegressor(**study.best_params, random_state=42)
+    best_model.fit(X_train, y_train)
+
+    return best_model, study.best_params
 
 # === Hyperparameter Tuning untuk LSTM ===
-def tune_lstm_hyperparameters(X, y, n_iter=5):
-    param_grid = {
-        "lstm_units": [32, 64, 128, 256],
-        "dropout_rate": [0.1, 0.2, 0.3, 0,4],
-        "dense_units": [16, 32, 64, 128],
-        "batch_size": [16, 32, 64, 128],
-        "epochs": [50, 75, 100, 125,]
+def train_final_lstm_with_best_params(X, y, best_params, epochs=50):
+    from tensorflow.keras.models import Sequential
+    from tensorflow.keras.layers import LSTM, Dense, Dropout
+    from tensorflow.keras.optimizers import Adam, RMSprop, Nadam
+
+    X_reshaped = np.reshape(X.values, (X.shape[0], X.shape[1], 1))
+
+    model = Sequential()
+    model.add(LSTM(
+        best_params["lstm_units"],
+        activation=best_params["activation"],
+        recurrent_dropout=best_params["recurrent_dropout"],
+        input_shape=(X_reshaped.shape[1], X_reshaped.shape[2]),
+        return_sequences=False
+    ))
+    model.add(Dropout(best_params["dropout_rate"]))
+    model.add(Dense(best_params["dense_units"], activation=best_params["activation"]))
+    model.add(Dense(1))
+
+    # Pilih optimizer sesuai hasil
+    optimizers = {
+        "adam": Adam,
+        "rmsprop": RMSprop,
+        "nadam": Nadam
     }
+    optimizer_class = optimizers[best_params["optimizer"]]
+    optimizer = optimizer_class(learning_rate=best_params["learning_rate"])
 
-    best_model = None
-    best_loss = np.inf
-    best_params = None
+    model.compile(loss="mean_absolute_error", optimizer=optimizer)
 
-    for params in ParameterSampler(param_grid, n_iter=n_iter, random_state=42):
-        try:
-            model = train_lstm(X, y, **params, verbose=0)
-            loss = model.evaluate(np.reshape(X.values, (X.shape[0], X.shape[1], 1)), y, verbose=0)
-            if loss < best_loss:
-                best_loss = loss
-                best_model = model
-                best_params = params
-        except Exception as e:
-            logging.warning(f"Gagal tuning LSTM dengan params {params}: {e}")
+    model.fit(X_reshaped, y, epochs=epochs, batch_size=best_params["batch_size"], verbose=1)
 
-    logging.info(f"Best LSTM params: {best_params}, loss: {best_loss:.4f}")
-    return best_model
+    return model
 
 def save_best_params(ticker: str, model_type: str, params: dict):
     os.makedirs("params", exist_ok=True)
