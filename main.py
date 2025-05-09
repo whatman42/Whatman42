@@ -532,6 +532,7 @@ def load_best_params(ticker: str, model_type: str) -> Optional[dict]:
         with open(path, "r") as f:
             return json.load(f)
     return None
+    
 # === Fungsi Kirim Alert ===
 def send_alert(message):
     logging.error(f"ALERT: {message}")
