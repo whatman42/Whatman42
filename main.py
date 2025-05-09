@@ -557,29 +557,6 @@ def tune_lstm_hyperparameters_optuna(X, y, n_trials=30):
 
     return study.best_params
     
-def train_lstm_with_auto_tuning(X, y, ticker, epochs=50, force_retrain=False):
-    import os
-    import json
-
-    param_path = f"lstm_best_params_{ticker}.json"
-
-    # Gunakan file param jika sudah ada, kecuali force retrain
-    if os.path.exists(param_path) and not force_retrain:
-        with open(param_path, "r") as f:
-            best_params = json.load(f)
-        logging.info(f"Parameter terbaik LSTM {ticker} dimuat dari file.")
-    else:
-        logging.info(f"Melakukan tuning hyperparameter LSTM untuk {ticker}...")
-        best_params = tune_lstm_hyperparameters_optuna(X, y, n_trials=30)
-
-        with open(param_path, "w") as f:
-            json.dump(best_params, f, indent=2)
-        logging.info(f"Parameter terbaik LSTM {ticker} disimpan ke {param_path}")
-
-    model = train_final_lstm_with_best_params(X, y, best_params, epochs=epochs)
-    model.save(f"model_lstm_{ticker}.keras")
-    logging.info(f"Model LSTM {ticker} selesai dilatih dan disimpan.")
-    
 def train_final_lstm_with_best_params(X, y, best_params, epochs=50):
     from tensorflow.keras.models import Sequential
     from tensorflow.keras.layers import LSTM, Dense, Dropout
@@ -613,6 +590,29 @@ def train_final_lstm_with_best_params(X, y, best_params, epochs=50):
     model.fit(X_reshaped, y, epochs=epochs, batch_size=best_params["batch_size"], verbose=1)
 
     return model
+    
+def train_lstm_with_auto_tuning(X, y, ticker, epochs=50, force_retrain=False):
+    import os
+    import json
+
+    param_path = f"lstm_best_params_{ticker}.json"
+
+    # Gunakan file param jika sudah ada, kecuali force retrain
+    if os.path.exists(param_path) and not force_retrain:
+        with open(param_path, "r") as f:
+            best_params = json.load(f)
+        logging.info(f"Parameter terbaik LSTM {ticker} dimuat dari file.")
+    else:
+        logging.info(f"Melakukan tuning hyperparameter LSTM untuk {ticker}...")
+        best_params = tune_lstm_hyperparameters_optuna(X, y, n_trials=30)
+
+        with open(param_path, "w") as f:
+            json.dump(best_params, f, indent=2)
+        logging.info(f"Parameter terbaik LSTM {ticker} disimpan ke {param_path}")
+
+    model = train_final_lstm_with_best_params(X, y, best_params, epochs=epochs)
+    model.save(f"model_lstm_{ticker}.keras")
+    logging.info(f"Model LSTM {ticker} selesai dilatih dan disimpan.")
 
 # Fungsi untuk membangun model LSTM
 def build_lstm_model(X_train, lstm_units, dropout_rate, dense_units, optimizer):
