@@ -1204,16 +1204,16 @@ if __name__ == "__main__":
     pd.DataFrame(results).to_csv(BACKUP_CSV_PATH, index=False)
     logging.info("✅ Backup CSV disimpan")
 
-    top_5 = sorted(results, key=lambda x: x["profit_potential_pct"], reverse=True)[:5]
-    if top_5:
+    top_10 = sorted(results, key=lambda x: x["profit_potential_pct"], reverse=True)[:10]
+    if top_10:
         motivation = get_random_motivation()
         message = (
             f"<b>🔮Hai K.N.T.L. Clan Member🔮</b>\n"
             f"<b>Apapun Yang Sedang Kalian Hadapi Saat Ini, Ingatlah...</b>\n"
             f"<b><i>{motivation}</i></b>\n\n"
-            f"<b>Berikut Top 5 saham pilihan berdasarkan analisa K.N.T.L. (Kernel Neural Trading Logic) A.I 🤖:</b>\n"
+            f"<b>Berikut Top 10 saham pilihan berdasarkan analisa K.N.T.L. (Kernel Neural Trading Logic) A.I 🤖:</b>\n"
         )
-        for r in top_5:
+        for r in top_10:
             message += (
                 f"\n🔹 {r['ticker']}\n"
                 f"   💰 Harga: {r['harga']:.2f}\n"
