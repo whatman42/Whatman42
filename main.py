@@ -978,7 +978,7 @@ def get_realized_price_data() -> pd.DataFrame:
 
     return pd.DataFrame(results)
     
-def evaluate_prediction_accuracy() -> Dict[str, float]:
+def evaluate_prediction_accuracy() -> Dict[str, Dict[str, float]]:
     log_path = "prediksi_log.csv"
     if not os.path.exists(log_path):
         logging.warning("File prediksi_log.csv tidak ditemukan.")
@@ -1006,18 +1006,29 @@ def evaluate_prediction_accuracy() -> Dict[str, float]:
         logging.info("Tidak ada prediksi yang cocok dengan data realisasi.")
         return {}
 
+    # Boolean akurasi dan MAE
     df_merged["benar"] = (
         (df_merged["actual_high"] >= df_merged["pred_high"]) &
         (df_merged["actual_low"]  <= df_merged["pred_low"])
     )
+    df_merged["error_high"] = (df_merged["actual_high"] - df_merged["pred_high"]).abs()
+    df_merged["error_low"]  = (df_merged["actual_low"]  - df_merged["pred_low"]).abs()
 
-    akurasi_per_ticker = df_merged.groupby("ticker")["benar"].mean().to_dict()
-    
-    for ticker, acc in akurasi_per_ticker.items():
-        logging.debug(f"Akurasi {ticker}: {acc:.2%}")
+    evaluasi = df_merged.groupby("ticker").agg({
+        "benar": "mean",
+        "error_high": "mean",
+        "error_low": "mean"
+    }).rename(columns={
+        "benar": "akurasi",
+        "error_high": "mae_high",
+        "error_low": "mae_low"
+    }).to_dict(orient="index")
 
-    logging.info(f"Akurasi prediksi dihitung untuk {len(akurasi_per_ticker)} ticker.")
-    return akurasi_per_ticker
+    for ticker, metrik in evaluasi.items():
+        logging.debug(f"{ticker}: Akurasi={metrik['akurasi']:.2%}, MAE High={metrik['mae_high']:.2f}, MAE Low={metrik['mae_low']:.2f}")
+
+    logging.info(f"Evaluasi lengkap dihitung untuk {len(evaluasi)} ticker.")
+    return evaluasi
     
 def check_and_reset_model_if_needed(ticker, features):
     hash_path = f"model_feature_hashes.json"
