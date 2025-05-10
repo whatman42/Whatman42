@@ -1105,9 +1105,9 @@ def get_realized_price_data() -> pd.DataFrame:
 
     df_log = pd.read_csv(log_path)
 
-    # Debug optional
-    # print(df_log.columns)
-    # print(df_log.head())
+    # Debug: tampilkan kolom dan beberapa baris
+    print("Kolom dalam df_log:", df_log.columns.tolist())
+    print(df_log.head())
 
     if "tanggal" not in df_log.columns:
         raise ValueError("Kolom 'tanggal' tidak ditemukan dalam log data!")
