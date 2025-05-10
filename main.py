@@ -85,14 +85,40 @@ STOCK_LIST = [
 ]
 
 # === Logging Setup ===
+# === Logging Setup ===
 log_formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
 log_handler   = RotatingFileHandler("trading.log", maxBytes=5*1024*1024, backupCount=3)
 log_handler.setFormatter(log_formatter)
 logging.getLogger().addHandler(log_handler)
 logging.basicConfig(level=logging.INFO)
-def log_prediction(ticker: str, tanggal: str, pred_high: float, pred_low: float, harga_awal: float):
+
+# Cek dan update header file CSV
+def check_and_update_csv_header():
+    log_path = "prediksi_log.csv"
+    if os.path.exists(log_path):
+        df_log = pd.read_csv(log_path, header=None)
+        # Periksa jika header tidak sesuai
+        if df_log.shape[1] != 6:  # 6 kolom termasuk 'model'
+            logging.warning("Header CSV tidak sesuai, memperbarui header.")
+            df_log.columns = ["ticker", "tanggal", "predicted_price", "upper_bound", "lower_bound", "model"]
+            df_log.to_csv(log_path, index=False, header=True)
+        else:
+            logging.info("Header CSV sudah sesuai.")
+    else:
+        logging.warning("File prediksi_log.csv tidak ditemukan.")
+
+check_and_update_csv_header()
+
+def log_prediction(ticker: str, tanggal: str, pred_high: float, pred_low: float, harga_awal: float, model_name: str = "LightGBM-v1"):
+    # Tulis ke CSV
     with open("prediksi_log.csv", "a") as f:
-        f.write(f"{ticker},{tanggal},{harga_awal},{pred_high},{pred_low}\n")
+        f.write(f"{ticker},{tanggal},{harga_awal},{pred_high},{pred_low},{model_name}\n")
+    
+    # Tulis ke log file
+    logging.info(
+        f"[{model_name}] Prediksi {ticker} pada {tanggal} | Harga Awal: {harga_awal:.2f} | "
+        f"High: {pred_high:.2f} | Low: {pred_low:.2f}"
+    )
 
 # === Lock untuk Thread-Safe Model Saving ===
 model_save_lock = threading.Lock()
