@@ -1,73 +1,49 @@
-2025-05-09 15:21:18,259 - ERROR - Error mengambil data BAEK.JK: HTTP Error 404: 
-2025-05-09 15:21:18,272 - ERROR - BAEK.JK: Data saham tidak ditemukan atau kosong.
-2025-05-09 15:26:43,930 - WARNING - BLTZ.JK: Data kosong/kurang atau kolom tidak lengkap.
-2025-05-09 15:26:43,943 - ERROR - BLTZ.JK: Data saham tidak ditemukan atau kosong.
-2025-05-09 15:30:22,272 - WARNING - BOSS.JK: Data kosong/kurang atau kolom tidak lengkap.
-2025-05-09 15:30:22,272 - ERROR - BOSS.JK: Data saham tidak ditemukan atau kosong.
-2025-05-09 15:33:01,008 - WARNING - BTEL.JK: Data kosong/kurang atau kolom tidak lengkap.
-2025-05-09 15:33:01,008 - ERROR - BTEL.JK: Data saham tidak ditemukan atau kosong.
-2025-05-09 15:33:49,034 - ERROR - Error mengambil data BVSN.JK: HTTP Error 404: 
-2025-05-09 15:33:49,035 - ERROR - BVSN.JK: Data saham tidak ditemukan atau kosong.
-2025-05-09 15:36:27,989 - WARNING - CBMF.JK: Data kosong/kurang atau kolom tidak lengkap.
-2025-05-09 15:36:27,989 - ERROR - CBMF.JK: Data saham tidak ditemukan atau kosong.
-2025-05-09 15:40:03,526 - ERROR - $CNTX.JK: possibly delisted; no price data found  (period=180d)
-2025-05-09 15:40:03,527 - WARNING - CNTX.JK: Data kosong/kurang atau kolom tidak lengkap.
-2025-05-09 15:40:03,527 - ERROR - CNTX.JK: Data saham tidak ditemukan atau kosong.
-2025-05-09 15:40:04,688 - WARNING - COWL.JK: Data kosong/kurang atau kolom tidak lengkap.
-2025-05-09 15:40:04,692 - ERROR - COWL.JK: Data saham tidak ditemukan atau kosong.
-2025-05-09 15:42:02,575 - WARNING - DEAL.JK: Data kosong/kurang atau kolom tidak lengkap.
-2025-05-09 15:42:02,576 - ERROR - DEAL.JK: Data saham tidak ditemukan atau kosong.
-2025-05-09 15:42:02,797 - WARNING - DEFI.JK: Data kosong/kurang atau kolom tidak lengkap.
-2025-05-09 15:42:02,798 - ERROR - DEFI.JK: Data saham tidak ditemukan atau kosong.
-2025-05-09 15:46:18,426 - WARNING - DUCK.JK: Data kosong/kurang atau kolom tidak lengkap.
-2025-05-09 15:46:18,426 - ERROR - DUCK.JK: Data saham tidak ditemukan atau kosong.
-2025-05-09 15:50:39,511 - ERROR - $ERA.JK: possibly delisted; no price data found  (period=180d) (Yahoo error = "No data found, symbol may be delisted")
-2025-05-09 15:50:39,512 - WARNING - ERA.JK: Data kosong/kurang atau kolom tidak lengkap.
-2025-05-09 15:50:39,512 - ERROR - ERA.JK: Data saham tidak ditemukan atau kosong.
-2025-05-09 15:51:53,607 - WARNING - FASW.JK: Data kosong/kurang atau kolom tidak lengkap.
-2025-05-09 15:51:53,610 - ERROR - FASW.JK: Data saham tidak ditemukan atau kosong.
-2025-05-09 15:52:36,528 - WARNING - FISH.JK: Data kosong/kurang atau kolom tidak lengkap.
-2025-05-09 15:52:36,528 - ERROR - FISH.JK: Data saham tidak ditemukan atau kosong.
-2025-05-09 15:54:29,846 - WARNING - GAMA.JK: Data kosong/kurang atau kolom tidak lengkap.
-2025-05-09 15:54:29,846 - ERROR - GAMA.JK: Data saham tidak ditemukan atau kosong.
-2025-05-09 15:56:57,220 - WARNING - HDTX.JK: Data kosong/kurang atau kolom tidak lengkap.
-2025-05-09 15:56:57,222 - ERROR - HDTX.JK: Data saham tidak ditemukan atau kosong.
-2025-05-09 15:57:01,332 - ERROR - $HITS.JK: possibly delisted; no price data found  (period=1d)
-2025-05-09 15:57:01,333 - WARNING - HITS.JK: Data daily kosong saat ambil harga terbaru.
-2025-05-09 15:57:01,457 - WARNING - HKMU.JK: Data kosong/kurang atau kolom tidak lengkap.
-2025-05-09 15:57:01,459 - ERROR - HKMU.JK: Data saham tidak ditemukan atau kosong.
-2025-05-09 15:59:53,900 - ERROR - $INAF.JK: possibly delisted; no price data found  (period=180d)
-2025-05-09 15:59:53,900 - WARNING - INAF.JK: Data kosong/kurang atau kolom tidak lengkap.
-2025-05-09 15:59:53,900 - ERROR - INAF.JK: Data saham tidak ditemukan atau kosong.
-2025-05-09 16:12:07,761 - ERROR - $LIFE.JK: possibly delisted; no price data found  (period=1d)
-2025-05-09 16:12:07,762 - WARNING - LIFE.JK: Data daily kosong saat ambil harga terbaru.
-2025-05-09 16:14:46,289 - WARNING - MAPB.JK: Data kosong/kurang atau kolom tidak lengkap.
-2025-05-09 16:14:46,289 - ERROR - MAPB.JK: Data saham tidak ditemukan atau kosong.
-2025-05-09 16:14:50,727 - ERROR - $MASA.JK: possibly delisted; no price data found  (period=180d)
-2025-05-09 16:14:50,727 - WARNING - MASA.JK: Data kosong/kurang atau kolom tidak lengkap.
-2025-05-09 16:14:50,728 - ERROR - MASA.JK: Data saham tidak ditemukan atau kosong.
-2025-05-09 16:17:32,920 - ERROR - $MKNT.JK: possibly delisted; no price data found  (period=180d)
-2025-05-09 16:17:32,922 - WARNING - MKNT.JK: Data kosong/kurang atau kolom tidak lengkap.
-2025-05-09 16:17:32,923 - ERROR - MKNT.JK: Data saham tidak ditemukan atau kosong.
-2025-05-09 16:21:20,827 - ERROR - $NATO.JK: possibly delisted; no price data found  (period=1d)
-2025-05-09 16:21:20,827 - WARNING - NATO.JK: Data daily kosong saat ambil harga terbaru.
-2025-05-09 16:22:26,154 - WARNING - OMRE.JK: Data kosong/kurang atau kolom tidak lengkap.
-2025-05-09 16:22:26,154 - ERROR - OMRE.JK: Data saham tidak ditemukan atau kosong.
-2025-05-09 16:23:00,739 - WARNING - PCAR.JK: ATR tidak valid (semua nol atau kosong) setelah kalkulasi.
-2025-05-09 16:25:09,932 - WARNING - POOL.JK: Data kosong/kurang atau kolom tidak lengkap.
-2025-05-09 16:25:09,932 - ERROR - POOL.JK: Data saham tidak ditemukan atau kosong.
-2025-05-09 16:25:11,764 - ERROR - $PPRO.JK: possibly delisted; no price data found  (period=1d)
-2025-05-09 16:25:11,764 - WARNING - PPRO.JK: Data daily kosong saat ambil harga terbaru.
-2025-05-09 16:32:29,619 - ERROR - $SMCB.JK: possibly delisted; no price data found  (period=1d)
-2025-05-09 16:32:29,620 - WARNING - SMCB.JK: Data daily kosong saat ambil harga terbaru.
-2025-05-09 16:37:37,393 - WARNING - TIFA.JK: Data kosong/kurang atau kolom tidak lengkap.
-2025-05-09 16:37:37,395 - ERROR - TIFA.JK: Data saham tidak ditemukan atau kosong.
-2025-05-09 16:40:24,870 - ERROR - $TURI.JK: possibly delisted; no price data found  (period=180d) (Yahoo error = "No data found, symbol may be delisted")
-2025-05-09 16:40:24,870 - WARNING - TURI.JK: Data kosong/kurang atau kolom tidak lengkap.
-2025-05-09 16:40:24,871 - ERROR - TURI.JK: Data saham tidak ditemukan atau kosong.
-2025-05-09 16:42:10,782 - ERROR - $WIKA.JK: possibly delisted; no price data found  (period=1d)
-2025-05-09 16:42:10,783 - WARNING - WIKA.JK: Data daily kosong saat ambil harga terbaru.
-2025-05-09 16:42:55,993 - WARNING - WSKT.JK: Data kosong/kurang atau kolom tidak lengkap.
-2025-05-09 16:42:55,994 - ERROR - WSKT.JK: Data saham tidak ditemukan atau kosong.
-2025-05-09 16:42:56,322 - WARNING - YPAS.JK: Data kosong/kurang atau kolom tidak lengkap.
-2025-05-09 16:42:56,322 - ERROR - YPAS.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 00:45:41.622287: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.
+2025-05-10 00:45:41.625351: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.
+2025-05-10 00:45:41.633768: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1746837941.647500    2177 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1746837941.651771    2177 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1746837941.663202    2177 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1746837941.663313    2177 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1746837941.663318    2177 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1746837941.663321    2177 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2025-05-10 00:45:41.666825: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3805, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'tanggal'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/runner/work/Whatman42/Whatman42/main.py", line 1426, in <module>
+    results = list(executor.map(analyze_stock, STOCK_LIST))
+  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/concurrent/futures/_base.py", line 621, in result_iterator
+    yield _result_or_cancel(fs.pop())
+  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/concurrent/futures/_base.py", line 319, in _result_or_cancel
+    return fut.result(timeout)
+  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/concurrent/futures/_base.py", line 458, in result
+    return self.__get_result()
+  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/runner/work/Whatman42/Whatman42/main.py", line 911, in analyze_stock
+    check_and_reset_model_if_needed(ticker, features)
+  File "/home/runner/work/Whatman42/Whatman42/main.py", line 1251, in check_and_reset_model_if_needed
+    akurasi_map = evaluate_prediction_accuracy()
+  File "/home/runner/work/Whatman42/Whatman42/main.py", line 1167, in evaluate_prediction_accuracy
+    df_data = get_realized_price_data()
+  File "/home/runner/work/Whatman42/Whatman42/main.py", line 1107, in get_realized_price_data
+    df_log["tanggal"] = pd.to_datetime(df_log["tanggal"])
+  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/pandas/core/frame.py", line 4102, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3812, in get_loc
+    raise KeyError(key) from err
+KeyError: 'tanggal'
