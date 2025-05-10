@@ -91,68 +91,102 @@ log_handler.setFormatter(log_formatter)
 logging.getLogger().addHandler(log_handler)
 logging.basicConfig(level=logging.INFO)
 
-# Cek dan update header file CSV
+# === CSV Cleaning ===
 def clean_log_file():
     log_path = "prediksi_log.csv"
     if os.path.exists(log_path):
         with open(log_path, "r") as f:
             lines = f.readlines()
 
-        # Proses untuk memastikan tidak ada baris dengan jumlah kolom yang tidak sesuai
         cleaned_lines = []
         for line in lines:
-            # Pisahkan berdasarkan koma dan periksa apakah jumlah kolom sesuai
             cols = line.strip().split(',')
-            if len(cols) == 6:  # Jika ada 6 kolom, maka baris ini valid
+            if len(cols) == 6:
                 cleaned_lines.append(line)
             else:
-                logging.warning(f"Baris dengan jumlah kolom tidak sesuai ditemukan: {line.strip()}")
+                logging.warning(f"Baris tidak valid dihapus: {line.strip()}")
 
-        # Tulis ulang file yang sudah dibersihkan
         with open(log_path, "w") as f:
             f.writelines(cleaned_lines)
 
-clean_log_file()
-
+# === Header Validator ===
 def check_and_update_csv_header():
     log_path = "prediksi_log.csv"
-    expected_cols = ["ticker", "tanggal", "predicted_price", "upper_bound", "lower_bound", "model"]
+    expected_cols = ["ticker", "timestamp", "actual_close", "predicted_high", "predicted_low", "model"]
 
     if not os.path.exists(log_path):
         logging.warning("File prediksi_log.csv tidak ditemukan.")
         return
 
     try:
-        df_log = pd.read_csv(log_path, header=0)  # Asumsikan sudah ada header
+        df_log = pd.read_csv(log_path, header=0)
         if list(df_log.columns) != expected_cols:
             logging.warning("Header tidak sesuai, memperbarui header.")
-            df_log = pd.read_csv(log_path, header=None)  # Baca ulang tanpa header
-            if df_log.shape[1] == 5:
-                df_log.columns = expected_cols[:-1]  # Kolom tanpa 'model'
-                df_log["model"] = "unknown"
-            elif df_log.shape[1] == 6:
+            df_log = pd.read_csv(log_path, header=None)
+            if df_log.shape[1] == 6:
                 df_log.columns = expected_cols
+                df_log.to_csv(log_path, index=False, header=True)
             else:
                 logging.error(f"Jumlah kolom tidak dikenali: {df_log.shape[1]}")
-                return
-
-            df_log.to_csv(log_path, index=False, header=True)
-        else:
-            logging.info("Header CSV sudah sesuai.")
     except Exception as e:
-        logging.error(f"Gagal membaca atau memperbarui header: {e}")
+        logging.error(f"Gagal membaca/memperbarui header: {e}")
 
-def log_prediction(ticker: str, tanggal: str, pred_high: float, pred_low: float, harga_awal: float, model_name: str = "LightGBM-v1"):
+# === Prediction Logger ===
+def log_prediction(ticker: str, timestamp: str, pred_high: float, pred_low: float, actual_close: float, model_name: str = "LightGBM-v1"):
     file_exists = os.path.exists("prediksi_log.csv")
     with open("prediksi_log.csv", "a") as f:
         if not file_exists:
-            f.write("ticker,tanggal,predicted_price,upper_bound,lower_bound,model\n")
-        f.write(f"{ticker},{tanggal},{harga_awal},{pred_high},{pred_low},{model_name}\n")
-    
+            f.write("ticker,timestamp,actual_close,predicted_high,predicted_low,model\n")
+        f.write(f"{ticker},{timestamp},{actual_close},{pred_high},{pred_low},{model_name}\n")
+
     logging.info(
-        f"[{model_name}] Prediksi {ticker} pada {tanggal} | Harga Awal: {harga_awal:.2f} | "
+        f"[{model_name}] Prediksi {ticker} @ {timestamp} | Actual: {actual_close:.2f} | "
         f"High: {pred_high:.2f} | Low: {pred_low:.2f}"
     )
+
+# === Self-Learning Evaluator ===
+def evaluate_and_retrain():
+    log_path = "prediksi_log.csv"
+    if not os.path.exists(log_path):
+        logging.warning("File prediksi_log.csv tidak ditemukan untuk evaluasi.")
+        return
+
+    try:
+        df = pd.read_csv(log_path)
+        df.dropna(inplace=True)
+
+        df['error_high'] = abs(df['predicted_high'] - df['actual_close'])
+        df['error_low'] = abs(df['predicted_low'] - df['actual_close'])
+        df['error_avg'] = (df['error_high'] + df['error_low']) / 2
+
+        # Evaluasi per ticker
+        for ticker in df['ticker'].unique():
+            data_ticker = df[df['ticker'] == ticker].copy()
+            if len(data_ticker) < 10:
+                continue  # Skip jika datanya terlalu sedikit
+
+            mse = mean_squared_error(data_ticker['actual_close'], (data_ticker['predicted_high'] + data_ticker['predicted_low']) / 2)
+            mae = mean_absolute_error(data_ticker['actual_close'], (data_ticker['predicted_high'] + data_ticker['predicted_low']) / 2)
+            avg_error = data_ticker['error_avg'].mean()
+
+            logging.info(f"[{ticker}] Evaluasi | MSE: {mse:.2f} | MAE: {mae:.2f} | Avg Error: {avg_error:.2f}")
+
+            # Self-learning sederhana: retrain jika MAE terlalu besar
+            if mae > 5.0:
+                logging.info(f"[{ticker}] MAE tinggi. Melatih ulang model dummy LightGBM.")
+                model = LGBMRegressor()
+                features = data_ticker[['actual_close']].values  # Fitur dummy
+                targets = ((data_ticker['predicted_high'] + data_ticker['predicted_low']) / 2).values
+                model.fit(features, targets)
+                joblib.dump(model, f"model_{ticker}.pkl")
+                logging.info(f"[{ticker}] Model tersimpan: model_{ticker}.pkl")
+    except Exception as e:
+        logging.error(f"Gagal evaluasi self-learning: {e}")
+
+# Jalankan pembersihan dan validasi saat modul diimpor
+clean_log_file()
+check_and_update_csv_header()
+evaluate_and_retrain()
 
 # === Lock untuk Thread-Safe Model Saving ===
 model_save_lock = threading.Lock()
