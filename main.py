@@ -185,6 +185,19 @@ def get_stock_data(ticker: str) -> pd.DataFrame:
         logging.error(f"Error mengambil data {ticker}: {e}")
     return None
 
+import yfinance as yf
+
+def safe_download_data(ticker: str, start_date: str, end_date: str):
+    try:
+        df_price = yf.download(ticker, start=start_date, end=end_date, interval="1h", progress=False)
+        if df_price.empty:
+            logging.error(f"{ticker}: Data saham tidak ditemukan atau kosong.")
+            return None
+        return df_price
+    except Exception as e:
+        logging.error(f"{ticker}: Gagal download data saham. Error: {e}")
+        return None
+        
 def validate_raw_data(df: pd.DataFrame, required_columns=None, min_rows=100, ticker: str = "UNKNOWN") -> bool:
     if required_columns is None:
         required_columns = ["Open", "High", "Low", "Close", "Volume"]
