@@ -1103,12 +1103,15 @@ def get_realized_price_data() -> pd.DataFrame:
     if not os.path.exists(log_path):
         return pd.DataFrame()
 
-        print(df_log.columns)
-        print(df_log.head())
-        
     df_log = pd.read_csv(log_path)
+
+    # Debug optional
+    # print(df_log.columns)
+    # print(df_log.head())
+
     if "tanggal" not in df_log.columns:
-    raise ValueError("Kolom 'tanggal' tidak ditemukan dalam log data!")
+        raise ValueError("Kolom 'tanggal' tidak ditemukan dalam log data!")
+
     df_log["tanggal"] = pd.to_datetime(df_log["tanggal"])
     results = []
 
@@ -1134,7 +1137,7 @@ def get_realized_price_data() -> pd.DataFrame:
             print(f"Data kosong atau kolom hilang untuk {ticker}")
             continue
 
-        df_price.index = pd.to_datetime(df_price.index)  # pastikan datetime
+        df_price.index = pd.to_datetime(df_price.index)
         df_price = df_price.sort_index()
 
         for _, row in df_ticker.iterrows():
