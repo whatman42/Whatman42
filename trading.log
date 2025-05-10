@@ -1,38 +1,93 @@
-2025-05-10 02:40:29.380604: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.
-2025-05-10 02:40:29.383735: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.
-2025-05-10 02:40:29.392182: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-05-10 02:54:57.918077: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.
+2025-05-10 02:54:57.921203: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.
+2025-05-10 02:54:57.929610: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
-E0000 00:00:1746844829.406146    2196 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
-E0000 00:00:1746844829.410342    2196 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
-W0000 00:00:1746844829.421844    2196 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-W0000 00:00:1746844829.421864    2196 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-W0000 00:00:1746844829.421867    2196 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-W0000 00:00:1746844829.421869    2196 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-2025-05-10 02:40:29.425470: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+E0000 00:00:1746845697.943728    2143 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1746845697.947927    2143 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1746845697.959385    2143 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1746845697.959406    2143 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1746845697.959408    2143 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1746845697.959410    2143 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2025-05-10 02:54:57.963065: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
 To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+/home/runner/work/Whatman42/Whatman42/main.py:1155: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_high": float(df_window["High"].max()),
+/home/runner/work/Whatman42/Whatman42/main.py:1156: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_low": float(df_window["Low"].min())
+/home/runner/work/Whatman42/Whatman42/main.py:1155: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_high": float(df_window["High"].max()),
+/home/runner/work/Whatman42/Whatman42/main.py:1156: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_low": float(df_window["Low"].min())
+/home/runner/work/Whatman42/Whatman42/main.py:1155: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_high": float(df_window["High"].max()),
+/home/runner/work/Whatman42/Whatman42/main.py:1156: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_low": float(df_window["Low"].min())
+/home/runner/work/Whatman42/Whatman42/main.py:1155: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_high": float(df_window["High"].max()),
+/home/runner/work/Whatman42/Whatman42/main.py:1156: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_low": float(df_window["Low"].min())
+/home/runner/work/Whatman42/Whatman42/main.py:1155: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_high": float(df_window["High"].max()),
+/home/runner/work/Whatman42/Whatman42/main.py:1156: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_low": float(df_window["Low"].min())
+/home/runner/work/Whatman42/Whatman42/main.py:1155: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_high": float(df_window["High"].max()),
+/home/runner/work/Whatman42/Whatman42/main.py:1156: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_low": float(df_window["Low"].min())
+/home/runner/work/Whatman42/Whatman42/main.py:1155: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_high": float(df_window["High"].max()),
+/home/runner/work/Whatman42/Whatman42/main.py:1156: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_low": float(df_window["Low"].min())
+/home/runner/work/Whatman42/Whatman42/main.py:1155: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_high": float(df_window["High"].max()),
+/home/runner/work/Whatman42/Whatman42/main.py:1156: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_low": float(df_window["Low"].min())
+/home/runner/work/Whatman42/Whatman42/main.py:1155: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_high": float(df_window["High"].max()),
+/home/runner/work/Whatman42/Whatman42/main.py:1156: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_low": float(df_window["Low"].min())
+/home/runner/work/Whatman42/Whatman42/main.py:1155: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_high": float(df_window["High"].max()),
+/home/runner/work/Whatman42/Whatman42/main.py:1156: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_low": float(df_window["Low"].min())
+/home/runner/work/Whatman42/Whatman42/main.py:1155: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_high": float(df_window["High"].max()),
+/home/runner/work/Whatman42/Whatman42/main.py:1156: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_low": float(df_window["Low"].min())
+/home/runner/work/Whatman42/Whatman42/main.py:1155: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_high": float(df_window["High"].max()),
+/home/runner/work/Whatman42/Whatman42/main.py:1156: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_low": float(df_window["Low"].min())
+/home/runner/work/Whatman42/Whatman42/main.py:1155: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_high": float(df_window["High"].max()),
+/home/runner/work/Whatman42/Whatman42/main.py:1156: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_low": float(df_window["Low"].min())
+/home/runner/work/Whatman42/Whatman42/main.py:1155: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_high": float(df_window["High"].max()),
+/home/runner/work/Whatman42/Whatman42/main.py:1156: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_low": float(df_window["Low"].min())
+/home/runner/work/Whatman42/Whatman42/main.py:1155: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_high": float(df_window["High"].max()),
+/home/runner/work/Whatman42/Whatman42/main.py:1156: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_low": float(df_window["Low"].min())
 YF.download() has changed argument auto_adjust default to True
+Data kosong atau kolom hilang untuk WIKA.JK
+Data kosong atau kolom hilang untuk WIKA.JK
+Data kosong atau kolom hilang untuk WIKA.JK
+Data kosong atau kolom hilang untuk WIKA.JK
+Data kosong atau kolom hilang untuk TOWR.JK
+Data kosong atau kolom hilang untuk TOWR.JK
+Data kosong atau kolom hilang untuk TOWR.JK
+Data kosong atau kolom hilang untuk TOWR.JK
+Data kosong atau kolom hilang untuk HITS.JK
+Data kosong atau kolom hilang untuk HITS.JK
+Data kosong atau kolom hilang untuk HITS.JK
+Data kosong atau kolom hilang untuk HITS.JK
+Data kosong atau kolom hilang untuk WIKA.JK
+Data kosong atau kolom hilang untuk TOWR.JK
+Data kosong atau kolom hilang untuk HITS.JK
 Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/pandas/core/arrays/datetimelike.py", line 536, in _validate_comparison_value
-    self._check_compatible_with(other)
-  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/pandas/core/arrays/datetimes.py", line 540, in _check_compatible_with
-    self._assert_tzawareness_compat(other)
-  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/pandas/core/arrays/datetimes.py", line 786, in _assert_tzawareness_compat
-    raise TypeError(
-TypeError: Cannot compare tz-naive and tz-aware datetime-like objects
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/pandas/core/arrays/datetimelike.py", line 983, in _cmp_method
-    other = self._validate_comparison_value(other)
-  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/pandas/core/arrays/datetimelike.py", line 539, in _validate_comparison_value
-    raise InvalidComparison(other) from err
-pandas.errors.InvalidComparison: 2025-05-03 00:00:00
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/runner/work/Whatman42/Whatman42/main.py", line 1428, in <module>
+  File "/home/runner/work/Whatman42/Whatman42/main.py", line 1434, in <module>
     results = list(executor.map(analyze_stock, STOCK_LIST))
   File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/concurrent/futures/_base.py", line 621, in result_iterator
     yield _result_or_cancel(fs.pop())
@@ -46,24 +101,16 @@ Traceback (most recent call last):
     result = self.fn(*self.args, **self.kwargs)
   File "/home/runner/work/Whatman42/Whatman42/main.py", line 911, in analyze_stock
     check_and_reset_model_if_needed(ticker, features)
-  File "/home/runner/work/Whatman42/Whatman42/main.py", line 1253, in check_and_reset_model_if_needed
+  File "/home/runner/work/Whatman42/Whatman42/main.py", line 1259, in check_and_reset_model_if_needed
     akurasi_map = evaluate_prediction_accuracy()
-  File "/home/runner/work/Whatman42/Whatman42/main.py", line 1169, in evaluate_prediction_accuracy
-    df_data = get_realized_price_data()
-  File "/home/runner/work/Whatman42/Whatman42/main.py", line 1142, in get_realized_price_data
-    df_window = df_price.loc[(df_price.index >= start_window) & (df_price.index <= end_window)]
-  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/pandas/core/ops/common.py", line 76, in new_method
-    return method(self, other)
-  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/pandas/core/arraylike.py", line 60, in __ge__
-    return self._cmp_method(other, operator.ge)
-  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 7197, in _cmp_method
-    result = op(self._values, other)
-  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/pandas/core/ops/common.py", line 76, in new_method
-    return method(self, other)
-  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/pandas/core/arraylike.py", line 60, in __ge__
-    return self._cmp_method(other, operator.ge)
-  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/pandas/core/arrays/datetimelike.py", line 985, in _cmp_method
-    return invalid_comparison(self, other, op)
-  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/pandas/core/ops/invalid.py", line 40, in invalid_comparison
-    raise TypeError(f"Invalid comparison between dtype={left.dtype} and {typ}")
-TypeError: Invalid comparison between dtype=datetime64[ns, UTC] and Timestamp
+  File "/home/runner/work/Whatman42/Whatman42/main.py", line 1183, in evaluate_prediction_accuracy
+    df_merged = df_log.merge(df_data, on=["ticker", "tanggal"], how="inner")
+  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/pandas/core/frame.py", line 10832, in merge
+    return merge(
+  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/pandas/core/reshape/merge.py", line 170, in merge
+    op = _MergeOperation(
+  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/pandas/core/reshape/merge.py", line 807, in __init__
+    self._maybe_coerce_merge_keys()
+  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/pandas/core/reshape/merge.py", line 1522, in _maybe_coerce_merge_keys
+    raise ValueError(msg)
+ValueError: You are trying to merge on datetime64[ns] and datetime64[ns, Asia/Jakarta] columns for key 'tanggal'. If you wish to proceed you should use pd.concat
