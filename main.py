@@ -871,7 +871,6 @@ def analyze_stock(ticker: str):
         return None
 
     avg_volume = df["Volume"].tail(20).mean()
-    atr = df["ATR"].iloc[-1]
 
     if not is_stock_eligible(price, avg_volume, atr, ticker):
         logging.debug(f"{ticker}: Tidak memenuhi kriteria awal.")
@@ -953,13 +952,15 @@ def analyze_stock(ticker: str):
     ph_xgb = model_high_xgb.predict(X_last)[0]
     pl_xgb = model_low_xgb.predict(X_last)[0]
 
-    # Prediksi harga dari LSTM
-    ph_lstm = model_lstm.predict(np.reshape(X_last.values, (X_last.shape[0], X_last.shape[1], 1)))[0][0]
-    pl_lstm = model_lstm.predict(np.reshape(X_last.values, (X_last.shape[0], X_last.shape[1], 1)))[0][0]
+    # Prediksi harga dari LSTM (untuk HIGH saja)
+    pred_lstm = model_lstm.predict(np.reshape(X_last.values, (X_last.shape[0], X_last.shape[1], 1)))
+    ph_lstm = pred_lstm[0][0]
+
+    # pl_lstm tidak digunakan
 
     # Median Ensemble dari hasil prediksi
     ph = np.median([ph_lgb, ph_xgb, ph_lstm])
-    pl = np.median([pl_lgb, pl_xgb, pl_lstm])
+    pl = np.median([pl_lgb, pl_xgb])
 
     action = "beli" if (ph - price) / price > 0.02 else "jual"
     profit_potential_pct = (ph - price) / price * 100 if action == "beli" else (price - pl) / price * 100
