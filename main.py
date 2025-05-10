@@ -993,23 +993,24 @@ def analyze_stock(ticker: str):
     }
 
 def main():
+    # Jalankan analisis secara paralel untuk semua saham
     results = list(filter(None, executor.map(analyze_stock, STOCK_LIST)))
-    
+
     if not results:
         logging.warning("Tidak ada sinyal yang valid ditemukan.")
         return
 
-    # Urutkan berdasarkan potensi probabilitas tertinggi
-    results = sorted(results, key=lambda x: x["prob_success"], reverse=True)
+    # Urutkan hasil berdasarkan probabilitas sukses tertinggi
+    sorted_results = sorted(results, key=lambda x: x["prob_success"], reverse=True)
 
-    # Ambil Top N
-    top_n = 10
-    top_signals = results[:top_n]
+    # Ambil Top N sinyal terbaik
+    top_n = min(10, len(sorted_results))
+    top_signals = sorted_results[:top_n]
 
-    logging.info(f"{len(results)} sinyal dianalisis, menampilkan top {top_n}")
+    logging.info(f"{len(results)} sinyal dianalisis. Menampilkan top {top_n} sinyal terbaik.")
 
-    for r in top_signals:
-        print_signal(r)
+    for signal in top_signals:
+        print_signal(signal)
         
 def retrain_if_needed(ticker: str, mae_threshold_pct: float = 0.02):
     evaluasi_map = evaluate_prediction_accuracy()
