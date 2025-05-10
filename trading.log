@@ -1,27 +1,583 @@
-2025-05-10 09:48:05.141728: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.
-2025-05-10 09:48:05.144840: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.
-2025-05-10 09:48:05.153554: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
-WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
-E0000 00:00:1746870485.168040    2148 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
-E0000 00:00:1746870485.172182    2148 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
-W0000 00:00:1746870485.183785    2148 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-W0000 00:00:1746870485.183805    2148 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-W0000 00:00:1746870485.183807    2148 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-W0000 00:00:1746870485.183810    2148 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-2025-05-10 09:48:05.187312: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
-To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
-Traceback (most recent call last):
-  File "/home/runner/work/Whatman42/Whatman42/main.py", line 110, in <module>
-    check_and_update_csv_header()
-  File "/home/runner/work/Whatman42/Whatman42/main.py", line 103, in check_and_update_csv_header
-    df_log.columns = ["ticker", "tanggal", "predicted_price", "upper_bound", "lower_bound", "model"]
-  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/pandas/core/generic.py", line 6313, in __setattr__
-    return object.__setattr__(self, name, value)
-  File "properties.pyx", line 69, in pandas._libs.properties.AxisProperty.__set__
-  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/pandas/core/generic.py", line 814, in _set_axis
-    self._mgr.set_axis(axis, labels)
-  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/pandas/core/internals/managers.py", line 238, in set_axis
-    self._validate_set_axis(axis, new_labels)
-  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/pandas/core/internals/base.py", line 98, in _validate_set_axis
-    raise ValueError(
-ValueError: Length mismatch: Expected axis has 5 elements, new values have 6 elements
+2025-05-10 10:31:14,881 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
+2025-05-10 10:31:14,893 - WARNING - Data realisasi harga kosong.
+2025-05-10 10:31:14,900 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
+2025-05-10 10:32:03,275 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
+2025-05-10 10:32:03,281 - WARNING - Data realisasi harga kosong.
+2025-05-10 10:32:03,295 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
+2025-05-10 10:32:05,082 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
+2025-05-10 10:32:05,082 - WARNING - Data realisasi harga kosong.
+2025-05-10 10:32:05,088 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
+2025-05-10 10:32:20,017 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
+2025-05-10 10:32:20,018 - WARNING - Data realisasi harga kosong.
+2025-05-10 10:32:20,026 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
+2025-05-10 10:33:46,037 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
+2025-05-10 10:33:46,038 - WARNING - Data realisasi harga kosong.
+2025-05-10 10:33:46,045 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
+2025-05-10 10:34:06,262 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
+2025-05-10 10:34:06,263 - WARNING - Data realisasi harga kosong.
+2025-05-10 10:34:06,272 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
+2025-05-10 10:34:28,069 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
+2025-05-10 10:34:28,069 - WARNING - Data realisasi harga kosong.
+2025-05-10 10:34:28,077 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
+2025-05-10 10:34:49,598 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
+2025-05-10 10:34:49,598 - WARNING - Data realisasi harga kosong.
+2025-05-10 10:34:49,609 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
+2025-05-10 10:36:05,183 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
+2025-05-10 10:36:05,184 - WARNING - Data realisasi harga kosong.
+2025-05-10 10:36:05,189 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
+2025-05-10 10:36:18,863 - WARNING - BLTZ.JK: Data kosong/kurang atau kolom tidak lengkap.
+2025-05-10 10:36:18,864 - ERROR - BLTZ.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 10:36:22,212 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
+2025-05-10 10:36:22,212 - WARNING - Data realisasi harga kosong.
+2025-05-10 10:36:22,218 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
+2025-05-10 10:36:33,148 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
+2025-05-10 10:36:33,149 - WARNING - Data realisasi harga kosong.
+2025-05-10 10:36:33,158 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
+2025-05-10 10:36:55,437 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
+2025-05-10 10:36:55,437 - WARNING - Data realisasi harga kosong.
+2025-05-10 10:36:55,443 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
+2025-05-10 10:37:49,170 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
+2025-05-10 10:37:49,170 - WARNING - Data realisasi harga kosong.
+2025-05-10 10:37:49,176 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
+2025-05-10 10:38:25,447 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
+2025-05-10 10:38:25,451 - WARNING - Data realisasi harga kosong.
+2025-05-10 10:38:25,458 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
+2025-05-10 10:39:19,327 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:39:19,328 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:39:28,970 - WARNING - BOSS.JK: Data kosong/kurang atau kolom tidak lengkap.
+2025-05-10 10:39:28,972 - ERROR - BOSS.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 10:39:34,322 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:39:34,323 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:39:52,182 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:39:52,182 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:40:48,422 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:40:48,422 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:41:09,767 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:41:09,768 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:42:19,468 - WARNING - BTEL.JK: Data kosong/kurang atau kolom tidak lengkap.
+2025-05-10 10:42:19,468 - ERROR - BTEL.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 10:42:22,825 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:42:22,826 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:42:29,366 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:42:29,367 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:43:29,535 - ERROR - Error mengambil data BVSN.JK: HTTP Error 404: 
+2025-05-10 10:43:29,535 - ERROR - BVSN.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 10:43:33,635 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:43:33,638 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:43:50,718 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:43:50,719 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:44:34,244 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:44:34,246 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:45:14,394 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:45:14,395 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:45:49,666 - WARNING - CBMF.JK: Data kosong/kurang atau kolom tidak lengkap.
+2025-05-10 10:45:49,669 - ERROR - CBMF.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 10:45:52,065 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:45:52,066 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:46:10,472 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:46:10,473 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:46:55,565 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:46:55,565 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:46:57,429 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:46:57,430 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:47:03,169 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:47:03,170 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:48:49,292 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:48:49,293 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:48:54,188 - ERROR - $CNTX.JK: possibly delisted; no price data found  (period=180d)
+2025-05-10 10:48:54,191 - WARNING - CNTX.JK: Data kosong/kurang atau kolom tidak lengkap.
+2025-05-10 10:48:54,191 - ERROR - CNTX.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 10:48:55,489 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:48:55,492 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:49:02,381 - WARNING - COWL.JK: Data kosong/kurang atau kolom tidak lengkap.
+2025-05-10 10:49:02,381 - ERROR - COWL.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 10:49:03,623 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:49:03,623 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:49:47,611 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:49:47,612 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:50:30,736 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:50:30,738 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:51:15,058 - WARNING - DEAL.JK: Data kosong/kurang atau kolom tidak lengkap.
+2025-05-10 10:51:15,059 - ERROR - DEAL.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 10:51:15,269 - WARNING - DEFI.JK: Data kosong/kurang atau kolom tidak lengkap.
+2025-05-10 10:51:15,273 - ERROR - DEFI.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 10:51:17,669 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:51:17,670 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:51:27,939 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:51:27,939 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:51:43,008 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:51:43,009 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:52:54,071 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:52:54,072 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:53:17,158 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:53:17,158 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:54:08,479 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:54:08,480 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:54:25,298 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:54:25,302 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:55:31,264 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:55:31,264 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:55:38,385 - WARNING - DUCK.JK: Data kosong/kurang atau kolom tidak lengkap.
+2025-05-10 10:55:38,385 - ERROR - DUCK.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 10:55:41,822 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:55:41,822 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:56:29,688 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:56:29,689 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:57:09,496 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:57:09,496 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:58:07,439 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:58:07,440 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:58:20,524 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:58:20,525 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:58:41,848 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:58:41,848 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:59:31,804 - ERROR - $ERA.JK: possibly delisted; no price data found  (period=180d) (Yahoo error = "No data found, symbol may be delisted")
+2025-05-10 10:59:31,804 - WARNING - ERA.JK: Data kosong/kurang atau kolom tidak lengkap.
+2025-05-10 10:59:31,805 - ERROR - ERA.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 10:59:33,109 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 10:59:33,110 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:00:38,971 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:00:38,972 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:01:01,306 - WARNING - FASW.JK: Data kosong/kurang atau kolom tidak lengkap.
+2025-05-10 11:01:01,306 - ERROR - FASW.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 11:01:02,843 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:01:02,844 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:01:15,236 - WARNING - FISH.JK: Data kosong/kurang atau kolom tidak lengkap.
+2025-05-10 11:01:15,239 - ERROR - FISH.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 11:01:16,519 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:01:16,520 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:02:06,619 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:02:06,620 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:03:02,515 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:03:02,517 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:03:25,465 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:03:25,465 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:03:33,398 - WARNING - GAMA.JK: Data kosong/kurang atau kolom tidak lengkap.
+2025-05-10 11:03:33,398 - ERROR - GAMA.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 11:03:37,610 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:03:37,610 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:03:41,488 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:03:41,488 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:04:52,772 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:04:52,773 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:05:34,729 - WARNING - HDTX.JK: Data kosong/kurang atau kolom tidak lengkap.
+2025-05-10 11:05:34,730 - ERROR - HDTX.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 11:05:38,124 - ERROR - $HITS.JK: possibly delisted; no price data found  (period=1d)
+2025-05-10 11:05:38,125 - WARNING - HITS.JK: Data daily kosong saat ambil harga terbaru.
+2025-05-10 11:05:38,129 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:05:38,129 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:06:17,167 - WARNING - HKMU.JK: Data kosong/kurang atau kolom tidak lengkap.
+2025-05-10 11:06:17,167 - ERROR - HKMU.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 11:06:18,596 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:06:18,604 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:06:21,057 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:06:21,058 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:07:19,262 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:07:19,263 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:07:26,692 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:07:26,693 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:08:36,221 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:08:36,222 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:08:56,892 - ERROR - $INAF.JK: possibly delisted; no price data found  (period=180d)
+2025-05-10 11:08:56,892 - WARNING - INAF.JK: Data kosong/kurang atau kolom tidak lengkap.
+2025-05-10 11:08:56,893 - ERROR - INAF.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 11:08:57,966 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:08:57,968 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:09:59,395 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:09:59,397 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:10:05,144 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:10:05,145 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:10:53,760 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:10:53,791 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:10:53,923 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:10:53,924 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:12:47,337 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:12:47,337 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:12:51,454 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:12:51,456 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:13:32,147 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:13:32,149 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:13:38,859 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:13:38,859 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:15:23,124 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:15:23,124 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:15:27,804 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:15:27,805 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:15:34,429 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:15:34,431 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:15:48,522 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:15:48,523 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:17:05,523 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:17:05,523 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:18:01,693 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:18:01,696 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:18:07,204 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:18:07,205 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:18:26,955 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:18:26,956 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:19:52,182 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:19:52,183 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:20:35,053 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:20:35,053 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:20:46,797 - ERROR - $LIFE.JK: possibly delisted; no price data found  (period=1d)
+2025-05-10 11:20:46,798 - WARNING - LIFE.JK: Data daily kosong saat ambil harga terbaru.
+2025-05-10 11:20:49,302 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:20:49,302 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:20:58,109 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:20:58,110 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:22:32,723 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:22:32,724 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:22:40,501 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:22:40,501 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:23:22,135 - WARNING - MAPB.JK: Data kosong/kurang atau kolom tidak lengkap.
+2025-05-10 11:23:22,136 - ERROR - MAPB.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 11:23:23,697 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:23:23,698 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:23:45,069 - ERROR - $MASA.JK: possibly delisted; no price data found  (period=180d)
+2025-05-10 11:23:45,069 - WARNING - MASA.JK: Data kosong/kurang atau kolom tidak lengkap.
+2025-05-10 11:23:45,070 - ERROR - MASA.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 11:23:47,733 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:23:47,734 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:24:48,727 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:24:48,727 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:25:23,245 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:25:23,245 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:25:56,567 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:25:56,568 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:26:19,912 - ERROR - $MKNT.JK: possibly delisted; no price data found  (period=180d)
+2025-05-10 11:26:19,912 - WARNING - MKNT.JK: Data kosong/kurang atau kolom tidak lengkap.
+2025-05-10 11:26:19,912 - ERROR - MKNT.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 11:26:21,269 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:26:21,270 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:27:29,353 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:27:29,353 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:28:04,388 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:28:04,392 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:28:16,901 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:28:16,901 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:28:55,289 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:28:55,290 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:30:06,993 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:30:06,994 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:30:23,670 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:30:23,671 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:30:47,913 - WARNING - OMRE.JK: Data kosong/kurang atau kolom tidak lengkap.
+2025-05-10 11:30:47,914 - ERROR - OMRE.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 11:30:49,230 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:30:49,231 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:31:44,464 - WARNING - PCAR.JK: ATR tidak valid (semua nol atau kosong) setelah kalkulasi.
+2025-05-10 11:31:48,233 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:31:48,234 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:32:29,590 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:32:29,591 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:32:59,801 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:32:59,803 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:33:30,714 - WARNING - POOL.JK: Data kosong/kurang atau kolom tidak lengkap.
+2025-05-10 11:33:30,714 - ERROR - POOL.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 11:33:32,681 - ERROR - $PPRO.JK: possibly delisted; no price data found  (period=1d)
+2025-05-10 11:33:32,682 - WARNING - PPRO.JK: Data daily kosong saat ambil harga terbaru.
+2025-05-10 11:33:33,971 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:33:33,971 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:34:28,746 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:34:28,747 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:35:08,138 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:35:08,139 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:35:48,342 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:35:48,343 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:35:51,183 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:35:51,183 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:37:12,549 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:37:12,550 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:37:42,089 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:37:42,092 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:38:30,995 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:38:30,996 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:38:32,795 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:38:32,796 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:39:47,061 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:39:47,064 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:40:14,714 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:40:14,718 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:40:55,461 - ERROR - $SMCB.JK: possibly delisted; no price data found  (period=1d)
+2025-05-10 11:40:55,461 - WARNING - SMCB.JK: Data daily kosong saat ambil harga terbaru.
+2025-05-10 11:40:56,805 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:40:56,806 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:41:06,007 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:41:06,007 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:42:31,232 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:42:31,234 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:42:44,412 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:42:44,412 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:43:22,660 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:43:22,661 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:43:36,597 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:43:36,597 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:44:32,997 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:44:32,998 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:45:15,239 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:45:15,239 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:45:22,884 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:45:22,885 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:45:58,630 - WARNING - TIFA.JK: Data kosong/kurang atau kolom tidak lengkap.
+2025-05-10 11:45:58,631 - ERROR - TIFA.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 11:46:00,068 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:46:00,070 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:47:14,406 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:47:14,407 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:47:44,422 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:47:44,424 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:48:00,637 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:48:00,639 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:48:35,349 - ERROR - $TURI.JK: possibly delisted; no price data found  (period=180d) (Yahoo error = "No data found, symbol may be delisted")
+2025-05-10 11:48:35,350 - WARNING - TURI.JK: Data kosong/kurang atau kolom tidak lengkap.
+2025-05-10 11:48:35,350 - ERROR - TURI.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 11:48:37,024 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:48:37,024 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:49:23,619 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:49:23,622 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:50:32,688 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:50:32,689 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:50:33,653 - ERROR - $WIKA.JK: possibly delisted; no price data found  (period=1d)
+2025-05-10 11:50:33,654 - WARNING - WIKA.JK: Data daily kosong saat ambil harga terbaru.
+2025-05-10 11:50:33,656 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:50:33,657 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
+
+2025-05-10 11:51:21,649 - WARNING - WSKT.JK: Data kosong/kurang atau kolom tidak lengkap.
+2025-05-10 11:51:21,651 - ERROR - WSKT.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 11:51:21,799 - WARNING - YPAS.JK: Data kosong/kurang atau kolom tidak lengkap.
+2025-05-10 11:51:21,799 - ERROR - YPAS.JK: Data saham tidak ditemukan atau kosong.
