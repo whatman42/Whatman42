@@ -1797,6 +1797,50 @@ def reset_models():
     else:
         logging.info(f"Total {total_deleted} model dihapus.")
         
+def apply_self_learning_hook(ticker, model_paths, df_new, X_new, y_high_new, y_low_new):
+    def safe_load(path):
+        try:
+            if path.endswith(".keras"):
+                return keras.models.load_model(path)
+            return joblib.load(path)
+        except Exception as e:
+            logging.warning(f"Gagal load model {path}: {e}")
+            return None
+
+    def safe_save(model, path):
+        try:
+            if path.endswith(".keras"):
+                model.save(path)
+            else:
+                joblib.dump(model, path)
+        except Exception as e:
+            logging.error(f"Gagal simpan model {path}: {e}")
+
+    for model_name, model_path in model_paths.items():
+        model = safe_load(model_path)
+        if model is None:
+            continue
+
+        try:
+            if hasattr(model, "partial_fit"):
+                target = y_high_new if "high" in model_name else y_low_new
+                model.partial_fit(X_new, target)
+                logging.info(f"Model {model_name} diperbarui dengan partial_fit.")
+                safe_save(model, model_path)
+
+            elif model_path.endswith(".keras"):
+                # Adaptasi untuk LSTM
+                X_lstm = np.expand_dims(X_new.values, axis=1)
+                y_lstm = y_high_new.values if "high" in model_name else y_low_new.values
+                model.fit(X_lstm, y_lstm, epochs=3, batch_size=8, verbose=0)
+                logging.info(f"Model LSTM {model_name} fine-tuned.")
+                safe_save(model, model_path)
+
+            else:
+                logging.info(f"Model {model_name} tidak mendukung self-learning otomatis.")
+        except Exception as e:
+            logging.error(f"Error update {model_name}: {e}")
+        
 # === Daftar Kutipan Motivasi ===
 MOTIVATION_QUOTES = [
     "Setiap peluang adalah langkah kecil menuju kebebasan finansial.",
