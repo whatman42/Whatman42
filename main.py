@@ -110,11 +110,12 @@ def check_and_update_csv_header():
 check_and_update_csv_header()
 
 def log_prediction(ticker: str, tanggal: str, pred_high: float, pred_low: float, harga_awal: float, model_name: str = "LightGBM-v1"):
-    # Tulis ke CSV
+    file_exists = os.path.exists("prediksi_log.csv")
     with open("prediksi_log.csv", "a") as f:
+        if not file_exists:
+            f.write("ticker,tanggal,predicted_price,upper_bound,lower_bound,model\n")
         f.write(f"{ticker},{tanggal},{harga_awal},{pred_high},{pred_low},{model_name}\n")
     
-    # Tulis ke log file
     logging.info(
         f"[{model_name}] Prediksi {ticker} pada {tanggal} | Harga Awal: {harga_awal:.2f} | "
         f"High: {pred_high:.2f} | Low: {pred_low:.2f}"
