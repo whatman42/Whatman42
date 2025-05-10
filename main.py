@@ -1234,7 +1234,14 @@ def evaluate_prediction_accuracy() -> Dict[str, Dict[str, float]]:
         logging.info("Tidak ada prediksi yang cocok dengan data realisasi.")
         return {}
 
-    # Boolean akurasi dan MAE
+    # Hapus baris dengan nilai NaN penting
+    df_merged = df_merged.dropna(subset=["actual_high", "actual_low", "pred_high", "pred_low"])
+
+    if df_merged.empty:
+        logging.warning("Setelah pembersihan, tidak ada data valid untuk evaluasi.")
+        return {}
+
+    # Hitung metrik akurasi dan error
     df_merged["benar"] = (
         (df_merged["actual_high"] >= df_merged["pred_high"]) &
         (df_merged["actual_low"]  <= df_merged["pred_low"])
