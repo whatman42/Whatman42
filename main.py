@@ -1258,8 +1258,8 @@ def check_and_reset_model_if_needed(ticker, features):
     # Cek performa model (akurasi dan MAE)
     akurasi_map = evaluate_prediction_accuracy()
     mae_map = evaluate_prediction_mae()
-    akurasi = akurasi_map.get(ticker, 1.0)
-    mae = mae_map.get(ticker, 0.0)
+    akurasi = akurasi_map.get(ticker, {}).get("akurasi", 1.0)
+    mae = mae_map.get(ticker, {}).get("mae", 0.0)
 
     perlu_reset = (
         saved_hashes.get(ticker) != current_hash or
