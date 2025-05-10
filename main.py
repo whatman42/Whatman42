@@ -1238,7 +1238,7 @@ def evaluate_prediction_mae() -> Dict[str, float]:
     df_merged["mae_low"] = (df_merged["pred_low"] - df_merged["actual_low"]).abs()
     df_merged["mae_avg"] = (df_merged["mae_high"] + df_merged["mae_low"]) / 2
 
-    return df_merged.groupby("ticker")["mae_avg"].mean().to_dict()
+    return df_merged.groupby("ticker")["mae_avg"].mean().apply(lambda x: {"mae": x}).to_dict()
     
 def check_and_reset_model_if_needed(ticker, features):
     hash_path = f"model_feature_hashes.json"
