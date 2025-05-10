@@ -1594,6 +1594,24 @@ def update_models_with_incremental_learning_and_meta(ticker: str):
     X = df[features]
     y_high = df["future_high"]
     y_low = df["future_low"]
+    
+    # === Apply Self-Learning ke semua model ===
+    model_paths = {
+        "high_lgb": f"model_high_lgb_{ticker}.pkl",
+        "low_lgb": f"model_low_lgb_{ticker}.pkl",
+        "high_xgb": f"model_high_xgb_{ticker}.pkl",
+        "low_xgb": f"model_low_xgb_{ticker}.pkl",
+        "lstm": f"model_lstm_{ticker}.keras"
+    }
+
+    apply_self_learning_hook(
+        ticker=ticker,
+        model_paths=model_paths,
+        df_new=df,
+        X_new=X,
+        y_high_new=y_high,
+        y_low_new=y_low
+    )
 
     # Perbarui model dengan incremental learning (contoh: LightGBM)
     model_high_lgb = joblib.load(f"model_high_lgb_{ticker}.pkl")
