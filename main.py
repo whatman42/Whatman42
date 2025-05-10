@@ -85,7 +85,6 @@ STOCK_LIST = [
 ]
 
 # === Logging Setup ===
-# === Logging Setup ===
 log_formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
 log_handler   = RotatingFileHandler("trading.log", maxBytes=5*1024*1024, backupCount=3)
 log_handler.setFormatter(log_formatter)
