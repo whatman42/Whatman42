@@ -1014,7 +1014,7 @@ def main():
     for signal in top_signals:
         print_signal(signal)
         
-def retrain_if_needed(ticker: str, mae_threshold_pct: float = 0.02):
+def retrain_if_needed(ticker: str, mae_threshold_pct: float = 0.02, incremental=False):
     evaluasi_map = evaluate_prediction_accuracy()
     metrik = evaluasi_map.get(ticker, {})
     
@@ -1075,22 +1075,62 @@ def retrain_if_needed(ticker: str, mae_threshold_pct: float = 0.02):
         y_high = df["future_high"]
         y_low = df["future_low"]
         
-        # Latih model LightGBM
-        model_high_lgb = train_lightgbm(X, y_high)
-        joblib.dump(model_high_lgb, f"model_high_lgb_{ticker}.pkl")
+        # Incremental Learning untuk XGBoost
+        if incremental:
+            model_high_xgb = xgb.Booster()
+            model_low_xgb = xgb.Booster()
+            try:
+                model_high_xgb.load_model(f"model_high_xgb_{ticker}.json")
+                model_low_xgb.load_model(f"model_low_xgb_{ticker}.json")
+                logging.info(f"Melanjutkan pelatihan model XGBoost untuk {ticker}")
+            except Exception as e:
+                logging.info(f"{ticker}: Tidak dapat memuat model sebelumnya. Pelatihan dari awal.")
+                model_high_xgb = train_xgboost(X, y_high)
+                model_low_xgb = train_xgboost(X, y_low)
+            
+            # Lanjutkan pelatihan
+            dtrain_high = xgb.DMatrix(X, label=y_high)
+            model_high_xgb = xgb.train(params, dtrain_high, xgb_model=model_high_xgb)
+            model_high_xgb.save_model(f"model_high_xgb_{ticker}.json")
+            
+            dtrain_low = xgb.DMatrix(X, label=y_low)
+            model_low_xgb = xgb.train(params, dtrain_low, xgb_model=model_low_xgb)
+            model_low_xgb.save_model(f"model_low_xgb_{ticker}.json")
         
-        model_low_lgb = train_lightgbm(X, y_low)
-        joblib.dump(model_low_lgb, f"model_low_lgb_{ticker}.pkl")
+        else:
+            # Latih model baru untuk XGBoost jika tidak incremental
+            model_high_xgb = train_xgboost(X, y_high)
+            joblib.dump(model_high_xgb, f"model_high_xgb_{ticker}.pkl")
+            model_low_xgb = train_xgboost(X, y_low)
+            joblib.dump(model_low_xgb, f"model_low_xgb_{ticker}.pkl")
+        
+        # Incremental Learning untuk LightGBM
+        if incremental:
+            model_high_lgb = lgb.Booster(model_file=f"model_high_lgb_{ticker}.txt")
+            model_low_lgb = lgb.Booster(model_file=f"model_low_lgb_{ticker}.txt")
+            try:
+                logging.info(f"Melanjutkan pelatihan model LightGBM untuk {ticker}")
+            except Exception as e:
+                logging.info(f"{ticker}: Tidak dapat memuat model sebelumnya. Pelatihan dari awal.")
+                model_high_lgb = train_lightgbm(X, y_high)
+                model_low_lgb = train_lightgbm(X, y_low)
 
-        # Latih model XGBoost
-        model_high_xgb = train_xgboost(X, y_high)
-        joblib.dump(model_high_xgb, f"model_high_xgb_{ticker}.pkl")
+            train_data_high = lgb.Dataset(X, label=y_high)
+            model_high_lgb = lgb.train(params, train_data_high, init_model=model_high_lgb)
+            model_high_lgb.save_model(f"model_high_lgb_{ticker}.txt")
+
+            train_data_low = lgb.Dataset(X, label=y_low)
+            model_low_lgb = lgb.train(params, train_data_low, init_model=model_low_lgb)
+            model_low_lgb.save_model(f"model_low_lgb_{ticker}.txt")
         
-        model_low_xgb = train_xgboost(X, y_low)
-        joblib.dump(model_low_xgb, f"model_low_xgb_{ticker}.pkl")
+        else:
+            # Latih model baru untuk LightGBM jika tidak incremental
+            model_high_lgb = train_lightgbm(X, y_high)
+            joblib.dump(model_high_lgb, f"model_high_lgb_{ticker}.pkl")
+            model_low_lgb = train_lightgbm(X, y_low)
+            joblib.dump(model_low_lgb, f"model_low_lgb_{ticker}.pkl")
         
-        # Latih model LSTM
-        # Hyperparameter tuning untuk LSTM
+        # LSTM tidak mendukung incremental training secara langsung, pertimbangkan untuk menggunakan "fine-tuning"
         best_params = tune_lstm_hyperparameters_optuna(X, y_high)
         model_lstm = train_final_lstm_with_best_params(X, y_high, best_params)
         model_lstm.save(f"model_lstm_{ticker}.keras")
