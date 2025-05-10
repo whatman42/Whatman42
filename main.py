@@ -1106,7 +1106,8 @@ def get_realized_price_data() -> pd.DataFrame:
     df_log = pd.read_csv(log_path, names=["ticker", "tanggal", "predicted_price", "upper_bound", "lower_bound"])
     df_log.columns = df_log.columns.str.strip().str.lower()
 
-    df_log["tanggal"] = pd.to_datetime(df_log["tanggal"])
+    # Bikin kolom tanggal timezone-aware (WIB)
+    df_log["tanggal"] = pd.to_datetime(df_log["tanggal"]).dt.tz_localize("Asia/Jakarta")
     results = []
 
     for ticker in df_log["ticker"].unique():
@@ -1117,8 +1118,8 @@ def get_realized_price_data() -> pd.DataFrame:
         try:
             df_price = yf.download(
                 ticker,
-                start=start_date.strftime("%Y-%m-%d"),
-                end=end_date.strftime("%Y-%m-%d"),
+                start=start_date.tz_convert("UTC").strftime("%Y-%m-%d"),
+                end=end_date.tz_convert("UTC").strftime("%Y-%m-%d"),
                 interval="1h",
                 progress=False,
                 threads=False
@@ -1131,7 +1132,12 @@ def get_realized_price_data() -> pd.DataFrame:
             print(f"Data kosong atau kolom hilang untuk {ticker}")
             continue
 
+        # Pastikan index df_price timezone-aware dan convert ke Asia/Jakarta
         df_price.index = pd.to_datetime(df_price.index)
+        if df_price.index.tz is None:
+            df_price.index = df_price.index.tz_localize("UTC").tz_convert("Asia/Jakarta")
+        else:
+            df_price.index = df_price.index.tz_convert("Asia/Jakarta")
         df_price = df_price.sort_index()
 
         for _, row in df_ticker.iterrows():
