@@ -93,6 +93,28 @@ logging.getLogger().addHandler(log_handler)
 logging.basicConfig(level=logging.INFO)
 
 # Cek dan update header file CSV
+def clean_log_file():
+    log_path = "prediksi_log.csv"
+    if os.path.exists(log_path):
+        with open(log_path, "r") as f:
+            lines = f.readlines()
+
+        # Proses untuk memastikan tidak ada baris dengan jumlah kolom yang tidak sesuai
+        cleaned_lines = []
+        for line in lines:
+            # Pisahkan berdasarkan koma dan periksa apakah jumlah kolom sesuai
+            cols = line.strip().split(',')
+            if len(cols) == 6:  # Jika ada 6 kolom, maka baris ini valid
+                cleaned_lines.append(line)
+            else:
+                logging.warning(f"Baris dengan jumlah kolom tidak sesuai ditemukan: {line.strip()}")
+
+        # Tulis ulang file yang sudah dibersihkan
+        with open(log_path, "w") as f:
+            f.writelines(cleaned_lines)
+
+clean_log_file()
+
 def check_and_update_csv_header():
     log_path = "prediksi_log.csv"
     expected_cols = ["ticker", "tanggal", "predicted_price", "upper_bound", "lower_bound", "model"]
