@@ -1,15 +1,99 @@
-2025-05-10 02:54:57.918077: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.
-2025-05-10 02:54:57.921203: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.
-2025-05-10 02:54:57.929610: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-05-10 03:16:07.734951: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.
+2025-05-10 03:16:07.738096: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.
+2025-05-10 03:16:07.746591: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
-E0000 00:00:1746845697.943728    2143 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
-E0000 00:00:1746845697.947927    2143 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
-W0000 00:00:1746845697.959385    2143 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-W0000 00:00:1746845697.959406    2143 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-W0000 00:00:1746845697.959408    2143 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-W0000 00:00:1746845697.959410    2143 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-2025-05-10 02:54:57.963065: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+E0000 00:00:1746846967.760487    2153 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1746846967.764718    2153 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1746846967.776324    2153 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1746846967.776342    2153 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1746846967.776345    2153 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1746846967.776347    2153 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2025-05-10 03:16:07.779917: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
 To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+/home/runner/work/Whatman42/Whatman42/main.py:1155: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_high": float(df_window["High"].max()),
+/home/runner/work/Whatman42/Whatman42/main.py:1156: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_low": float(df_window["Low"].min())
+/home/runner/work/Whatman42/Whatman42/main.py:1155: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_high": float(df_window["High"].max()),
+/home/runner/work/Whatman42/Whatman42/main.py:1156: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_low": float(df_window["Low"].min())
+/home/runner/work/Whatman42/Whatman42/main.py:1155: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_high": float(df_window["High"].max()),
+/home/runner/work/Whatman42/Whatman42/main.py:1155: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_high": float(df_window["High"].max()),
+/home/runner/work/Whatman42/Whatman42/main.py:1156: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_low": float(df_window["Low"].min())
+/home/runner/work/Whatman42/Whatman42/main.py:1155: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_high": float(df_window["High"].max()),
+/home/runner/work/Whatman42/Whatman42/main.py:1156: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_low": float(df_window["Low"].min())
+/home/runner/work/Whatman42/Whatman42/main.py:1155: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_high": float(df_window["High"].max()),
+/home/runner/work/Whatman42/Whatman42/main.py:1156: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_low": float(df_window["Low"].min())
+/home/runner/work/Whatman42/Whatman42/main.py:1155: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_high": float(df_window["High"].max()),
+/home/runner/work/Whatman42/Whatman42/main.py:1156: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_low": float(df_window["Low"].min())
+/home/runner/work/Whatman42/Whatman42/main.py:1155: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_high": float(df_window["High"].max()),
+/home/runner/work/Whatman42/Whatman42/main.py:1156: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_low": float(df_window["Low"].min())
+/home/runner/work/Whatman42/Whatman42/main.py:1155: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_high": float(df_window["High"].max()),
+/home/runner/work/Whatman42/Whatman42/main.py:1156: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_low": float(df_window["Low"].min())
+/home/runner/work/Whatman42/Whatman42/main.py:1155: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_high": float(df_window["High"].max()),
+/home/runner/work/Whatman42/Whatman42/main.py:1155: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_high": float(df_window["High"].max()),
+/home/runner/work/Whatman42/Whatman42/main.py:1156: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_low": float(df_window["Low"].min())
+/home/runner/work/Whatman42/Whatman42/main.py:1155: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_high": float(df_window["High"].max()),
+/home/runner/work/Whatman42/Whatman42/main.py:1156: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_low": float(df_window["Low"].min())
+/home/runner/work/Whatman42/Whatman42/main.py:1155: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_high": float(df_window["High"].max()),
+/home/runner/work/Whatman42/Whatman42/main.py:1156: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_low": float(df_window["Low"].min())
+/home/runner/work/Whatman42/Whatman42/main.py:1155: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_high": float(df_window["High"].max()),
+/home/runner/work/Whatman42/Whatman42/main.py:1156: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_low": float(df_window["Low"].min())
+/home/runner/work/Whatman42/Whatman42/main.py:1155: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_high": float(df_window["High"].max()),
+/home/runner/work/Whatman42/Whatman42/main.py:1156: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_low": float(df_window["Low"].min())
+/home/runner/work/Whatman42/Whatman42/main.py:1155: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_high": float(df_window["High"].max()),
+/home/runner/work/Whatman42/Whatman42/main.py:1156: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_low": float(df_window["Low"].min())
+/home/runner/work/Whatman42/Whatman42/main.py:1155: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_high": float(df_window["High"].max()),
+/home/runner/work/Whatman42/Whatman42/main.py:1156: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_low": float(df_window["Low"].min())
+/home/runner/work/Whatman42/Whatman42/main.py:1155: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_high": float(df_window["High"].max()),
+/home/runner/work/Whatman42/Whatman42/main.py:1156: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_low": float(df_window["Low"].min())
+/home/runner/work/Whatman42/Whatman42/main.py:1155: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_high": float(df_window["High"].max()),
+/home/runner/work/Whatman42/Whatman42/main.py:1156: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_low": float(df_window["Low"].min())
+/home/runner/work/Whatman42/Whatman42/main.py:1155: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_high": float(df_window["High"].max()),
+/home/runner/work/Whatman42/Whatman42/main.py:1156: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_low": float(df_window["Low"].min())
+/home/runner/work/Whatman42/Whatman42/main.py:1155: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_high": float(df_window["High"].max()),
+/home/runner/work/Whatman42/Whatman42/main.py:1156: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_low": float(df_window["Low"].min())
+/home/runner/work/Whatman42/Whatman42/main.py:1155: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_high": float(df_window["High"].max()),
+/home/runner/work/Whatman42/Whatman42/main.py:1156: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+  "actual_low": float(df_window["Low"].min())
 /home/runner/work/Whatman42/Whatman42/main.py:1155: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
   "actual_high": float(df_window["High"].max()),
 /home/runner/work/Whatman42/Whatman42/main.py:1156: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
@@ -84,7 +168,28 @@ Data kosong atau kolom hilang untuk HITS.JK
 Data kosong atau kolom hilang untuk HITS.JK
 Data kosong atau kolom hilang untuk HITS.JK
 Data kosong atau kolom hilang untuk WIKA.JK
+Gagal download data untuk WIKA.JK: No objects to concatenate
+Data kosong atau kolom hilang untuk WIKA.JK
+Data kosong atau kolom hilang untuk WIKA.JK
 Data kosong atau kolom hilang untuk TOWR.JK
+Gagal download data untuk TOWR.JK: No objects to concatenate
+Data kosong atau kolom hilang untuk TOWR.JK
+Data kosong atau kolom hilang untuk TOWR.JK
+Data kosong atau kolom hilang untuk HITS.JK
+Data kosong atau kolom hilang untuk HITS.JK
+Data kosong atau kolom hilang untuk HITS.JK
+Data kosong atau kolom hilang untuk HITS.JK
+Data kosong atau kolom hilang untuk WIKA.JK
+Data kosong atau kolom hilang untuk WIKA.JK
+Data kosong atau kolom hilang untuk TOWR.JK
+Data kosong atau kolom hilang untuk TOWR.JK
+Data kosong atau kolom hilang untuk HITS.JK
+Data kosong atau kolom hilang untuk HITS.JK
+Data kosong atau kolom hilang untuk WIKA.JK
+Data kosong atau kolom hilang untuk WIKA.JK
+Data kosong atau kolom hilang untuk TOWR.JK
+Data kosong atau kolom hilang untuk TOWR.JK
+Data kosong atau kolom hilang untuk HITS.JK
 Data kosong atau kolom hilang untuk HITS.JK
 Traceback (most recent call last):
   File "/home/runner/work/Whatman42/Whatman42/main.py", line 1434, in <module>
@@ -101,9 +206,9 @@ Traceback (most recent call last):
     result = self.fn(*self.args, **self.kwargs)
   File "/home/runner/work/Whatman42/Whatman42/main.py", line 911, in analyze_stock
     check_and_reset_model_if_needed(ticker, features)
-  File "/home/runner/work/Whatman42/Whatman42/main.py", line 1259, in check_and_reset_model_if_needed
-    akurasi_map = evaluate_prediction_accuracy()
-  File "/home/runner/work/Whatman42/Whatman42/main.py", line 1183, in evaluate_prediction_accuracy
+  File "/home/runner/work/Whatman42/Whatman42/main.py", line 1260, in check_and_reset_model_if_needed
+    mae_map = evaluate_prediction_mae()
+  File "/home/runner/work/Whatman42/Whatman42/main.py", line 1233, in evaluate_prediction_mae
     df_merged = df_log.merge(df_data, on=["ticker", "tanggal"], how="inner")
   File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/pandas/core/frame.py", line 10832, in merge
     return merge(
