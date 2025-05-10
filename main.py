@@ -1142,12 +1142,11 @@ def retrain_if_needed(ticker: str, mae_threshold_pct: float = 0.02, incremental=
 def get_realized_price_data() -> pd.DataFrame:
     log_path = "prediksi_log.csv"
     if not os.path.exists(log_path):
+        logging.warning("File prediksi_log.csv tidak ditemukan.")
         return pd.DataFrame()
 
     df_log = pd.read_csv(log_path, names=["ticker", "tanggal", "predicted_price", "upper_bound", "lower_bound"])
     df_log.columns = df_log.columns.str.strip().str.lower()
-
-    # Bikin kolom tanggal timezone-aware (WIB)
     df_log["tanggal"] = pd.to_datetime(df_log["tanggal"], format='mixed', utc=True).dt.tz_convert("Asia/Jakarta")
     results = []
 
@@ -1166,14 +1165,13 @@ def get_realized_price_data() -> pd.DataFrame:
                 threads=False
             )
         except Exception as e:
-            print(f"Gagal download data untuk {ticker}: {e}")
+            logging.error(f"[{ticker}] Gagal download data: {e}")
             continue
 
         if df_price.empty or "High" not in df_price or "Low" not in df_price:
-            print(f"Data kosong atau kolom hilang untuk {ticker}")
+            logging.warning(f"[{ticker}] Data kosong atau kolom hilang.")
             continue
 
-        # Pastikan index df_price timezone-aware dan convert ke Asia/Jakarta
         df_price.index = pd.to_datetime(df_price.index)
         if df_price.index.tz is None:
             df_price.index = df_price.index.tz_localize("UTC").tz_convert("Asia/Jakarta")
@@ -1187,14 +1185,23 @@ def get_realized_price_data() -> pd.DataFrame:
             end_window = tanggal_prediksi + pd.Timedelta(days=2)
 
             df_window = df_price.loc[(df_price.index >= start_window) & (df_price.index <= end_window)]
-            if df_window.shape[0] < 3:
+
+            if df_window.shape[0] < 3 or df_window[["High", "Low"]].isna().all().all():
+                logging.warning(f"[{ticker}] Data prediksi {tanggal_prediksi.date()} tidak cukup untuk evaluasi.")
+                continue
+
+            actual_high = pd.to_numeric(df_window["High"], errors="coerce").max()
+            actual_low = pd.to_numeric(df_window["Low"], errors="coerce").min()
+
+            if pd.isna(actual_high) or pd.isna(actual_low):
+                logging.warning(f"[{ticker}] Nilai actual_high/low NaN pada {tanggal_prediksi.date()}")
                 continue
 
             results.append({
                 "ticker": ticker,
                 "tanggal": tanggal_prediksi,
-                "actual_high": pd.to_numeric(df_window["High"], errors="coerce").max(),
-                "actual_low": pd.to_numeric(df_window["Low"], errors="coerce").min()
+                "actual_high": actual_high,
+                "actual_low": actual_low
             })
 
     return pd.DataFrame(results)
