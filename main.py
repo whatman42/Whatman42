@@ -461,6 +461,41 @@ def tune_xgboost_hyperparameters_optuna(X_train, y_train, n_trials=50):
 
     return best_model, study.best_params
 
+#=== Pelatihan Final XGBoost ===
+def train_final_xgb_with_best_params(X_train, y_train, best_params):
+    model = xgb.XGBRegressor(**best_params)
+    model.fit(X_train, y_train)
+    return model
+    
+#=== Pelatihan Otomatis XGBoost ===
+def train_xgb_with_auto_tuning(X, y, ticker, force_retrain=False, n_trials=50):
+    import os
+    import json
+
+    param_path = f"xgb_best_params_{ticker}.json"
+    if os.path.exists(param_path) and not force_retrain:
+        with open(param_path, "r") as f:
+            best_params = json.load(f)
+        logging.info(f"Parameter XGBoost {ticker} dimuat dari file.")
+    else:
+        logging.info(f"Melakukan tuning hyperparameter XGBoost untuk {ticker}...")
+        model, best_params = tune_xgboost_hyperparameters_optuna(X, y, n_trials=n_trials)
+        with open(param_path, "w") as f:
+            json.dump(best_params, f, indent=2)
+        logging.info(f"Parameter terbaik disimpan ke {param_path}")
+
+    model = train_final_xgb_with_best_params(X, y, best_params)
+    joblib.dump(model, f"model_xgb_{ticker}.joblib")
+    logging.info(f"Model XGBoost {ticker} selesai dilatih dan disimpan.")
+    
+#=== Build Model XGBoost (Basic Wrapper) ===
+def build_xgb_model(X_train, y_train, params=None):
+    if params is None:
+        params = {'n_estimators': 100, 'learning_rate': 0.1, 'max_depth': 6}
+    model = xgb.XGBRegressor(**params)
+    model.fit(X_train, y_train)
+    return model
+    
 # === Hyperparameter Tuning untuk LightGBM ===
 def tune_lightgbm_hyperparameters_optuna(X_train, y_train, n_trials=50):
     def objective(trial):
@@ -492,6 +527,42 @@ def tune_lightgbm_hyperparameters_optuna(X_train, y_train, n_trials=50):
     best_model.fit(X_train, y_train)
 
     return best_model, study.best_params
+
+#=== Train Final LightGBM dengan Best Params ===
+def train_final_lgbm_with_best_params(X_train, y_train, best_params):
+    model = lgb.LGBMRegressor(**best_params, random_state=42)
+    model.fit(X_train, y_train)
+    return model
+    
+#=== Auto Tuning + Simpan/Load Parameter LightGBM ===
+def train_lgbm_with_auto_tuning(X, y, ticker, force_retrain=False, n_trials=50):
+    import os
+    import json
+
+    param_path = f"lgbm_best_params_{ticker}.json"
+
+    if os.path.exists(param_path) and not force_retrain:
+        with open(param_path, "r") as f:
+            best_params = json.load(f)
+        logging.info(f"Parameter LightGBM {ticker} dimuat dari file.")
+    else:
+        logging.info(f"Melakukan tuning hyperparameter LightGBM untuk {ticker}...")
+        model, best_params = tune_lightgbm_hyperparameters_optuna(X, y, n_trials=n_trials)
+        with open(param_path, "w") as f:
+            json.dump(best_params, f, indent=2)
+        logging.info(f"Parameter terbaik LightGBM disimpan ke {param_path}")
+
+    model = train_final_lgbm_with_best_params(X, y, best_params)
+    joblib.dump(model, f"model_lgbm_{ticker}.joblib")
+    logging.info(f"Model LightGBM {ticker} selesai dilatih dan disimpan.")
+    
+#=== Build LightGBM Model (Versi Ringan) ===
+def build_lgbm_model(X_train, y_train, params=None):
+    if params is None:
+        params = {'n_estimators': 100, 'learning_rate': 0.1, 'max_depth': 6}
+    model = lgb.LGBMRegressor(**params, random_state=42)
+    model.fit(X_train, y_train)
+    return model
 
 # === Hyperparameter Tuning untuk LSTM ===
 def tune_lstm_hyperparameters_optuna(X, y, n_trials=30):
