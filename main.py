@@ -95,19 +95,31 @@ logging.basicConfig(level=logging.INFO)
 # Cek dan update header file CSV
 def check_and_update_csv_header():
     log_path = "prediksi_log.csv"
-    if os.path.exists(log_path):
-        df_log = pd.read_csv(log_path, header=None)
-        # Periksa jika header tidak sesuai
-        if df_log.shape[1] != 6:  # 6 kolom termasuk 'model'
-            logging.warning("Header CSV tidak sesuai, memperbarui header.")
-            df_log.columns = ["ticker", "tanggal", "predicted_price", "upper_bound", "lower_bound", "model"]
+    expected_cols = ["ticker", "tanggal", "predicted_price", "upper_bound", "lower_bound", "model"]
+
+    if not os.path.exists(log_path):
+        logging.warning("File prediksi_log.csv tidak ditemukan.")
+        return
+
+    try:
+        df_log = pd.read_csv(log_path, header=0)  # Asumsikan sudah ada header
+        if list(df_log.columns) != expected_cols:
+            logging.warning("Header tidak sesuai, memperbarui header.")
+            df_log = pd.read_csv(log_path, header=None)  # Baca ulang tanpa header
+            if df_log.shape[1] == 5:
+                df_log.columns = expected_cols[:-1]  # Kolom tanpa 'model'
+                df_log["model"] = "unknown"
+            elif df_log.shape[1] == 6:
+                df_log.columns = expected_cols
+            else:
+                logging.error(f"Jumlah kolom tidak dikenali: {df_log.shape[1]}")
+                return
+
             df_log.to_csv(log_path, index=False, header=True)
         else:
             logging.info("Header CSV sudah sesuai.")
-    else:
-        logging.warning("File prediksi_log.csv tidak ditemukan.")
-
-check_and_update_csv_header()
+    except Exception as e:
+        logging.error(f"Gagal membaca atau memperbarui header: {e}")
 
 def log_prediction(ticker: str, tanggal: str, pred_high: float, pred_low: float, harga_awal: float, model_name: str = "LightGBM-v1"):
     file_exists = os.path.exists("prediksi_log.csv")
