@@ -1,83 +1,27 @@
-2025-05-10 09:23:04.716003: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.
-2025-05-10 09:23:04.719165: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.
-2025-05-10 09:23:04.727770: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-05-10 09:48:05.141728: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.
+2025-05-10 09:48:05.144840: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.
+2025-05-10 09:48:05.153554: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
-E0000 00:00:1746868984.741864    2167 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
-E0000 00:00:1746868984.746219    2167 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
-W0000 00:00:1746868984.757961    2167 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-W0000 00:00:1746868984.757977    2167 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-W0000 00:00:1746868984.757980    2167 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-W0000 00:00:1746868984.757982    2167 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-2025-05-10 09:23:04.761569: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+E0000 00:00:1746870485.168040    2148 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1746870485.172182    2148 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1746870485.183785    2148 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1746870485.183805    2148 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1746870485.183807    2148 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1746870485.183810    2148 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2025-05-10 09:48:05.187312: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
 To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
-YF.download() has changed argument auto_adjust default to True
 Traceback (most recent call last):
-  File "/home/runner/work/Whatman42/Whatman42/main.py", line 1798, in <module>
-    results = list(executor.map(analyze_stock, STOCK_LIST))
-  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/concurrent/futures/_base.py", line 621, in result_iterator
-    yield _result_or_cancel(fs.pop())
-  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/concurrent/futures/_base.py", line 319, in _result_or_cancel
-    return fut.result(timeout)
-  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/concurrent/futures/_base.py", line 458, in result
-    return self.__get_result()
-  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
-    raise self._exception
-  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/concurrent/futures/thread.py", line 58, in run
-    result = self.fn(*self.args, **self.kwargs)
-  File "/home/runner/work/Whatman42/Whatman42/main.py", line 912, in analyze_stock
-    check_and_reset_model_if_needed(ticker, features)
-  File "/home/runner/work/Whatman42/Whatman42/main.py", line 1623, in check_and_reset_model_if_needed
-    akurasi_map = evaluate_prediction_accuracy()
-  File "/home/runner/work/Whatman42/Whatman42/main.py", line 1223, in evaluate_prediction_accuracy
-    df_data = get_realized_price_data()
-  File "/home/runner/work/Whatman42/Whatman42/main.py", line 1193, in get_realized_price_data
-    actual_high = pd.to_numeric(df_window["High"], errors="coerce").max()
-  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/pandas/core/tools/numeric.py", line 206, in to_numeric
-    raise TypeError("arg must be a list, tuple, 1-d array, or Series")
-TypeError: arg must be a list, tuple, 1-d array, or Series
-song atau kolom hilang.
-2025-05-10 09:23:13,574 - ERROR - 
-1 Failed download:
-2025-05-10 09:23:13,574 - ERROR - ['MNCN.JK']: YFPricesMissingError('possibly delisted; no price data found  (1h 2025-05-03 -> 2025-05-05)')
-2025-05-10 09:23:13,576 - WARNING - [MNCN.JK] Data kosong atau kolom hilang.
-2025-05-10 09:23:13,599 - ERROR - 
-1 Failed download:
-2025-05-10 09:23:13,599 - ERROR - ['MNCN.JK']: YFPricesMissingError('possibly delisted; no price data found  (1h 2025-05-03 -> 2025-05-05)')
-2025-05-10 09:23:13,603 - WARNING - [MNCN.JK] Data kosong atau kolom hilang.
-2025-05-10 09:23:13,619 - ERROR - 
-1 Failed download:
-2025-05-10 09:23:13,619 - ERROR - ['MNCN.JK']: YFPricesMissingError('possibly delisted; no price data found  (1h 2025-05-03 -> 2025-05-05)')
-2025-05-10 09:23:13,621 - WARNING - [MNCN.JK] Data kosong atau kolom hilang.
-2025-05-10 09:23:13,623 - ERROR - 
-1 Failed download:
-2025-05-10 09:23:13,623 - ERROR - ['MNCN.JK']: YFPricesMissingError('possibly delisted; no price data found  (1h 2025-05-03 -> 2025-05-05)')
-2025-05-10 09:23:13,625 - WARNING - [MNCN.JK] Data kosong atau kolom hilang.
-2025-05-10 09:23:13,769 - WARNING - [KLBF.JK] Data prediksi 2025-05-03 tidak cukup untuk evaluasi.
-2025-05-10 09:23:13,793 - WARNING - [KLBF.JK] Data prediksi 2025-05-03 tidak cukup untuk evaluasi.
-2025-05-10 09:23:13,830 - WARNING - [KLBF.JK] Data prediksi 2025-05-03 tidak cukup untuk evaluasi.
-2025-05-10 09:23:13,833 - WARNING - [KLBF.JK] Data prediksi 2025-05-03 tidak cukup untuk evaluasi.
-2025-05-10 09:23:18,000 - WARNING - [JPFA.JK] Data prediksi 2025-05-02 tidak cukup untuk evaluasi.
-2025-05-10 09:23:18,015 - WARNING - [JPFA.JK] Data prediksi 2025-05-03 tidak cukup untuk evaluasi.
-2025-05-10 09:23:18,017 - ERROR - 
-1 Failed download:
-2025-05-10 09:23:18,017 - ERROR - ['AKRA.JK']: YFPricesMissingError('possibly delisted; no price data found  (1h 2025-05-03 -> 2025-05-05)')
-2025-05-10 09:23:18,019 - WARNING - [JPFA.JK] Data prediksi 2025-05-02 tidak cukup untuk evaluasi.
-2025-05-10 09:23:18,021 - WARNING - [JPFA.JK] Data prediksi 2025-05-03 tidak cukup untuk evaluasi.
-2025-05-10 09:23:18,021 - WARNING - [AKRA.JK] Data kosong atau kolom hilang.
-2025-05-10 09:23:18,023 - ERROR - 
-1 Failed download:
-2025-05-10 09:23:18,024 - ERROR - 
-1 Failed download:
-2025-05-10 09:23:18,024 - ERROR - ['MNCN.JK']: YFPricesMissingError('possibly delisted; no price data found  (1h 2025-05-03 -> 2025-05-05)')
-2025-05-10 09:23:18,025 - ERROR - ['MNCN.JK']: YFPricesMissingError('possibly delisted; no price data found  (1h 2025-05-03 -> 2025-05-05)')
-2025-05-10 09:23:18,027 - WARNING - [AKRA.JK] Data kosong atau kolom hilang.
-2025-05-10 09:23:18,030 - WARNING - [MNCN.JK] Data kosong atau kolom hilang.
-2025-05-10 09:23:18,041 - ERROR - 
-1 Failed download:
-2025-05-10 09:23:18,041 - ERROR - ['MNCN.JK']: YFPricesMissingError('possibly delisted; no price data found  (1h 2025-05-03 -> 2025-05-05)')
-2025-05-10 09:23:18,044 - ERROR - 
-1 Failed download:
-2025-05-10 09:23:18,045 - ERROR - ['MNCN.JK']: YFPricesMissingError('possibly delisted; no price data found  (1h 2025-05-03 -> 2025-05-05)')
-2025-05-10 09:23:18,051 - WARNING - [MNCN.JK] Data prediksi 2025-05-03 tidak cukup untuk evaluasi.
-2025-05-10 09:23:18,066 - WARNING - [KLBF.JK] Data prediksi 2025-05-03 tidak cukup untuk evaluasi.
-2025-05-10 09:23:18,070 - WARNING - [KLBF.JK] Data prediksi 2025-05-03 tidak cukup untuk evaluasi.
+  File "/home/runner/work/Whatman42/Whatman42/main.py", line 110, in <module>
+    check_and_update_csv_header()
+  File "/home/runner/work/Whatman42/Whatman42/main.py", line 103, in check_and_update_csv_header
+    df_log.columns = ["ticker", "tanggal", "predicted_price", "upper_bound", "lower_bound", "model"]
+  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/pandas/core/generic.py", line 6313, in __setattr__
+    return object.__setattr__(self, name, value)
+  File "properties.pyx", line 69, in pandas._libs.properties.AxisProperty.__set__
+  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/pandas/core/generic.py", line 814, in _set_axis
+    self._mgr.set_axis(axis, labels)
+  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/pandas/core/internals/managers.py", line 238, in set_axis
+    self._validate_set_axis(axis, new_labels)
+  File "/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/pandas/core/internals/base.py", line 98, in _validate_set_axis
+    raise ValueError(
+ValueError: Length mismatch: Expected axis has 5 elements, new values have 6 elements
