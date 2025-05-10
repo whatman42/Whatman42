@@ -978,7 +978,7 @@ def analyze_stock(ticker: str):
         logging.info(f"{ticker} dilewati: potensi profit rendah ({profit_potential_pct:.2f}%)")
         return None
 
-    tanggal = pd.Timestamp.now().strftime("%Y-%m-%d")
+    tanggal = pd.Timestamp.now(tz="Asia/Jakarta")
     log_prediction(ticker, tanggal, ph, pl, price)
 
     return {
