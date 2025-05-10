@@ -1172,9 +1172,29 @@ def get_realized_price_data() -> pd.DataFrame:
         logging.warning("File prediksi_log.csv tidak ditemukan.")
         return pd.DataFrame()
 
-    df_log = pd.read_csv(log_path, names=["ticker", "tanggal", "predicted_price", "upper_bound", "lower_bound"])
+    try:
+        df_log = pd.read_csv(log_path)
+    except Exception as e:
+        logging.error(f"Gagal membaca {log_path}: {e}")
+        return pd.DataFrame()
+
+    # Validasi kolom yang wajib ada
+    expected_columns = {"ticker", "tanggal", "predicted_price", "upper_bound", "lower_bound"}
+    actual_columns = set(df_log.columns.str.strip().str.lower())
+
+    if not expected_columns.issubset(actual_columns):
+        logging.error(f"Kolom CSV tidak sesuai. Kolom yang ditemukan: {actual_columns}")
+        return pd.DataFrame()
+
+    # Normalisasi nama kolom
     df_log.columns = df_log.columns.str.strip().str.lower()
-    df_log["tanggal"] = pd.to_datetime(df_log["tanggal"], format='mixed', utc=True).dt.tz_convert("Asia/Jakarta")
+    df_log["tanggal"] = pd.to_datetime(df_log["tanggal"], format="mixed", utc=True, errors="coerce")
+
+    if df_log["tanggal"].isna().all():
+        logging.error("Semua entri tanggal gagal dikonversi.")
+        return pd.DataFrame()
+
+    df_log["tanggal"] = df_log["tanggal"].dt.tz_convert("Asia/Jakarta")
     results = []
 
     for ticker in df_log["ticker"].unique():
