@@ -1281,6 +1281,131 @@ def evaluate_prediction_mae() -> Dict[str, float]:
 
     return df_merged.groupby("ticker")["mae_avg"].mean().apply(lambda x: {"mae": x}).to_dict()
     
+def get_model_predictions(ticker: str, X: pd.DataFrame):
+    # Muat model
+    model_high_lgb = joblib.load(f"model_high_lgb_{ticker}.pkl")
+    model_low_lgb = joblib.load(f"model_low_lgb_{ticker}.pkl")
+    model_high_xgb = joblib.load(f"model_high_xgb_{ticker}.pkl")
+    model_low_xgb = joblib.load(f"model_low_xgb_{ticker}.pkl")
+    model_lstm = keras.models.load_model(f"model_lstm_{ticker}.keras")
+    
+    # Prediksi dari model LightGBM, XGBoost, dan LSTM
+    pred_high_lgb = model_high_lgb.predict(X)
+    pred_low_lgb = model_low_lgb.predict(X)
+    
+    pred_high_xgb = model_high_xgb.predict(X)
+    pred_low_xgb = model_low_xgb.predict(X)
+    
+    pred_lstm = model_lstm.predict(X)
+    
+    return {
+        'high_lgb': pred_high_lgb,
+        'low_lgb': pred_low_lgb,
+        'high_xgb': pred_high_xgb,
+        'low_xgb': pred_low_xgb,
+        'lstm': pred_lstm
+    }
+    
+def meta_learner(ticker: str, X: pd.DataFrame, y_high: pd.DataFrame, y_low: pd.DataFrame):
+    # Dapatkan prediksi dari masing-masing model
+    model_predictions = get_model_predictions(ticker, X)
+    
+    # Gabungkan prediksi untuk model high dan low
+    X_meta = pd.DataFrame({
+        'high_lgb': model_predictions['high_lgb'],
+        'low_lgb': model_predictions['low_lgb'],
+        'high_xgb': model_predictions['high_xgb'],
+        'low_xgb': model_predictions['low_xgb'],
+        'lstm': model_predictions['lstm']
+    })
+    
+    # Target untuk model meta-learner adalah nilai sebenarnya dari harga tinggi dan rendah
+    y_meta_high = y_high
+    y_meta_low = y_low
+    
+    # Latih model meta-learner untuk memprediksi harga tertinggi dan terendah
+    meta_model_high = LogisticRegression()  # Bisa diganti dengan model lain, misalnya Random Forest, XGBoost, dll.
+    meta_model_high.fit(X_meta, y_meta_high)
+    
+    meta_model_low = LogisticRegression()
+    meta_model_low.fit(X_meta, y_meta_low)
+    
+    return meta_model_high, meta_model_low
+    
+def select_best_model(ticker: str, X: pd.DataFrame, y_high: pd.DataFrame, y_low: pd.DataFrame):
+    # Latih meta-learner
+    meta_model_high, meta_model_low = meta_learner(ticker, X, y_high, y_low)
+    
+    # Prediksi menggunakan meta-learner
+    model_predictions = get_model_predictions(ticker, X)
+    X_meta = pd.DataFrame({
+        'high_lgb': model_predictions['high_lgb'],
+        'low_lgb': model_predictions['low_lgb'],
+        'high_xgb': model_predictions['high_xgb'],
+        'low_xgb': model_predictions['low_xgb'],
+        'lstm': model_predictions['lstm']
+    })
+    
+    meta_pred_high = meta_model_high.predict(X_meta)
+    meta_pred_low = meta_model_low.predict(X_meta)
+    
+    # Evaluasi prediksi dari meta-learner
+    mae_meta_high = mean_absolute_error(y_high, meta_pred_high)
+    mae_meta_low = mean_absolute_error(y_low, meta_pred_low)
+    
+    # Pilih model berdasarkan kinerja (misalnya, jika meta-learner lebih baik dari masing-masing model individu)
+    if mae_meta_high < min(mean_absolute_error(y_high, model_predictions['high_lgb']),
+                           mean_absolute_error(y_high, model_predictions['high_xgb']),
+                           mean_absolute_error(y_high, model_predictions['lstm'])):
+        logging.info("Meta-learner memilih prediksi harga tertinggi.")
+        return meta_pred_high
+    else:
+        # Jika meta-learner tidak lebih baik, pilih model terbaik
+        logging.info("Memilih model terbaik untuk harga tertinggi.")
+        return model_predictions['high_lgb']  # Ganti dengan model terbaik sesuai evaluasi
+        
+def retrain_if_needed_with_meta(ticker: str, mae_threshold_pct: float = 0.02):
+    evaluasi_map = evaluate_prediction_accuracy()
+    metrik = evaluasi_map.get(ticker, {})
+    
+    akurasi = metrik.get("akurasi", 1.0)
+    mae_high = metrik.get("mae_high", 0)
+    mae_low = metrik.get("mae_low", 0)
+
+    # Ambil harga saat ini sebagai basis MAE threshold
+    df_now = get_stock_data(ticker)
+    if df_now is None or df_now.empty:
+        logging.error(f"{ticker}: Data saham tidak ditemukan atau kosong.")
+        return
+
+    harga_now = df_now["Close"].iloc[-1]
+    mae_threshold = harga_now * mae_threshold_pct
+
+    if akurasi < 0.80 or mae_high > mae_threshold or mae_low > mae_threshold:
+        logging.info(f"Retraining diperlukan untuk {ticker} - Akurasi: {akurasi:.2%}, MAE High: {mae_high:.2f}, MAE Low: {mae_low:.2f}")
+
+        df = calculate_indicators(df_now)
+        df = df.dropna(subset=["future_high", "future_low"])
+        
+        # Tentukan fitur yang akan digunakan
+        features = [
+            "Close", "is_opening_hour", "is_closing_hour", "return_prev_day", "gap_close",
+            "daily_avg", "daily_std", "daily_range", "zscore", "ATR", "OBV", "OBV_MA_5",
+            "EMA_5", "EMA_10", "SMA_5", "RSI", "CCI", "ADX", "BB_Upper", "BB_Lower", "future_high", "future_low"
+        ]
+        
+        X = df[features]
+        y_high = df["future_high"]
+        y_low = df["future_low"]
+
+        # Retrain model dan meta-learner
+        retrain_if_needed(ticker, mae_threshold_pct)  # Retraining model individu
+        select_best_model(ticker, X, y_high, y_low)  # Memilih model terbaik menggunakan meta-learner
+        
+        logging.info(f"Model untuk {ticker} telah dilatih ulang dan dipilih dengan meta-learner.")
+    else:
+        logging.info(f"Akurasi model {ticker} sudah cukup baik ({akurasi:.2%}), tidak perlu retraining.")
+        
 def check_and_reset_model_if_needed(ticker, features):
     hash_path = f"model_feature_hashes.json"
     current_hash = hashlib.md5(json.dumps(features, sort_keys=True).encode()).hexdigest()
