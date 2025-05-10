@@ -1406,6 +1406,107 @@ def retrain_if_needed_with_meta(ticker: str, mae_threshold_pct: float = 0.02):
     else:
         logging.info(f"Akurasi model {ticker} sudah cukup baik ({akurasi:.2%}), tidak perlu retraining.")
         
+def update_models_with_incremental_learning_and_meta(ticker: str):
+    # Ambil data baru untuk incremental learning
+    df_now = get_stock_data(ticker)
+    if df_now is None or df_now.empty:
+        logging.error(f"{ticker}: Data saham tidak ditemukan atau kosong.")
+        return
+
+    df = calculate_indicators(df_now)
+    df = df.dropna(subset=["future_high", "future_low"])
+    
+    features = [
+        "Close", "is_opening_hour", "is_closing_hour", "return_prev_day", "gap_close",
+        "daily_avg", "daily_std", "daily_range", "zscore", "ATR", "OBV", "OBV_MA_5",
+        "EMA_5", "EMA_10", "SMA_5", "RSI", "CCI", "ADX", "BB_Upper", "BB_Lower", "future_high", "future_low"
+    ]
+    X = df[features]
+    y_high = df["future_high"]
+    y_low = df["future_low"]
+
+    # Perbarui model dengan incremental learning (contoh: LightGBM)
+    model_high_lgb = joblib.load(f"model_high_lgb_{ticker}.pkl")
+    model_low_lgb = joblib.load(f"model_low_lgb_{ticker}.pkl")
+    model_high_xgb = joblib.load(f"model_high_xgb_{ticker}.pkl")
+    model_low_xgb = joblib.load(f"model_low_xgb_{ticker}.pkl")
+    model_lstm = keras.models.load_model(f"model_lstm_{ticker}.keras")
+
+    # Update model dengan data baru (incremental learning)
+    model_high_lgb = incremental_learning(model_high_lgb, X, y_high)
+    model_low_lgb = incremental_learning(model_low_lgb, X, y_low)
+    model_high_xgb = incremental_learning(model_high_xgb, X, y_high)
+    model_low_xgb = incremental_learning(model_low_xgb, X, y_low)
+    model_lstm = incremental_learning(model_lstm, X, y_high)
+
+    # Simpan model yang telah diperbarui
+    joblib.dump(model_high_lgb, f"model_high_lgb_{ticker}.pkl")
+    joblib.dump(model_low_lgb, f"model_low_lgb_{ticker}.pkl")
+    joblib.dump(model_high_xgb, f"model_high_xgb_{ticker}.pkl")
+    joblib.dump(model_low_xgb, f"model_low_xgb_{ticker}.pkl")
+    model_lstm.save(f"model_lstm_{ticker}.keras")
+
+    # Retrain dengan meta-learner setelah pembaruan model
+    retrain_with_meta(ticker)
+    
+def retrain_and_select_best_model(ticker: str, mae_threshold_pct: float = 0.02):
+    evaluasi_map = evaluate_prediction_accuracy()
+    metrik = evaluasi_map.get(ticker, {})
+    
+    akurasi = metrik.get("akurasi", 1.0)
+    mae_high = metrik.get("mae_high", 0)
+    mae_low = metrik.get("mae_low", 0)
+
+    # Ambil harga saat ini sebagai basis MAE threshold
+    df_now = get_stock_data(ticker)
+    if df_now is None or df_now.empty:
+        logging.error(f"{ticker}: Data saham tidak ditemukan atau kosong.")
+        return
+
+    harga_now = df_now["Close"].iloc[-1]
+    mae_threshold = harga_now * mae_threshold_pct
+
+    if akurasi < 0.80 or mae_high > mae_threshold or mae_low > mae_threshold:
+        logging.info(f"Retraining diperlukan untuk {ticker} - Akurasi: {akurasi:.2%}, MAE High: {mae_high:.2f}, MAE Low: {mae_low:.2f}")
+
+        df = calculate_indicators(df_now)
+        df = df.dropna(subset=["future_high", "future_low"])
+
+        features = [
+            "Close", "is_opening_hour", "is_closing_hour", "return_prev_day", "gap_close",
+            "daily_avg", "daily_std", "daily_range", "zscore", "ATR", "OBV", "OBV_MA_5",
+            "EMA_5", "EMA_10", "SMA_5", "RSI", "CCI", "ADX", "BB_Upper", "BB_Lower", "future_high", "future_low"
+        ]
+        
+        X = df[features]
+        y_high = df["future_high"]
+        y_low = df["future_low"]
+
+        # Latih atau update model individu
+        model_high_lgb = train_lightgbm(X, y_high)
+        joblib.dump(model_high_lgb, f"model_high_lgb_{ticker}.pkl")
+        
+        model_low_lgb = train_lightgbm(X, y_low)
+        joblib.dump(model_low_lgb, f"model_low_lgb_{ticker}.pkl")
+
+        model_high_xgb = train_xgboost(X, y_high)
+        joblib.dump(model_high_xgb, f"model_high_xgb_{ticker}.pkl")
+        
+        model_low_xgb = train_xgboost(X, y_low)
+        joblib.dump(model_low_xgb, f"model_low_xgb_{ticker}.pkl")
+
+        # Model LSTM juga dilatih dengan data baru
+        best_params = tune_lstm_hyperparameters_optuna(X, y_high)
+        model_lstm = train_final_lstm_with_best_params(X, y_high, best_params)
+        model_lstm.save(f"model_lstm_{ticker}.keras")
+
+        # Setelah retraining, gunakan meta-learner untuk memilih model terbaik
+        selected_model = select_best_model(ticker, X, y_high, y_low)  # Memilih model terbaik
+        
+        logging.info(f"Model terbaik untuk {ticker} telah dipilih dan disimpan: {selected_model}")
+    else:
+        logging.info(f"Akurasi model {ticker} sudah cukup baik ({akurasi:.2%}), tidak perlu retraining.")
+        
 def check_and_reset_model_if_needed(ticker, features):
     hash_path = f"model_feature_hashes.json"
     current_hash = hashlib.md5(json.dumps(features, sort_keys=True).encode()).hexdigest()
