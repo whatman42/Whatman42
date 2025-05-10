@@ -1103,14 +1103,8 @@ def get_realized_price_data() -> pd.DataFrame:
     if not os.path.exists(log_path):
         return pd.DataFrame()
 
-    df_log = pd.read_csv(log_path)
-
-    # Debug: tampilkan kolom dan beberapa baris
-    print("Kolom dalam df_log:", df_log.columns.tolist())
-    print(df_log.head())
-
-    if "tanggal" not in df_log.columns:
-        raise ValueError("Kolom 'tanggal' tidak ditemukan dalam log data!")
+    df_log = pd.read_csv(log_path, names=["ticker", "tanggal", "predicted_price", "upper_bound", "lower_bound"])
+    df_log.columns = df_log.columns.str.strip().str.lower()
 
     df_log["tanggal"] = pd.to_datetime(df_log["tanggal"])
     results = []
