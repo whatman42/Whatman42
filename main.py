@@ -1168,8 +1168,8 @@ def get_realized_price_data() -> pd.DataFrame:
             logging.error(f"[{ticker}] Gagal download data: {e}")
             continue
 
-        if df_price.empty or "High" not in df_price or "Low" not in df_price:
-            logging.warning(f"[{ticker}] Data kosong atau kolom hilang.")
+        if df_price.empty or "High" not in df_price.columns or "Low" not in df_price.columns:
+            logging.warning(f"[{ticker}] Data kosong atau kolom High/Low hilang.")
             continue
 
         df_price.index = pd.to_datetime(df_price.index)
@@ -1186,12 +1186,20 @@ def get_realized_price_data() -> pd.DataFrame:
 
             df_window = df_price.loc[(df_price.index >= start_window) & (df_price.index <= end_window)]
 
+            if df_window.empty or "High" not in df_window.columns or "Low" not in df_window.columns:
+                logging.warning(f"[{ticker}] Data kosong atau kolom High/Low hilang untuk {tanggal_prediksi.date()}")
+                continue
+
             if df_window.shape[0] < 3 or df_window[["High", "Low"]].isna().all().all():
                 logging.warning(f"[{ticker}] Data prediksi {tanggal_prediksi.date()} tidak cukup untuk evaluasi.")
                 continue
 
-            actual_high = pd.to_numeric(df_window["High"], errors="coerce").max()
-            actual_low = pd.to_numeric(df_window["Low"], errors="coerce").min()
+            try:
+                actual_high = pd.to_numeric(df_window["High"], errors="coerce").max()
+                actual_low = pd.to_numeric(df_window["Low"], errors="coerce").min()
+            except Exception as e:
+                logging.warning(f"[{ticker}] Gagal konversi harga jadi numerik: {e}")
+                continue
 
             if pd.isna(actual_high) or pd.isna(actual_low):
                 logging.warning(f"[{ticker}] Nilai actual_high/low NaN pada {tanggal_prediksi.date()}")
