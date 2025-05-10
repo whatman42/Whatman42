@@ -1217,7 +1217,7 @@ def evaluate_prediction_mae() -> Dict[str, float]:
 
     try:
         df_log = pd.read_csv(log_path, names=["ticker", "tanggal", "harga_awal", "pred_high", "pred_low"])
-        df_log["tanggal"] = pd.to_datetime(df_log["tanggal"])
+        df_log["tanggal"] = pd.to_datetime(df_log["tanggal"]).dt.tz_localize("Asia/Jakarta", nonexistent='shift_forward')
         df_log.drop_duplicates(subset=["ticker", "tanggal"], keep="last", inplace=True)
     except Exception as e:
         logging.error(f"Gagal membaca log prediksi: {e}")
