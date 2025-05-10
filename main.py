@@ -1152,8 +1152,8 @@ def get_realized_price_data() -> pd.DataFrame:
             results.append({
                 "ticker": ticker,
                 "tanggal": tanggal_prediksi,
-                "actual_high": float(df_window["High"].max()),
-                "actual_low": float(df_window["Low"].min())
+                "actual_high": pd.to_numeric(df_window["High"], errors="coerce").max(),
+                "actual_low": pd.to_numeric(df_window["Low"], errors="coerce").min()
             })
 
     return pd.DataFrame(results)
