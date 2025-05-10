@@ -1,583 +1,465 @@
-2025-05-10 10:31:14,881 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
-2025-05-10 10:31:14,893 - WARNING - Data realisasi harga kosong.
-2025-05-10 10:31:14,900 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
-2025-05-10 10:32:03,275 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
-2025-05-10 10:32:03,281 - WARNING - Data realisasi harga kosong.
-2025-05-10 10:32:03,295 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
-2025-05-10 10:32:05,082 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
-2025-05-10 10:32:05,082 - WARNING - Data realisasi harga kosong.
-2025-05-10 10:32:05,088 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
-2025-05-10 10:32:20,017 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
-2025-05-10 10:32:20,018 - WARNING - Data realisasi harga kosong.
-2025-05-10 10:32:20,026 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
-2025-05-10 10:33:46,037 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
-2025-05-10 10:33:46,038 - WARNING - Data realisasi harga kosong.
-2025-05-10 10:33:46,045 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
-2025-05-10 10:34:06,262 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
-2025-05-10 10:34:06,263 - WARNING - Data realisasi harga kosong.
-2025-05-10 10:34:06,272 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
-2025-05-10 10:34:28,069 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
-2025-05-10 10:34:28,069 - WARNING - Data realisasi harga kosong.
-2025-05-10 10:34:28,077 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
-2025-05-10 10:34:49,598 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
-2025-05-10 10:34:49,598 - WARNING - Data realisasi harga kosong.
-2025-05-10 10:34:49,609 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
-2025-05-10 10:36:05,183 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
-2025-05-10 10:36:05,184 - WARNING - Data realisasi harga kosong.
-2025-05-10 10:36:05,189 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
-2025-05-10 10:36:18,863 - WARNING - BLTZ.JK: Data kosong/kurang atau kolom tidak lengkap.
-2025-05-10 10:36:18,864 - ERROR - BLTZ.JK: Data saham tidak ditemukan atau kosong.
-2025-05-10 10:36:22,212 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
-2025-05-10 10:36:22,212 - WARNING - Data realisasi harga kosong.
-2025-05-10 10:36:22,218 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
-2025-05-10 10:36:33,148 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
-2025-05-10 10:36:33,149 - WARNING - Data realisasi harga kosong.
-2025-05-10 10:36:33,158 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
-2025-05-10 10:36:55,437 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
-2025-05-10 10:36:55,437 - WARNING - Data realisasi harga kosong.
-2025-05-10 10:36:55,443 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
-2025-05-10 10:37:49,170 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
-2025-05-10 10:37:49,170 - WARNING - Data realisasi harga kosong.
-2025-05-10 10:37:49,176 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
-2025-05-10 10:38:25,447 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
-2025-05-10 10:38:25,451 - WARNING - Data realisasi harga kosong.
-2025-05-10 10:38:25,458 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'1744.9858966466702', '1824.1706278206104', '1750.0', '2025-05-02', 'jpfa.jk'}
-2025-05-10 10:39:19,327 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:39:19,328 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:39:28,970 - WARNING - BOSS.JK: Data kosong/kurang atau kolom tidak lengkap.
-2025-05-10 10:39:28,972 - ERROR - BOSS.JK: Data saham tidak ditemukan atau kosong.
-2025-05-10 10:39:34,322 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:39:34,323 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:39:52,182 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:39:52,182 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:40:48,422 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:40:48,422 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:41:09,767 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:41:09,768 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:42:19,468 - WARNING - BTEL.JK: Data kosong/kurang atau kolom tidak lengkap.
-2025-05-10 10:42:19,468 - ERROR - BTEL.JK: Data saham tidak ditemukan atau kosong.
-2025-05-10 10:42:22,825 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:42:22,826 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:42:29,366 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:42:29,367 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:43:29,535 - ERROR - Error mengambil data BVSN.JK: HTTP Error 404: 
-2025-05-10 10:43:29,535 - ERROR - BVSN.JK: Data saham tidak ditemukan atau kosong.
-2025-05-10 10:43:33,635 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:43:33,638 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:43:50,718 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:43:50,719 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:44:34,244 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:44:34,246 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:45:14,394 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:45:14,395 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:45:49,666 - WARNING - CBMF.JK: Data kosong/kurang atau kolom tidak lengkap.
-2025-05-10 10:45:49,669 - ERROR - CBMF.JK: Data saham tidak ditemukan atau kosong.
-2025-05-10 10:45:52,065 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:45:52,066 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:46:10,472 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:46:10,473 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:46:55,565 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:46:55,565 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:46:57,429 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:46:57,430 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:47:03,169 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:47:03,170 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:48:49,292 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:48:49,293 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:48:54,188 - ERROR - $CNTX.JK: possibly delisted; no price data found  (period=180d)
-2025-05-10 10:48:54,191 - WARNING - CNTX.JK: Data kosong/kurang atau kolom tidak lengkap.
-2025-05-10 10:48:54,191 - ERROR - CNTX.JK: Data saham tidak ditemukan atau kosong.
-2025-05-10 10:48:55,489 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:48:55,492 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:49:02,381 - WARNING - COWL.JK: Data kosong/kurang atau kolom tidak lengkap.
-2025-05-10 10:49:02,381 - ERROR - COWL.JK: Data saham tidak ditemukan atau kosong.
-2025-05-10 10:49:03,623 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:49:03,623 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:49:47,611 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:49:47,612 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:50:30,736 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:50:30,738 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:51:15,058 - WARNING - DEAL.JK: Data kosong/kurang atau kolom tidak lengkap.
-2025-05-10 10:51:15,059 - ERROR - DEAL.JK: Data saham tidak ditemukan atau kosong.
-2025-05-10 10:51:15,269 - WARNING - DEFI.JK: Data kosong/kurang atau kolom tidak lengkap.
-2025-05-10 10:51:15,273 - ERROR - DEFI.JK: Data saham tidak ditemukan atau kosong.
-2025-05-10 10:51:17,669 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:51:17,670 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:51:27,939 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:51:27,939 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:51:43,008 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:51:43,009 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:52:54,071 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:52:54,072 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:53:17,158 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:53:17,158 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:54:08,479 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:54:08,480 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:54:25,298 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:54:25,302 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:55:31,264 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:55:31,264 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:55:38,385 - WARNING - DUCK.JK: Data kosong/kurang atau kolom tidak lengkap.
-2025-05-10 10:55:38,385 - ERROR - DUCK.JK: Data saham tidak ditemukan atau kosong.
-2025-05-10 10:55:41,822 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:55:41,822 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:56:29,688 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:56:29,689 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:57:09,496 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:57:09,496 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:58:07,439 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:58:07,440 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:58:20,524 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:58:20,525 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:58:41,848 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:58:41,848 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:59:31,804 - ERROR - $ERA.JK: possibly delisted; no price data found  (period=180d) (Yahoo error = "No data found, symbol may be delisted")
-2025-05-10 10:59:31,804 - WARNING - ERA.JK: Data kosong/kurang atau kolom tidak lengkap.
-2025-05-10 10:59:31,805 - ERROR - ERA.JK: Data saham tidak ditemukan atau kosong.
-2025-05-10 10:59:33,109 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 10:59:33,110 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:00:38,971 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:00:38,972 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:01:01,306 - WARNING - FASW.JK: Data kosong/kurang atau kolom tidak lengkap.
-2025-05-10 11:01:01,306 - ERROR - FASW.JK: Data saham tidak ditemukan atau kosong.
-2025-05-10 11:01:02,843 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:01:02,844 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:01:15,236 - WARNING - FISH.JK: Data kosong/kurang atau kolom tidak lengkap.
-2025-05-10 11:01:15,239 - ERROR - FISH.JK: Data saham tidak ditemukan atau kosong.
-2025-05-10 11:01:16,519 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:01:16,520 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:02:06,619 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:02:06,620 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:03:02,515 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:03:02,517 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:03:25,465 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:03:25,465 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:03:33,398 - WARNING - GAMA.JK: Data kosong/kurang atau kolom tidak lengkap.
-2025-05-10 11:03:33,398 - ERROR - GAMA.JK: Data saham tidak ditemukan atau kosong.
-2025-05-10 11:03:37,610 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:03:37,610 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:03:41,488 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:03:41,488 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:04:52,772 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:04:52,773 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:05:34,729 - WARNING - HDTX.JK: Data kosong/kurang atau kolom tidak lengkap.
-2025-05-10 11:05:34,730 - ERROR - HDTX.JK: Data saham tidak ditemukan atau kosong.
-2025-05-10 11:05:38,124 - ERROR - $HITS.JK: possibly delisted; no price data found  (period=1d)
-2025-05-10 11:05:38,125 - WARNING - HITS.JK: Data daily kosong saat ambil harga terbaru.
-2025-05-10 11:05:38,129 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:05:38,129 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:06:17,167 - WARNING - HKMU.JK: Data kosong/kurang atau kolom tidak lengkap.
-2025-05-10 11:06:17,167 - ERROR - HKMU.JK: Data saham tidak ditemukan atau kosong.
-2025-05-10 11:06:18,596 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:06:18,604 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:06:21,057 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:06:21,058 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:07:19,262 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:07:19,263 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:07:26,692 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:07:26,693 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:08:36,221 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:08:36,222 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:08:56,892 - ERROR - $INAF.JK: possibly delisted; no price data found  (period=180d)
-2025-05-10 11:08:56,892 - WARNING - INAF.JK: Data kosong/kurang atau kolom tidak lengkap.
-2025-05-10 11:08:56,893 - ERROR - INAF.JK: Data saham tidak ditemukan atau kosong.
-2025-05-10 11:08:57,966 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:08:57,968 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:09:59,395 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:09:59,397 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:10:05,144 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:10:05,145 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:10:53,760 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:10:53,791 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:10:53,923 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:10:53,924 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:12:47,337 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:12:47,337 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:12:51,454 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:12:51,456 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:13:32,147 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:13:32,149 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:13:38,859 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:13:38,859 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:15:23,124 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:15:23,124 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:15:27,804 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:15:27,805 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:15:34,429 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:15:34,431 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:15:48,522 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:15:48,523 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:17:05,523 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:17:05,523 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:18:01,693 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:18:01,696 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:18:07,204 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:18:07,205 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:18:26,955 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:18:26,956 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:19:52,182 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:19:52,183 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:20:35,053 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:20:35,053 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:20:46,797 - ERROR - $LIFE.JK: possibly delisted; no price data found  (period=1d)
-2025-05-10 11:20:46,798 - WARNING - LIFE.JK: Data daily kosong saat ambil harga terbaru.
-2025-05-10 11:20:49,302 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:20:49,302 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:20:58,109 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:20:58,110 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:22:32,723 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:22:32,724 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:22:40,501 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:22:40,501 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:23:22,135 - WARNING - MAPB.JK: Data kosong/kurang atau kolom tidak lengkap.
-2025-05-10 11:23:22,136 - ERROR - MAPB.JK: Data saham tidak ditemukan atau kosong.
-2025-05-10 11:23:23,697 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:23:23,698 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:23:45,069 - ERROR - $MASA.JK: possibly delisted; no price data found  (period=180d)
-2025-05-10 11:23:45,069 - WARNING - MASA.JK: Data kosong/kurang atau kolom tidak lengkap.
-2025-05-10 11:23:45,070 - ERROR - MASA.JK: Data saham tidak ditemukan atau kosong.
-2025-05-10 11:23:47,733 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:23:47,734 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:24:48,727 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:24:48,727 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:25:23,245 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:25:23,245 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:25:56,567 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:25:56,568 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:26:19,912 - ERROR - $MKNT.JK: possibly delisted; no price data found  (period=180d)
-2025-05-10 11:26:19,912 - WARNING - MKNT.JK: Data kosong/kurang atau kolom tidak lengkap.
-2025-05-10 11:26:19,912 - ERROR - MKNT.JK: Data saham tidak ditemukan atau kosong.
-2025-05-10 11:26:21,269 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:26:21,270 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:27:29,353 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:27:29,353 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:28:04,388 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:28:04,392 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:28:16,901 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:28:16,901 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:28:55,289 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:28:55,290 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:30:06,993 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:30:06,994 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:30:23,670 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:30:23,671 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:30:47,913 - WARNING - OMRE.JK: Data kosong/kurang atau kolom tidak lengkap.
-2025-05-10 11:30:47,914 - ERROR - OMRE.JK: Data saham tidak ditemukan atau kosong.
-2025-05-10 11:30:49,230 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:30:49,231 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:31:44,464 - WARNING - PCAR.JK: ATR tidak valid (semua nol atau kosong) setelah kalkulasi.
-2025-05-10 11:31:48,233 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:31:48,234 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:32:29,590 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:32:29,591 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:32:59,801 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:32:59,803 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:33:30,714 - WARNING - POOL.JK: Data kosong/kurang atau kolom tidak lengkap.
-2025-05-10 11:33:30,714 - ERROR - POOL.JK: Data saham tidak ditemukan atau kosong.
-2025-05-10 11:33:32,681 - ERROR - $PPRO.JK: possibly delisted; no price data found  (period=1d)
-2025-05-10 11:33:32,682 - WARNING - PPRO.JK: Data daily kosong saat ambil harga terbaru.
-2025-05-10 11:33:33,971 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:33:33,971 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:34:28,746 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:34:28,747 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:35:08,138 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:35:08,139 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:35:48,342 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:35:48,343 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:35:51,183 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:35:51,183 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:37:12,549 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:37:12,550 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:37:42,089 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:37:42,092 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:38:30,995 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:38:30,996 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:38:32,795 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:38:32,796 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:39:47,061 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:39:47,064 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:40:14,714 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:40:14,718 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:40:55,461 - ERROR - $SMCB.JK: possibly delisted; no price data found  (period=1d)
-2025-05-10 11:40:55,461 - WARNING - SMCB.JK: Data daily kosong saat ambil harga terbaru.
-2025-05-10 11:40:56,805 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:40:56,806 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:41:06,007 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:41:06,007 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:42:31,232 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:42:31,234 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:42:44,412 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:42:44,412 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:43:22,660 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:43:22,661 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:43:36,597 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:43:36,597 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:44:32,997 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:44:32,998 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:45:15,239 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:45:15,239 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:45:22,884 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:45:22,885 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:45:58,630 - WARNING - TIFA.JK: Data kosong/kurang atau kolom tidak lengkap.
-2025-05-10 11:45:58,631 - ERROR - TIFA.JK: Data saham tidak ditemukan atau kosong.
-2025-05-10 11:46:00,068 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:46:00,070 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:47:14,406 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:47:14,407 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:47:44,422 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:47:44,424 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:48:00,637 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:48:00,639 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:48:35,349 - ERROR - $TURI.JK: possibly delisted; no price data found  (period=180d) (Yahoo error = "No data found, symbol may be delisted")
-2025-05-10 11:48:35,350 - WARNING - TURI.JK: Data kosong/kurang atau kolom tidak lengkap.
-2025-05-10 11:48:35,350 - ERROR - TURI.JK: Data saham tidak ditemukan atau kosong.
-2025-05-10 11:48:37,024 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:48:37,024 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:49:23,619 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:49:23,622 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:50:32,688 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:50:32,689 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:50:33,653 - ERROR - $WIKA.JK: possibly delisted; no price data found  (period=1d)
-2025-05-10 11:50:33,654 - WARNING - WIKA.JK: Data daily kosong saat ambil harga terbaru.
-2025-05-10 11:50:33,656 - ERROR - Gagal membaca file log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:50:33,657 - ERROR - Gagal membaca log prediksi: Error tokenizing data. C error: Expected 5 fields in line 98, saw 6
-
-2025-05-10 11:51:21,649 - WARNING - WSKT.JK: Data kosong/kurang atau kolom tidak lengkap.
-2025-05-10 11:51:21,651 - ERROR - WSKT.JK: Data saham tidak ditemukan atau kosong.
-2025-05-10 11:51:21,799 - WARNING - YPAS.JK: Data kosong/kurang atau kolom tidak lengkap.
-2025-05-10 11:51:21,799 - ERROR - YPAS.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 13:05:31,921 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:05:31,932 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:05:31,939 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:05:59,309 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:05:59,310 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:05:59,316 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:06:13,806 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:06:13,807 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:06:13,814 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:06:44,909 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:06:44,910 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:06:44,915 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:07:44,397 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:07:44,398 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:07:44,406 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:08:14,457 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:08:14,458 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:08:14,465 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:09:01,065 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:09:01,065 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:09:01,077 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:09:02,786 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:09:02,787 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:09:02,792 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:10:17,148 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:10:17,148 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:10:17,154 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:10:19,191 - WARNING - BLTZ.JK: Data kosong/kurang atau kolom tidak lengkap.
+2025-05-10 13:10:19,192 - ERROR - BLTZ.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 13:10:22,977 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:10:22,977 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:10:22,983 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:10:39,752 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:10:39,752 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:10:39,760 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:11:28,172 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:11:28,172 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:11:28,179 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:12:02,356 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:12:02,356 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:12:02,361 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:12:40,881 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:12:40,882 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:12:40,890 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:13:25,115 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:13:25,115 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:13:25,121 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:13:51,311 - WARNING - BOSS.JK: Data kosong/kurang atau kolom tidak lengkap.
+2025-05-10 13:13:51,311 - ERROR - BOSS.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 13:13:56,817 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:13:56,818 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:13:56,823 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:14:16,757 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:14:16,759 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:14:16,769 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:15:09,646 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:15:09,647 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:15:09,653 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:15:13,860 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:15:13,860 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:15:13,865 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:16:40,941 - WARNING - BTEL.JK: Data kosong/kurang atau kolom tidak lengkap.
+2025-05-10 13:16:40,941 - ERROR - BTEL.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 13:16:44,525 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:16:44,525 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:16:44,531 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:17:08,299 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:17:08,299 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:17:08,304 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:17:36,521 - ERROR - Error mengambil data BVSN.JK: HTTP Error 404: 
+2025-05-10 13:17:36,521 - ERROR - BVSN.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 13:17:40,586 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:17:40,586 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:17:40,594 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:17:57,824 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:17:57,825 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:17:57,831 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:19:18,715 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:19:18,715 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:19:18,721 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:19:23,636 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:19:23,636 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:19:23,642 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:19:59,501 - WARNING - CBMF.JK: Data kosong/kurang atau kolom tidak lengkap.
+2025-05-10 13:19:59,502 - ERROR - CBMF.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 13:20:01,921 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:20:01,922 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:20:01,928 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:20:18,551 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:20:18,551 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:20:18,558 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:21:07,413 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:21:07,413 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:21:07,419 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:21:09,661 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:21:09,662 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:21:09,670 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:21:55,270 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:21:55,270 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:21:55,282 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:22:52,295 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:22:52,295 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:22:52,301 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:23:25,630 - ERROR - $CNTX.JK: possibly delisted; no price data found  (period=180d)
+2025-05-10 13:23:25,630 - WARNING - CNTX.JK: Data kosong/kurang atau kolom tidak lengkap.
+2025-05-10 13:23:25,631 - ERROR - CNTX.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 13:23:27,244 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:23:27,244 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:23:27,251 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:23:45,485 - WARNING - COWL.JK: Data kosong/kurang atau kolom tidak lengkap.
+2025-05-10 13:23:45,486 - ERROR - COWL.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 13:23:47,003 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:23:47,004 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:23:47,012 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:23:50,881 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:23:50,882 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:23:50,887 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:24:37,359 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:24:37,360 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:24:37,366 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:25:36,823 - WARNING - DEAL.JK: Data kosong/kurang atau kolom tidak lengkap.
+2025-05-10 13:25:36,824 - ERROR - DEAL.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 13:25:37,075 - WARNING - DEFI.JK: Data kosong/kurang atau kolom tidak lengkap.
+2025-05-10 13:25:37,076 - ERROR - DEFI.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 13:25:39,483 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:25:39,483 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:25:39,495 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:25:55,063 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:25:55,076 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:25:55,087 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:26:27,352 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:26:27,352 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:26:27,358 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:27:19,797 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:27:19,798 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:27:19,805 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:27:28,614 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:27:28,614 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:27:28,621 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:28:17,285 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:28:17,286 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:28:17,291 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:29:04,169 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:29:04,170 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:29:04,175 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:30:04,464 - WARNING - DUCK.JK: Data kosong/kurang atau kolom tidak lengkap.
+2025-05-10 13:30:04,467 - ERROR - DUCK.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 13:30:04,671 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:30:04,671 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:30:04,677 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:30:07,984 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:30:07,985 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:30:07,990 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:30:50,317 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:30:50,317 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:30:50,325 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:31:40,127 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:31:40,129 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:31:40,135 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:32:26,587 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:32:26,588 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:32:26,595 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:32:53,868 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:32:53,868 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:32:53,878 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:33:05,973 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:33:05,973 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:33:05,978 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:34:14,774 - ERROR - $ERA.JK: possibly delisted; no price data found  (period=180d) (Yahoo error = "No data found, symbol may be delisted")
+2025-05-10 13:34:14,775 - WARNING - ERA.JK: Data kosong/kurang atau kolom tidak lengkap.
+2025-05-10 13:34:14,775 - ERROR - ERA.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 13:34:16,290 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:34:16,291 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:34:16,297 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:34:58,715 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:34:58,716 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:34:58,723 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:35:32,598 - WARNING - FASW.JK: Data kosong/kurang atau kolom tidak lengkap.
+2025-05-10 13:35:32,599 - ERROR - FASW.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 13:35:33,855 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:35:33,855 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:35:33,861 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:35:48,913 - WARNING - FISH.JK: Data kosong/kurang atau kolom tidak lengkap.
+2025-05-10 13:35:48,913 - ERROR - FISH.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 13:35:50,077 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:35:50,077 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:35:50,081 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:36:55,727 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:36:55,728 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:36:55,736 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:37:35,488 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:37:35,489 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:37:35,498 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:37:39,930 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:37:39,930 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:37:39,939 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:38:09,684 - WARNING - GAMA.JK: Data kosong/kurang atau kolom tidak lengkap.
+2025-05-10 13:38:09,686 - ERROR - GAMA.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 13:38:14,098 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:38:14,100 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:38:14,106 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:38:26,428 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:38:26,428 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:38:26,434 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:39:31,257 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:39:31,258 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:39:31,265 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:39:58,064 - WARNING - HDTX.JK: Data kosong/kurang atau kolom tidak lengkap.
+2025-05-10 13:39:58,065 - ERROR - HDTX.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 13:40:01,748 - ERROR - $HITS.JK: possibly delisted; no price data found  (period=1d)
+2025-05-10 13:40:01,749 - WARNING - HITS.JK: Data daily kosong saat ambil harga terbaru.
+2025-05-10 13:40:01,761 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:40:01,761 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:40:01,768 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:40:40,578 - WARNING - HKMU.JK: Data kosong/kurang atau kolom tidak lengkap.
+2025-05-10 13:40:40,579 - ERROR - HKMU.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 13:40:41,986 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:40:41,986 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:40:41,992 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:41:07,892 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:41:07,892 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:41:07,898 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:41:50,174 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:41:50,175 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:41:50,182 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:41:56,830 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:41:56,830 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:41:56,838 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:43:08,393 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:43:08,394 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:43:08,400 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:43:49,420 - ERROR - $INAF.JK: possibly delisted; no price data found  (period=180d)
+2025-05-10 13:43:49,421 - WARNING - INAF.JK: Data kosong/kurang atau kolom tidak lengkap.
+2025-05-10 13:43:49,421 - ERROR - INAF.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 13:43:50,549 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:43:50,549 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:43:50,555 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:44:19,511 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:44:19,512 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:44:19,519 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:44:40,562 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:44:40,564 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:44:40,580 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:45:26,067 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:45:26,068 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:45:26,074 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:45:55,583 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:45:55,584 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:45:55,590 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:47:06,390 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:47:06,390 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:47:06,398 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:47:20,576 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:47:20,577 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:47:20,582 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:48:05,167 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:48:05,167 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:48:05,176 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:48:44,383 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:48:44,383 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:48:44,391 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:49:47,703 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:49:47,704 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:49:47,709 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:49:58,948 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:49:58,949 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:49:58,959 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:50:15,871 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:50:15,872 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:50:15,877 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:50:50,046 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:50:50,047 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:50:50,055 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:51:41,758 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:51:41,759 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:51:41,766 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:52:32,620 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:52:32,621 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:52:32,632 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:53:02,156 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:53:02,157 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:53:02,167 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:53:21,080 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:53:21,080 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:53:21,088 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:54:30,879 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:54:30,879 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:54:30,885 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:55:13,786 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:55:13,787 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:55:13,794 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:55:39,752 - ERROR - $LIFE.JK: possibly delisted; no price data found  (period=1d)
+2025-05-10 13:55:39,753 - WARNING - LIFE.JK: Data daily kosong saat ambil harga terbaru.
+2025-05-10 13:55:42,274 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:55:42,274 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:55:42,281 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:56:02,234 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:56:02,237 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:56:02,244 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:57:08,389 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:57:08,390 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:57:08,395 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:57:24,154 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:57:24,160 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:57:24,172 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:58:20,099 - WARNING - MAPB.JK: Data kosong/kurang atau kolom tidak lengkap.
+2025-05-10 13:58:20,100 - ERROR - MAPB.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 13:58:21,526 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:58:21,527 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:58:21,533 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:58:43,441 - ERROR - $MASA.JK: possibly delisted; no price data found  (period=180d)
+2025-05-10 13:58:43,442 - WARNING - MASA.JK: Data kosong/kurang atau kolom tidak lengkap.
+2025-05-10 13:58:43,442 - ERROR - MASA.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 13:58:46,299 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:58:46,300 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:58:46,305 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:59:28,823 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 13:59:28,824 - WARNING - Data realisasi harga kosong.
+2025-05-10 13:59:28,832 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:00:02,926 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:00:02,928 - WARNING - Data realisasi harga kosong.
+2025-05-10 14:00:02,938 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:01:01,325 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:01:01,328 - WARNING - Data realisasi harga kosong.
+2025-05-10 14:01:01,334 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:01:29,662 - ERROR - $MKNT.JK: possibly delisted; no price data found  (period=180d)
+2025-05-10 14:01:29,662 - WARNING - MKNT.JK: Data kosong/kurang atau kolom tidak lengkap.
+2025-05-10 14:01:29,662 - ERROR - MKNT.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 14:01:31,180 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:01:31,181 - WARNING - Data realisasi harga kosong.
+2025-05-10 14:01:31,188 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:02:01,645 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:02:01,646 - WARNING - Data realisasi harga kosong.
+2025-05-10 14:02:01,656 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:02:40,479 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:02:40,479 - WARNING - Data realisasi harga kosong.
+2025-05-10 14:02:40,484 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:03:28,819 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:03:28,820 - WARNING - Data realisasi harga kosong.
+2025-05-10 14:03:28,826 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:04:05,576 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:04:05,576 - WARNING - Data realisasi harga kosong.
+2025-05-10 14:04:05,584 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:04:34,800 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:04:34,801 - WARNING - Data realisasi harga kosong.
+2025-05-10 14:04:34,807 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:04:59,288 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:04:59,289 - WARNING - Data realisasi harga kosong.
+2025-05-10 14:04:59,296 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:06:03,355 - WARNING - OMRE.JK: Data kosong/kurang atau kolom tidak lengkap.
+2025-05-10 14:06:03,356 - ERROR - OMRE.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 14:06:04,610 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:06:04,611 - WARNING - Data realisasi harga kosong.
+2025-05-10 14:06:04,617 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:06:47,170 - WARNING - PCAR.JK: ATR tidak valid (semua nol atau kosong) setelah kalkulasi.
+2025-05-10 14:06:51,004 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:06:51,005 - WARNING - Data realisasi harga kosong.
+2025-05-10 14:06:51,014 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:07:15,105 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:07:15,106 - WARNING - Data realisasi harga kosong.
+2025-05-10 14:07:15,115 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:07:27,656 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:07:27,656 - WARNING - Data realisasi harga kosong.
+2025-05-10 14:07:27,663 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:08:43,825 - WARNING - POOL.JK: Data kosong/kurang atau kolom tidak lengkap.
+2025-05-10 14:08:43,826 - ERROR - POOL.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 14:08:45,692 - ERROR - $PPRO.JK: possibly delisted; no price data found  (period=1d)
+2025-05-10 14:08:45,692 - WARNING - PPRO.JK: Data daily kosong saat ambil harga terbaru.
+2025-05-10 14:08:47,116 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:08:47,117 - WARNING - Data realisasi harga kosong.
+2025-05-10 14:08:47,123 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:09:34,136 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:09:34,137 - WARNING - Data realisasi harga kosong.
+2025-05-10 14:09:34,147 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:09:51,980 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:09:51,981 - WARNING - Data realisasi harga kosong.
+2025-05-10 14:09:51,993 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:10:18,524 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:10:18,524 - WARNING - Data realisasi harga kosong.
+2025-05-10 14:10:18,534 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:11:16,828 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:11:16,829 - WARNING - Data realisasi harga kosong.
+2025-05-10 14:11:16,834 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:12:18,442 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:12:18,443 - WARNING - Data realisasi harga kosong.
+2025-05-10 14:12:18,464 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:12:23,789 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:12:23,790 - WARNING - Data realisasi harga kosong.
+2025-05-10 14:12:23,795 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:13:00,393 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:13:00,395 - WARNING - Data realisasi harga kosong.
+2025-05-10 14:13:00,401 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:14:03,533 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:14:03,534 - WARNING - Data realisasi harga kosong.
+2025-05-10 14:14:03,540 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:14:50,688 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:14:50,688 - WARNING - Data realisasi harga kosong.
+2025-05-10 14:14:50,699 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:15:00,277 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:15:00,278 - WARNING - Data realisasi harga kosong.
+2025-05-10 14:15:00,283 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:15:34,623 - ERROR - $SMCB.JK: possibly delisted; no price data found  (period=1d)
+2025-05-10 14:15:34,624 - WARNING - SMCB.JK: Data daily kosong saat ambil harga terbaru.
+2025-05-10 14:15:36,185 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:15:36,185 - WARNING - Data realisasi harga kosong.
+2025-05-10 14:15:36,190 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:16:36,081 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:16:36,082 - WARNING - Data realisasi harga kosong.
+2025-05-10 14:16:36,090 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:17:27,473 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:17:27,473 - WARNING - Data realisasi harga kosong.
+2025-05-10 14:17:27,479 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:17:41,521 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:17:41,522 - WARNING - Data realisasi harga kosong.
+2025-05-10 14:17:41,528 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:18:15,921 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:18:15,925 - WARNING - Data realisasi harga kosong.
+2025-05-10 14:18:15,932 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:19:22,170 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:19:22,171 - WARNING - Data realisasi harga kosong.
+2025-05-10 14:19:22,176 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:19:57,892 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:19:57,893 - WARNING - Data realisasi harga kosong.
+2025-05-10 14:19:57,901 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:20:21,862 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:20:21,862 - WARNING - Data realisasi harga kosong.
+2025-05-10 14:20:21,868 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:20:32,176 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:20:32,177 - WARNING - Data realisasi harga kosong.
+2025-05-10 14:20:32,182 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:20:55,606 - WARNING - TIFA.JK: Data kosong/kurang atau kolom tidak lengkap.
+2025-05-10 14:20:55,607 - ERROR - TIFA.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 14:20:56,953 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:20:56,954 - WARNING - Data realisasi harga kosong.
+2025-05-10 14:20:56,960 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:22:33,338 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:22:33,338 - WARNING - Data realisasi harga kosong.
+2025-05-10 14:22:33,344 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:22:58,497 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:22:58,498 - WARNING - Data realisasi harga kosong.
+2025-05-10 14:22:58,503 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:23:05,839 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:23:05,843 - WARNING - Data realisasi harga kosong.
+2025-05-10 14:23:05,853 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:23:44,040 - ERROR - $TURI.JK: possibly delisted; no price data found  (period=180d) (Yahoo error = "No data found, symbol may be delisted")
+2025-05-10 14:23:44,040 - WARNING - TURI.JK: Data kosong/kurang atau kolom tidak lengkap.
+2025-05-10 14:23:44,040 - ERROR - TURI.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 14:23:45,588 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:23:45,589 - WARNING - Data realisasi harga kosong.
+2025-05-10 14:23:45,598 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:25:01,145 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:25:01,146 - WARNING - Data realisasi harga kosong.
+2025-05-10 14:25:01,151 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:25:34,655 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:25:34,656 - WARNING - Data realisasi harga kosong.
+2025-05-10 14:25:34,661 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:25:43,787 - ERROR - $WIKA.JK: possibly delisted; no price data found  (period=1d)
+2025-05-10 14:25:43,788 - WARNING - WIKA.JK: Data daily kosong saat ambil harga terbaru.
+2025-05-10 14:25:43,795 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:25:43,796 - WARNING - Data realisasi harga kosong.
+2025-05-10 14:25:43,804 - ERROR - Kolom CSV tidak sesuai. Kolom yang ditemukan: {'bmtr.jk', 'lightgbm-v1', '2025-05-10 17:39:15.572090+07:00', '143.0006561279297', '140.0', '138.9941199785698'}
+2025-05-10 14:26:22,469 - WARNING - WSKT.JK: Data kosong/kurang atau kolom tidak lengkap.
+2025-05-10 14:26:22,471 - ERROR - WSKT.JK: Data saham tidak ditemukan atau kosong.
+2025-05-10 14:26:22,818 - WARNING - YPAS.JK: Data kosong/kurang atau kolom tidak lengkap.
+2025-05-10 14:26:22,819 - ERROR - YPAS.JK: Data saham tidak ditemukan atau kosong.
